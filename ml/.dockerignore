@@ -1,9 +1,0 @@
-__pycache__/
-**/__pycache__/
-.pytest_cache/
-data/lfw_home/
-data/pgdata/
-data/*.mp4
-artifacts/trip_evals.json
-demo_env.ps1
-*.log

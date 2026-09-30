@@ -48,7 +48,7 @@ export LLM_API_KEY=...                # or ANTHROPIC_API_KEY=... for Claude. Fre
 export USE_LAYA=1                     # optional: semantic scam check in moderation (pip install laya; ~70 ms/msg on CPU)
 uvicorn app:app --port 8000           # 6. deploy; open http://127.0.0.1:8000/docs (also runs 2 trip worker threads)
 python smoke_test.py http://127.0.0.1:8000   # HTTP checks against the running server
-docker build -t buddysync-ml . && docker run -p 8000:8000 -e DATABASE_URL -e LLM_BASE_URL -e LLM_MODEL -e LLM_API_KEY buddysync-ml
+(cd .. && docker build -t buddysync-ml .) && docker run -p 8000:8000 -e DATABASE_URL -e LLM_BASE_URL -e LLM_MODEL -e LLM_API_KEY buddysync-ml
 ```
 
 **Production trip workers:** run the API with `TRIP_WORKERS=0`, and scale the planner separately with `python -m trip_planner.worker --threads 4`. Both need the same `DATABASE_URL` and LLM variables.

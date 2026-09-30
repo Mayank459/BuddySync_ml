@@ -1,0 +1,13 @@
+.git/
+*.pdf
+*.md
+!ml/API.md
+**/__pycache__/
+**/.pytest_cache/
+ml/data/lfw_home/
+ml/data/pgdata/
+ml/data/*.mp4
+ml/artifacts/trip_evals.json
+ml/demo_env.ps1
+.playwright-mcp/
+*.log

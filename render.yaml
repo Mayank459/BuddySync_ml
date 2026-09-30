@@ -4,8 +4,8 @@ services:
   - type: web
     name: buddysync-ml
     runtime: docker
-    dockerfilePath: ./ml/Dockerfile
-    dockerContext: ./ml
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     # Memory: ~250 MB for the trip planner alone, ~430 MB once face verification and liveness have run.
     # free/starter (512 MB) works for a demo with 1 process; use standard (2 GB) for real traffic.
     # free instances sleep after 15 min idle (first request then takes ~1 min): open /health before a demo.

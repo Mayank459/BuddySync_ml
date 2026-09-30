@@ -118,6 +118,7 @@ The main settings. Every variable is in [ml/API.md §7.24](ml/API.md#724-configu
 
 ```
 render.yaml                 Render blueprint (web service + Postgres)
+Dockerfile                  the service image (build from the repo root)
 ML_IMPLEMENTATION_PLAN.md   design for every ML feature: decisions, data, evaluation, roadmap
 TRIP_PLANNER_DESIGN.md      the trip planner's full design (§18 tracks what's built)
 DEMO.md                     3-minute demo script
