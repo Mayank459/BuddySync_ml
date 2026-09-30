@@ -67,7 +67,7 @@ def quote(origin_city: str, dest_city: str, day: date, direction: str = "before"
     prices = [r["price"] for r in near.values()]
     dep = datetime.fromisoformat(best["departure_at"]).replace(tzinfo=None)
     arr = dep + timedelta(minutes=best.get("duration_to") or best.get("duration") or 0)
-    marker = os.getenv("TRAVELPAYOUTS_MARKER")
+    marker = os.getenv("TRAVELPAYOUTS_MARKER", "783614")  # BuddySync's public partner ID
     url = "https://www.aviasales.com" + best["link"] + (f"&marker={marker}" if marker else "")
     return {"price": {"min": min(prices), "max": max(prices), "currency": "INR", "unit": "person", "confidence": "range",
                       "source": "cheapest cached fares (Aviasales via Travelpayouts)",

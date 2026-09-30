@@ -60,9 +60,22 @@ class Provider:
     models: dict = field(default_factory=dict)  # task -> [model, ...]
 
 
-def _models(prefix, default):
+# A key alone is enough: the base URL and models are inferred from its format (explicit env vars win)
+KNOWN = {"groq": ("https://api.groq.com/openai/v1", "qwen/qwen3.8-27b,openai/gpt-oss-120b,openai/gpt-oss-20b"),
+         "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai/", "gemini-flash-lite-latest,gemini-3.8-flash")}
+
+
+def infer(key: str):
+    if key.startswith("gsk_"):
+        return KNOWN["groq"]
+    if key.startswith(("AIza", "AQ.")):
+        return KNOWN["gemini"]
+    return None, ""
+
+
+def _models(prefix, default, fallback=""):
     lists = lambda v: [m.strip() for m in v.split(",") if m.strip()]
-    base = lists(os.getenv(default, ""))
+    base = lists(os.getenv(default, "") or fallback)
     return {t: lists(os.getenv(f"{prefix}_{t.upper()}_MODEL", "")) or base for t in ("draft", "chat", "utility")}
 
 
@@ -74,15 +87,13 @@ def providers() -> tuple:
         return (Provider("anthropic", anthropic.Anthropic(max_retries=1), {t: m for t in ("draft", "chat", "utility")}),)
     out = []
     import openai
-    if all(os.getenv(k) for k in ("LLM_BASE_URL", "LLM_API_KEY")) and any(_models("LLM", "LLM_MODEL").values()):
-        out.append(Provider("openai", openai.OpenAI(base_url=os.environ["LLM_BASE_URL"],
-                                                    api_key=os.environ["LLM_API_KEY"], max_retries=0),
-                            _models("LLM", "LLM_MODEL")))
-    if all(os.getenv(k) for k in ("LLM_FALLBACK_BASE_URL", "LLM_FALLBACK_API_KEY", "LLM_FALLBACK_MODEL")):
-        fb = [m.strip() for m in os.environ["LLM_FALLBACK_MODEL"].split(",")]
-        out.append(Provider("openai", openai.OpenAI(base_url=os.environ["LLM_FALLBACK_BASE_URL"],
-                                                    api_key=os.environ["LLM_FALLBACK_API_KEY"], max_retries=0),
-                            {t: fb for t in ("draft", "chat", "utility")}))
+    for prefix in ("LLM", "LLM_FALLBACK"):
+        key = os.getenv(f"{prefix}_API_KEY", "")
+        url, models = infer(key)
+        url = os.getenv(f"{prefix}_BASE_URL") or url
+        by_task = _models(prefix, f"{prefix}_MODEL", models)
+        if key and url and any(by_task.values()):
+            out.append(Provider("openai", openai.OpenAI(base_url=url, api_key=key, max_retries=0), by_task))
     return tuple(out)
 
 

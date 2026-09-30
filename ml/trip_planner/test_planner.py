@@ -458,3 +458,21 @@ def test_reply_language_is_decided_in_code():
     assert planner.language_of("Mujhe sirf veg khana chahiye") .startswith("Hinglish")
     assert planner.language_of("मुझे शाकाहारी खाना चाहिए").startswith("Hindi")
     assert planner.language_of("Make the hotel a bit cheaper") == "English"
+
+
+def test_llm_provider_inferred_from_the_key_alone(monkeypatch):
+    for k in ("ANTHROPIC_API_KEY", "LLM_BASE_URL", "LLM_MODEL", "LLM_FALLBACK_BASE_URL", "LLM_FALLBACK_MODEL",
+              "LLM_DRAFT_MODEL", "LLM_CHAT_MODEL", "LLM_UTILITY_MODEL"):
+        monkeypatch.delenv(k, raising=False)
+    monkeypatch.setenv("LLM_API_KEY", "gsk_test")
+    monkeypatch.setenv("LLM_FALLBACK_API_KEY", "AQ.test")
+    llm.providers.cache_clear()
+    try:
+        groq, gemini = llm.providers()
+        assert str(groq.client.base_url).startswith("https://api.groq.com") and groq.models["chat"][0] == "qwen/qwen3.8-27b"
+        assert "generativelanguage" in str(gemini.client.base_url) and gemini.models["draft"][0] == "gemini-flash-lite-latest"
+        monkeypatch.setenv("LLM_MODEL", "openai/gpt-oss-120b")  # explicit settings still win
+        llm.providers.cache_clear()
+        assert llm.providers()[0].models["chat"] == ["openai/gpt-oss-120b"]
+    finally:
+        llm.providers.cache_clear()

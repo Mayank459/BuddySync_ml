@@ -39,6 +39,10 @@ def pool() -> ConnectionPool:
         except ImportError:
             raise StoreUnavailable("trip planner storage not configured: set DATABASE_URL")
         # ponytail: embedded dev database; production always sets DATABASE_URL
+        import logging
+        logging.getLogger("trip_store").warning(
+            "DATABASE_URL is not set: using an embedded Postgres inside this process. Trips are LOST on every "
+            "restart or redeploy of a container. Set DATABASE_URL (e.g. a Render Postgres) in production.")
         url = pgserver.get_server(str(DATA / "pgdata"), cleanup_mode="stop").get_uri()  # stops with the last process
     p = ConnectionPool(url, min_size=1, max_size=int(os.getenv("DB_POOL_SIZE", "10")), open=True,
                        kwargs={"row_factory": dict_row, "autocommit": True})
