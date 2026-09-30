@@ -1,0 +1,1050 @@
+listing_id,event_id,source,title,performers,category,city,venue_lat,venue_lng,start_time,description
+1,1,partner_a,Bengaluru Food Festivals Fest,Riya Project,festival,Bengaluru,13.0144,77.5718,2026-09-30 21:00:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+2,1,partner_b,Bengaluru Food Festivals Fest,Riya Project,festival,Bengaluru,13.0142,77.5717,2026-09-30 21:30:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+3,2,partner_a,Blue Lantern Band presents a musicals evening,Blue Lantern Band,theatre,Hyderabad,17.4499,78.5754,2026-07-06 17:00:00,An evening of musicals in Hyderabad. weekend pe plans chahiye
+4,2,partner_b,Blue Lantern Band presents a musicals evening,Blue Lantern Band,theatre,Hyderabad,17.4499,78.5754,2026-07-06 17:30:00,An evening of musicals in Hyderabad. weekend pe plans chahiye
+5,3,partner_a,Anime Marathon: The Monsoon Collective Premiere,The Monsoon Collective,movie,Hyderabad,17.3915,78.5249,2026-09-05 21:00:00,An evening of anime in Hyderabad.
+6,3,partner_b,ANIME MARATHON: THE MONSOON COLLECTIVE PREMIERE,The Monsoon Collective,movie,Hyderabad,17.3915,78.5245,2026-09-05 21:00:00,An evening of anime in Hyderabad.
+7,4,partner_a,Delhi Tigers vs Strikers (cricket),Aarav Trio,sports,Delhi,28.6247,77.1649,2027-01-17 21:00:00,An evening of cricket in Delhi.
+8,5,partner_a,Comedy Night ft. Riya Express,Riya Express,comedy,Bengaluru,13.0273,77.5959,2027-01-18 19:00:00,"An evening of stand-up comedy in Bengaluru. new city, new friends"
+9,6,partner_a,Coding Workshop with Saffron Sessions,Saffron Sessions,workshop,Delhi,28.5907,77.1862,2026-06-26 17:00:00,An evening of coding in Delhi. always up for a good show
+10,6,partner_b,CODING WORKSHOP WITH SAFFRON SESSIONS,Saffron Sessions,workshop,Delhi,28.5909,77.1866,2026-06-26 16:30:00,An evening of coding in Delhi. always up for a good show
+11,7,partner_a,Blue Lantern Project presents a theatre evening,Blue Lantern Project,theatre,Pune,18.5144,73.8568,2026-10-01 19:00:00,An evening of theatre in Pune. ekdum mast vibe
+12,8,partner_a,Photography Workshop with Static Tides Live,Static Tides Live,workshop,Delhi,28.6274,77.2426,2026-07-23 18:00:00,An evening of photography in Delhi. always up for a good show
+13,8,partner_b,Photography Workshop with Static Tides Live,Static Tides Live,workshop,Delhi,28.6277,77.2421,2026-07-23 18:00:00,An evening of photography in Delhi. always up for a good show
+14,9,partner_a,Coding Workshop with Blue Lantern Collective,Blue Lantern Collective,workshop,Delhi,28.6247,77.1649,2026-08-01 17:00:00,An evening of coding in Delhi. ekdum mast vibe
+15,10,partner_a,Pottery Workshop with Blue Lantern Collective,Blue Lantern Collective,workshop,Hyderabad,17.4405,78.5003,2026-11-15 17:00:00,An evening of pottery in Hyderabad. chalo saath chalte hain
+16,10,partner_b,Pottery Workshop with Blue Lantern Collective,Blue Lantern Collective,workshop,Hyderabad,17.4408,78.5002,2026-11-15 17:30:00,An evening of pottery in Hyderabad. chalo saath chalte hain
+17,11,partner_a,Pune Music Festivals Carnival,DJ Neon Express,festival,Pune,18.5595,73.9874,2026-10-15 19:00:00,An evening of music festivals in Pune. always up for a good show
+18,11,partner_b,Pune Music Festivals Carnival,DJ Neon Express,festival,Pune,18.5592,73.9873,2026-10-15 19:00:00,An evening of music festivals in Pune. always up for a good show
+19,12,partner_a,Hyderabad Tigers vs Titans (football),Midnight Chai Collective,sports,Hyderabad,17.3915,78.5249,2027-01-19 19:00:00,An evening of football in Hyderabad. ekdum mast vibe
+20,12,partner_b,HYDERABAD TIGERS VS TITANS (FOOTBALL),Midnight Chai Collective,sports,Hyderabad,17.3918,78.5251,2027-01-19 18:30:00,An evening of football in Hyderabad. ekdum mast vibe
+21,13,partner_a,Mehfil Live - Bollywood Music Night,Mehfil Live,concert,Delhi,28.6247,77.1649,2026-09-09 17:00:00,An evening of bollywood music in Delhi. ekdum mast vibe
+22,14,partner_a,Static Tides Band presents a theatre evening,Static Tides Band,theatre,Mumbai,19.1697,72.8776,2026-09-20 21:00:00,An evening of theatre in Mumbai. weekend pe plans chahiye
+23,15,partner_a,Delhi Ai Summit 2026,Kavya Band,conference,Delhi,28.6274,77.2426,2026-08-18 18:00:00,An evening of ai in Delhi. chalo saath chalte hain
+24,16,partner_a,Mumbai Ai Summit 2026,Riya Band,conference,Mumbai,19.1581,72.9795,2026-06-26 21:00:00,An evening of ai in Mumbai. chalo saath chalte hain
+25,16,partner_b,Mumbai Ai Summit 2026,Riya Band,conference,Mumbai,19.1584,72.98,2026-06-26 21:00:00,An evening of ai in Mumbai. chalo saath chalte hain
+26,17,partner_a,Static Tides Sessions - Rock Night,Static Tides Sessions,concert,Bengaluru,13.0273,77.5959,2026-07-02 18:00:00,An evening of rock in Bengaluru. chalo saath chalte hain
+27,17,partner_b,Static Tides Sessions - Rock Night | Tickets,Static Tides Sessions,concert,Bengaluru,13.0274,77.5957,2026-07-02 17:30:00,An evening of rock in Bengaluru. chalo saath chalte hain
+28,18,partner_a,Comedy Night ft. Mehfil Project,Mehfil Project,comedy,Delhi,28.5718,77.2247,2026-10-29 19:00:00,An evening of stand-up comedy in Delhi.
+29,19,partner_a,Blue Lantern Express presents a theatre evening,Blue Lantern Express,theatre,Delhi,28.571,77.1801,2026-09-19 20:00:00,An evening of theatre in Delhi. weekend pe plans chahiye
+30,19,partner_b,Blue Lantern Express presents a theatre evening,Blue Lantern Express,theatre,Delhi,28.5703,77.1798,2026-09-19 19:30:00,An evening of theatre in Delhi. weekend pe plans chahiye
+31,20,partner_a,Mumbai Dynamos vs Titans (cricket),DJ Neon Live,sports,Mumbai,19.067,72.8295,2026-12-13 20:00:00,An evening of cricket in Mumbai.
+32,20,partner_b,Mumbai Dynamos vs Titans (cricket),DJ Neon Live,sports,Mumbai,19.067,72.8301,2026-12-13 19:30:00,An evening of cricket in Mumbai.
+33,21,partner_a,Mumbai Food Festivals Fest,The Monsoon Sessions,festival,Mumbai,19.1581,72.9795,2026-08-05 21:00:00,"An evening of food festivals in Mumbai. new city, new friends"
+34,21,partner_b,Mumbai Food Festivals Fest,The Monsoon Sessions,festival,Mumbai,19.1581,72.9796,2026-08-05 20:30:00,"An evening of food festivals in Mumbai. new city, new friends"
+35,22,partner_a,Mumbai Strikers vs Mavericks (football),Midnight Chai Collective,sports,Mumbai,19.1081,72.9657,2026-06-16 17:00:00,An evening of football in Mumbai. ekdum mast vibe
+36,22,partner_b,Mumbai Strikers vs Mavericks (football) | Tickets,Midnight Chai Collective,sports,Mumbai,19.108,72.9652,2026-06-16 16:30:00,An evening of football in Mumbai. ekdum mast vibe
+37,23,partner_a,Pune Dynamos vs Mavericks (football),Blue Lantern Collective,sports,Pune,18.5144,73.8568,2026-07-03 19:00:00,An evening of football in Pune. chalo saath chalte hain
+38,23,partner_b,Pune Dynamos vs Mavericks (football),Blue Lantern Collective,sports,Pune,18.5144,73.8568,2026-07-03 19:00:00,An evening of football in Pune. chalo saath chalte hain
+39,24,partner_a,Mumbai Royals vs Titans (cricket),Kavya Trio,sports,Mumbai,19.103,72.9041,2026-08-08 19:00:00,An evening of cricket in Mumbai. ekdum mast vibe
+40,24,partner_b,MUMBAI ROYALS VS TITANS (CRICKET),Kavya Trio,sports,Mumbai,19.1025,72.9044,2026-08-08 18:30:00,An evening of cricket in Mumbai. ekdum mast vibe
+41,25,partner_a,Anime Marathon: Blue Lantern Band Premiere,Blue Lantern Band,movie,Mumbai,19.0901,72.8287,2026-08-24 19:00:00,"An evening of anime in Mumbai. new city, new friends"
+42,26,partner_a,Hyderabad Ai Summit 2026,The Monsoon Band,conference,Hyderabad,17.3915,78.5249,2026-08-20 18:00:00,"An evening of ai in Hyderabad. new city, new friends"
+43,27,partner_a,Mumbai Music Festivals Fest,Blue Lantern Sessions,festival,Mumbai,18.9995,72.9009,2026-11-10 17:00:00,An evening of music festivals in Mumbai. always up for a good show
+44,28,partner_a,Delhi Food Festivals Carnival,Saffron Collective,festival,Delhi,28.5718,77.2247,2026-08-10 19:00:00,An evening of food festivals in Delhi. chalo saath chalte hain
+45,29,partner_a,Bengaluru Tigers vs Royals (cricket),The Monsoon Trio,sports,Bengaluru,13.0283,77.6532,2026-12-14 19:00:00,An evening of cricket in Bengaluru. ekdum mast vibe
+46,29,partner_b,Bengaluru Tigers vs Royals (cricket),The Monsoon Trio,sports,Bengaluru,13.0285,77.6532,2026-12-14 19:00:00,An evening of cricket in Bengaluru. ekdum mast vibe
+47,30,partner_a,Bengaluru Mavericks vs Tigers (cricket),Kavya Live,sports,Bengaluru,13.0283,77.6532,2026-12-27 21:00:00,An evening of cricket in Bengaluru. ekdum mast vibe
+48,31,partner_a,Midnight Chai Sessions - Indie Music Night,Midnight Chai Sessions,concert,Hyderabad,17.3915,78.5249,2026-09-16 17:00:00,An evening of indie music in Hyderabad.
+49,31,partner_b,Midnight Chai Sessions - Indie Music Night,Midnight Chai Sessions,concert,Hyderabad,17.391,78.5252,2026-09-16 17:00:00,An evening of indie music in Hyderabad.
+50,32,partner_a,Pune Mavericks vs Strikers (kabaddi),Mehfil Express,sports,Pune,18.4833,73.9283,2027-01-21 21:00:00,An evening of kabaddi in Pune. weekend pe plans chahiye
+51,32,partner_b,PUNE MAVERICKS VS STRIKERS (KABADDI),Mehfil Express,sports,Pune,18.4832,73.9285,2027-01-21 21:00:00,An evening of kabaddi in Pune. weekend pe plans chahiye
+52,33,partner_a,Coding Workshop with Static Tides Band,Static Tides Band,workshop,Bengaluru,13.0493,77.5864,2026-08-11 17:00:00,An evening of coding in Bengaluru. ekdum mast vibe
+53,33,partner_b,Coding Workshop with Static Tides Band,Static Tides Band,workshop,Bengaluru,13.0494,77.5866,2026-08-11 17:00:00,An evening of coding in Bengaluru. ekdum mast vibe
+54,34,partner_a,Kavya Project Live in Bengaluru,Kavya Project,concert,Bengaluru,13.0273,77.5959,2026-10-26 19:00:00,An evening of bollywood music in Bengaluru. weekend pe plans chahiye
+55,34,partner_b,KAVYA PROJECT LIVE IN BENGALURU,Kavya Project,concert,Bengaluru,13.027,77.5958,2026-10-26 18:30:00,An evening of bollywood music in Bengaluru. weekend pe plans chahiye
+56,35,partner_a,Coding Workshop with Midnight Chai Live,Midnight Chai Live,workshop,Bengaluru,12.9731,77.5858,2026-08-16 19:00:00,An evening of coding in Bengaluru. always up for a good show
+57,36,partner_a,Static Tides Band presents a theatre evening,Static Tides Band,theatre,Mumbai,19.0259,72.9696,2026-07-16 17:00:00,An evening of theatre in Mumbai. ekdum mast vibe
+58,36,partner_b,Static Tides Band presents a theatre evening,Static Tides Band,theatre,Mumbai,19.0258,72.9696,2026-07-16 17:30:00,An evening of theatre in Mumbai. ekdum mast vibe
+59,37,partner_a,Mehfil Live - Bollywood Music Night,Mehfil Live,concert,Pune,18.4833,73.9283,2026-07-14 19:00:00,An evening of bollywood music in Pune. ekdum mast vibe
+60,38,partner_a,Coding Workshop with Saffron Band,Saffron Band,workshop,Bengaluru,13.0428,77.5678,2027-01-14 20:00:00,An evening of coding in Bengaluru.
+61,38,partner_b,Coding Workshop with Saffron Band,Saffron Band,workshop,Bengaluru,13.0429,77.5675,2027-01-14 20:30:00,An evening of coding in Bengaluru.
+62,39,partner_a,Bengaluru Dynamos vs Dynamos (cricket),DJ Neon Live,sports,Bengaluru,13.0283,77.6532,2026-08-31 21:00:00,An evening of cricket in Bengaluru. ekdum mast vibe
+63,39,partner_b,Bengaluru Dynamos vs Dynamos (cricket),DJ Neon Live,sports,Bengaluru,13.0279,77.6532,2026-08-31 20:30:00,An evening of cricket in Bengaluru. ekdum mast vibe
+64,40,partner_a,Bengaluru Royals vs Dynamos (cricket),The Monsoon Band,sports,Bengaluru,12.9731,77.5858,2026-11-21 19:00:00,An evening of cricket in Bengaluru. chalo saath chalte hain
+65,40,partner_b,Bengaluru Royals vs Dynamos (cricket),The Monsoon Band,sports,Bengaluru,12.9728,77.5857,2026-11-21 19:30:00,An evening of cricket in Bengaluru. chalo saath chalte hain
+66,41,partner_a,Hyderabad Ai Summit 2026,DJ Neon Trio,conference,Hyderabad,17.4405,78.5003,2026-12-11 17:00:00,"An evening of ai in Hyderabad. new city, new friends"
+67,41,partner_b,Hyderabad Ai Summit 2026 | Tickets,DJ Neon Trio,conference,Hyderabad,17.4409,78.5002,2026-12-11 16:30:00,"An evening of ai in Hyderabad. new city, new friends"
+68,42,partner_a,DJ Neon Express: Stand-up Special,DJ Neon Express,comedy,Hyderabad,17.3933,78.5429,2026-11-14 21:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+69,42,partner_b,DJ Neon Express - Stand-up Special,DJ Neon Express,comedy,Hyderabad,17.3931,78.5426,2026-11-14 21:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+70,43,partner_a,The Monsoon Project - Sufi Night,The Monsoon Project,concert,Delhi,28.6022,77.2427,2026-11-18 21:00:00,An evening of sufi in Delhi. ekdum mast vibe
+71,44,partner_a,Mumbai Food Festivals Fest,Midnight Chai Express,festival,Mumbai,19.067,72.8295,2026-07-02 19:00:00,"An evening of food festivals in Mumbai. new city, new friends"
+72,45,partner_a,Anime Marathon: Static Tides Express Premiere,Static Tides Express,movie,Mumbai,18.9995,72.9009,2026-07-31 19:00:00,An evening of anime in Mumbai. weekend pe plans chahiye
+73,46,partner_a,Hyderabad Startups Summit 2026,Kavya Sessions,conference,Hyderabad,17.3123,78.5082,2026-10-08 19:00:00,"An evening of startups in Hyderabad. new city, new friends"
+74,46,partner_b,Hyderabad Startups Summit 2026 | Tickets,Kavya Sessions,conference,Hyderabad,17.3121,78.5081,2026-10-08 18:30:00,"An evening of startups in Hyderabad. new city, new friends"
+75,47,partner_a,Anime Marathon: Blue Lantern Collective Premiere,Blue Lantern Collective,movie,Hyderabad,17.3123,78.5082,2026-12-29 21:00:00,An evening of anime in Hyderabad.
+76,48,partner_a,Comedy Night ft. Riya Project,Riya Project,comedy,Delhi,28.6348,77.258,2026-08-17 19:00:00,An evening of improv in Delhi. weekend pe plans chahiye
+77,49,partner_a,Blue Lantern Collective: Stand-up Special,Blue Lantern Collective,comedy,Delhi,28.6274,77.2426,2026-09-07 18:00:00,An evening of stand-up comedy in Delhi. chalo saath chalte hain
+78,49,partner_b,Blue Lantern Collective: Stand-up Special,Blue Lantern Collective,comedy,Delhi,28.6272,77.2425,2026-09-07 18:00:00,An evening of stand-up comedy in Delhi. chalo saath chalte hain
+79,50,partner_a,Hyderabad Strikers vs Strikers (football),Static Tides Trio,sports,Hyderabad,17.4405,78.5003,2026-06-07 21:00:00,An evening of football in Hyderabad. always up for a good show
+80,51,partner_a,Mehfil Collective: Stand-up Special,Mehfil Collective,comedy,Pune,18.4675,73.8723,2026-09-20 19:00:00,An evening of stand-up comedy in Pune. weekend pe plans chahiye
+81,51,partner_b,MEHFIL COLLECTIVE: STAND-UP SPECIAL,Mehfil Collective,comedy,Pune,18.4678,73.8727,2026-09-20 19:00:00,An evening of stand-up comedy in Pune. weekend pe plans chahiye
+82,52,partner_a,Hyderabad Tigers vs Royals (football),Saffron Project,sports,Hyderabad,17.3312,78.4836,2026-12-18 20:00:00,"An evening of football in Hyderabad. new city, new friends"
+83,52,partner_b,Hyderabad Tigers vs Royals (football),Saffron Project,sports,Hyderabad,17.3313,78.4831,2026-12-18 20:30:00,"An evening of football in Hyderabad. new city, new friends"
+84,53,partner_a,Anime Marathon: Riya Collective Premiere,Riya Collective,movie,Bengaluru,13.0144,77.5718,2026-10-28 20:00:00,An evening of anime in Bengaluru. chalo saath chalte hain
+85,54,partner_a,Delhi Music Festivals Fest,Mehfil Sessions,festival,Delhi,28.5718,77.2247,2026-06-06 19:00:00,An evening of music festivals in Delhi. chalo saath chalte hain
+86,54,partner_b,Delhi Music Festivals Fest | Tickets,Mehfil Sessions,festival,Delhi,28.5719,77.2247,2026-06-06 19:00:00,An evening of music festivals in Delhi. chalo saath chalte hain
+87,55,partner_a,Bengaluru Strikers vs Titans (football),Mehfil Band,sports,Bengaluru,13.0273,77.5959,2026-11-09 17:00:00,An evening of football in Bengaluru. ekdum mast vibe
+88,55,partner_b,Bengaluru Strikers vs Titans (football) | Tickets,Mehfil Band,sports,Bengaluru,13.0273,77.5962,2026-11-09 16:30:00,An evening of football in Bengaluru. ekdum mast vibe
+89,56,partner_a,Kavya Sessions - Rock Night,Kavya Sessions,concert,Bengaluru,13.0421,77.6685,2026-09-27 21:00:00,An evening of rock in Bengaluru. always up for a good show
+90,56,partner_b,Kavya Sessions - Rock Night,Kavya Sessions,concert,Bengaluru,13.0422,77.6681,2026-09-27 21:30:00,An evening of rock in Bengaluru. always up for a good show
+91,57,partner_a,Mumbai Music Festivals Carnival,Static Tides Sessions,festival,Mumbai,19.067,72.8295,2026-11-11 21:00:00,An evening of music festivals in Mumbai. chalo saath chalte hain
+92,57,partner_b,Mumbai Music Festivals Carnival | Tickets,Static Tides Sessions,festival,Mumbai,19.0671,72.8299,2026-11-11 20:30:00,An evening of music festivals in Mumbai. chalo saath chalte hain
+93,58,partner_a,Coding Workshop with Saffron Band,Saffron Band,workshop,Hyderabad,17.4499,78.5754,2026-11-24 20:00:00,An evening of coding in Hyderabad. weekend pe plans chahiye
+94,59,partner_a,Delhi Music Festivals Fest,Riya Live,festival,Delhi,28.5907,77.1862,2026-08-14 20:00:00,An evening of music festivals in Delhi. always up for a good show
+95,59,partner_b,Delhi Music Festivals Fest | Tickets,Riya Live,festival,Delhi,28.5907,77.1861,2026-08-14 20:30:00,An evening of music festivals in Delhi. always up for a good show
+96,60,partner_a,Midnight Chai Project presents a theatre evening,Midnight Chai Project,theatre,Bengaluru,12.928,77.6909,2026-09-04 21:00:00,An evening of theatre in Bengaluru. weekend pe plans chahiye
+97,61,partner_a,Riya Project - Indie Music Night,Riya Project,concert,Pune,18.4833,73.9283,2026-08-01 17:00:00,An evening of indie music in Pune. weekend pe plans chahiye
+98,62,partner_a,Hyderabad Mavericks vs Royals (football),Midnight Chai Live,sports,Hyderabad,17.4499,78.5754,2026-06-06 21:00:00,An evening of football in Hyderabad.
+99,63,partner_a,Static Tides Live Live in Pune,Static Tides Live,concert,Pune,18.5144,73.8568,2026-12-03 21:00:00,"An evening of edm in Pune. new city, new friends"
+100,63,partner_b,Static Tides Live LIVE @ Pune,Static Tides Live,concert,Pune,18.5144,73.8565,2026-12-03 21:00:00,"An evening of edm in Pune. new city, new friends"
+101,64,partner_a,Pottery Workshop with Kavya Trio,Kavya Trio,workshop,Delhi,28.6022,77.2427,2026-10-28 18:00:00,An evening of pottery in Delhi. weekend pe plans chahiye
+102,64,partner_b,Pottery Workshop with Kavya Trio,Kavya Trio,workshop,Delhi,28.6018,77.2431,2026-10-28 18:00:00,An evening of pottery in Delhi. weekend pe plans chahiye
+103,65,partner_a,Coding Workshop with DJ Neon Live,DJ Neon Live,workshop,Pune,18.5683,73.8686,2026-11-17 18:00:00,An evening of coding in Pune. chalo saath chalte hain
+104,65,partner_b,Coding Workshop with DJ Neon Live,DJ Neon Live,workshop,Pune,18.568,73.869,2026-11-17 18:00:00,An evening of coding in Pune. chalo saath chalte hain
+105,66,partner_a,Comedy Night ft. Riya Live,Riya Live,comedy,Hyderabad,17.3933,78.5429,2026-10-03 21:00:00,"An evening of improv in Hyderabad. new city, new friends"
+106,66,partner_b,Comedy Night ft. Riya Live | Tickets,Riya Live,comedy,Hyderabad,17.3931,78.5434,2026-10-03 20:30:00,"An evening of improv in Hyderabad. new city, new friends"
+107,67,partner_a,Mumbai Ai Summit 2026,Static Tides Trio,conference,Mumbai,19.0259,72.9696,2026-06-03 20:00:00,An evening of ai in Mumbai. weekend pe plans chahiye
+108,68,partner_a,Hollywood Films Marathon: The Monsoon Collective Premiere,The Monsoon Collective,movie,Bengaluru,12.9731,77.5858,2026-06-25 20:00:00,"An evening of hollywood films in Bengaluru. new city, new friends"
+109,68,partner_b,HOLLYWOOD FILMS MARATHON: THE MONSOON COLLECTIVE PREMIERE,The Monsoon Collective,movie,Bengaluru,12.9738,77.5859,2026-06-25 20:00:00,"An evening of hollywood films in Bengaluru. new city, new friends"
+110,69,partner_a,Midnight Chai Trio - Rock Night,Midnight Chai Trio,concert,Pune,18.5144,73.8568,2026-09-05 20:00:00,An evening of rock in Pune. always up for a good show
+111,69,partner_b,Midnight Chai Trio - Rock Night,Midnight Chai Trio,concert,Pune,18.5142,73.8571,2026-09-05 20:00:00,An evening of rock in Pune. always up for a good show
+112,70,partner_a,Mumbai Dynamos vs Tigers (cricket),Midnight Chai Live,sports,Mumbai,18.9995,72.9009,2026-08-27 19:00:00,An evening of cricket in Mumbai. ekdum mast vibe
+113,71,partner_a,Mumbai Strikers vs Mavericks (cricket),Midnight Chai Collective,sports,Mumbai,19.067,72.8295,2026-09-15 18:00:00,An evening of cricket in Mumbai. always up for a good show
+114,72,partner_a,Static Tides Band presents a musicals evening,Static Tides Band,theatre,Pune,18.5144,73.8568,2026-10-03 21:00:00,An evening of musicals in Pune. chalo saath chalte hain
+115,72,partner_b,Static Tides Band presents a musicals evening,Static Tides Band,theatre,Pune,18.5149,73.8567,2026-10-03 21:00:00,An evening of musicals in Pune. chalo saath chalte hain
+116,73,partner_a,Delhi Dynamos vs Tigers (cricket),Midnight Chai Project,sports,Delhi,28.6247,77.1649,2026-12-10 21:00:00,An evening of cricket in Delhi.
+117,74,partner_a,Photography Workshop with Mehfil Project,Mehfil Project,workshop,Mumbai,19.1697,72.8776,2026-08-12 19:00:00,An evening of photography in Mumbai. weekend pe plans chahiye
+118,75,partner_a,Comedy Night ft. Riya Trio,Riya Trio,comedy,Delhi,28.6274,77.2426,2026-12-16 18:00:00,"An evening of improv in Delhi. new city, new friends"
+119,76,partner_a,Coding Workshop with Static Tides Band,Static Tides Band,workshop,Bengaluru,13.0144,77.5718,2027-01-26 17:00:00,An evening of coding in Bengaluru. ekdum mast vibe
+120,77,partner_a,Photography Workshop with Saffron Project,Saffron Project,workshop,Bengaluru,12.9731,77.5858,2026-11-11 18:00:00,An evening of photography in Bengaluru. always up for a good show
+121,78,partner_a,Comedy Night ft. Static Tides Sessions,Static Tides Sessions,comedy,Bengaluru,13.0493,77.5864,2027-01-23 19:00:00,An evening of stand-up comedy in Bengaluru. chalo saath chalte hain
+122,79,partner_a,Bengaluru Startups Summit 2026,Riya Collective,conference,Bengaluru,12.928,77.6909,2026-06-23 19:00:00,An evening of startups in Bengaluru. always up for a good show
+123,80,partner_a,Midnight Chai Live presents a theatre evening,Midnight Chai Live,theatre,Pune,18.5595,73.9874,2026-06-14 20:00:00,"An evening of theatre in Pune. new city, new friends"
+124,80,partner_b,Midnight Chai Live presents a theatre evening,Midnight Chai Live,theatre,Pune,18.5593,73.9866,2026-06-14 20:00:00,"An evening of theatre in Pune. new city, new friends"
+125,81,partner_a,Bollywood Films Marathon: Riya Live Premiere,Riya Live,movie,Bengaluru,13.0273,77.5959,2026-06-06 20:00:00,An evening of bollywood films in Bengaluru. always up for a good show
+126,81,partner_b,Bollywood Films Marathon: Riya Live Premiere | Tickets,Riya Live,movie,Bengaluru,13.0277,77.596,2026-06-06 19:30:00,An evening of bollywood films in Bengaluru. always up for a good show
+127,82,partner_a,Comedy Night ft. Static Tides Live,Static Tides Live,comedy,Delhi,28.6247,77.1649,2026-06-19 21:00:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+128,82,partner_b,COMEDY NIGHT FT. STATIC TIDES LIVE,Static Tides Live,comedy,Delhi,28.6249,77.1645,2026-06-19 21:30:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+129,83,partner_a,Mumbai Mavericks vs Tigers (kabaddi),Kavya Trio,sports,Mumbai,18.9995,72.9009,2026-10-04 19:00:00,An evening of kabaddi in Mumbai. ekdum mast vibe
+130,83,partner_b,Mumbai Mavericks vs Tigers (kabaddi),Kavya Trio,sports,Mumbai,18.9989,72.9012,2026-10-04 18:30:00,An evening of kabaddi in Mumbai. ekdum mast vibe
+131,84,partner_a,Coding Workshop with Kavya Project,Kavya Project,workshop,Mumbai,18.9995,72.9009,2026-06-12 20:00:00,An evening of coding in Mumbai. chalo saath chalte hain
+132,84,partner_b,Coding Workshop with Kavya Project | Tickets,Kavya Project,workshop,Mumbai,18.9997,72.9008,2026-06-12 20:00:00,An evening of coding in Mumbai. chalo saath chalte hain
+133,85,partner_a,Hollywood Films Marathon: DJ Neon Live Premiere,DJ Neon Live,movie,Hyderabad,17.3848,78.4976,2026-08-03 18:00:00,An evening of hollywood films in Hyderabad. ekdum mast vibe
+134,86,partner_a,DJ Neon Express presents a musicals evening,DJ Neon Express,theatre,Pune,18.4933,73.8493,2026-09-28 20:00:00,"An evening of musicals in Pune. new city, new friends"
+135,87,partner_a,Bengaluru Food Festivals Carnival,Blue Lantern Sessions,festival,Bengaluru,13.0273,77.5959,2027-01-06 21:00:00,An evening of food festivals in Bengaluru. always up for a good show
+136,88,partner_a,Bengaluru Music Festivals Carnival,Mehfil Live,festival,Bengaluru,13.0493,77.5864,2026-06-12 20:00:00,An evening of music festivals in Bengaluru. always up for a good show
+137,89,partner_a,Anime Marathon: Midnight Chai Collective Premiere,Midnight Chai Collective,movie,Mumbai,19.0901,72.8287,2026-12-07 20:00:00,An evening of anime in Mumbai.
+138,90,partner_a,Saffron Band presents a musicals evening,Saffron Band,theatre,Delhi,28.5907,77.1862,2026-10-20 18:00:00,An evening of musicals in Delhi. ekdum mast vibe
+139,91,partner_a,Pottery Workshop with Static Tides Collective,Static Tides Collective,workshop,Bengaluru,13.0144,77.5718,2026-09-01 17:00:00,An evening of pottery in Bengaluru. always up for a good show
+140,91,partner_b,Pottery Workshop with Static Tides Collective,Static Tides Collective,workshop,Bengaluru,13.0143,77.5722,2026-09-01 17:00:00,An evening of pottery in Bengaluru. always up for a good show
+141,92,partner_a,Hyderabad Ai Summit 2026,Kavya Band,conference,Hyderabad,17.4405,78.5003,2026-12-24 21:00:00,An evening of ai in Hyderabad. chalo saath chalte hain
+142,92,partner_b,Hyderabad Ai Summit 2026 | Tickets,Kavya Band,conference,Hyderabad,17.4404,78.5005,2026-12-24 21:00:00,An evening of ai in Hyderabad. chalo saath chalte hain
+143,93,partner_a,Aarav Sessions presents a musicals evening,Aarav Sessions,theatre,Bengaluru,12.9731,77.5858,2026-11-01 19:00:00,"An evening of musicals in Bengaluru. new city, new friends"
+144,93,partner_b,AARAV SESSIONS PRESENTS A MUSICALS EVENING,Aarav Sessions,theatre,Bengaluru,12.973,77.5861,2026-11-01 18:30:00,"An evening of musicals in Bengaluru. new city, new friends"
+145,94,partner_a,Comedy Night ft. The Monsoon Collective,The Monsoon Collective,comedy,Delhi,28.6247,77.1649,2026-07-19 18:00:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+146,95,partner_a,Anime Marathon: Aarav Band Premiere,Aarav Band,movie,Pune,18.5595,73.9874,2026-08-11 21:00:00,An evening of anime in Pune. weekend pe plans chahiye
+147,95,partner_b,Anime Marathon: Aarav Band Premiere,Aarav Band,movie,Pune,18.5595,73.9878,2026-08-11 20:30:00,An evening of anime in Pune. weekend pe plans chahiye
+148,96,partner_a,Hyderabad Startups Summit 2026,Midnight Chai Band,conference,Hyderabad,17.3848,78.4976,2026-10-09 19:00:00,An evening of startups in Hyderabad. ekdum mast vibe
+149,96,partner_b,HYDERABAD STARTUPS SUMMIT 2026,Midnight Chai Band,conference,Hyderabad,17.3848,78.4978,2026-10-09 18:30:00,An evening of startups in Hyderabad. ekdum mast vibe
+150,97,partner_a,Photography Workshop with Riya Express,Riya Express,workshop,Bengaluru,13.0493,77.5864,2026-11-14 19:00:00,An evening of photography in Bengaluru. weekend pe plans chahiye
+151,98,partner_a,Mehfil Project: Stand-up Special,Mehfil Project,comedy,Hyderabad,17.3933,78.5429,2026-09-18 17:00:00,An evening of stand-up comedy in Hyderabad. chalo saath chalte hain
+152,98,partner_b,Mehfil Project: Stand-up Special,Mehfil Project,comedy,Hyderabad,17.3933,78.5426,2026-09-18 17:00:00,An evening of stand-up comedy in Hyderabad. chalo saath chalte hain
+153,99,partner_a,Bengaluru Royals vs Mavericks (kabaddi),DJ Neon Collective,sports,Bengaluru,13.0144,77.5718,2026-07-24 21:00:00,"An evening of kabaddi in Bengaluru. new city, new friends"
+154,99,partner_b,Bengaluru Royals vs Mavericks (kabaddi),DJ Neon Collective,sports,Bengaluru,13.0145,77.5722,2026-07-24 21:30:00,"An evening of kabaddi in Bengaluru. new city, new friends"
+155,100,partner_a,Comedy Night ft. Midnight Chai Project,Midnight Chai Project,comedy,Mumbai,19.1081,72.9657,2027-01-25 17:00:00,An evening of stand-up comedy in Mumbai. ekdum mast vibe
+156,100,partner_b,Comedy Night ft. Midnight Chai Project,Midnight Chai Project,comedy,Mumbai,19.1081,72.9659,2027-01-25 17:00:00,An evening of stand-up comedy in Mumbai. ekdum mast vibe
+157,101,partner_a,Bengaluru Food Festivals Fest,Blue Lantern Trio,festival,Bengaluru,13.0421,77.6685,2026-12-17 17:00:00,An evening of food festivals in Bengaluru.
+158,102,partner_a,Coding Workshop with Mehfil Collective,Mehfil Collective,workshop,Hyderabad,17.3123,78.5082,2026-08-20 17:00:00,An evening of coding in Hyderabad.
+159,102,partner_b,Coding Workshop with Mehfil Collective | Tickets,Mehfil Collective,workshop,Hyderabad,17.3127,78.5086,2026-08-20 17:00:00,An evening of coding in Hyderabad.
+160,103,partner_a,Saffron Project - Sufi Night,Saffron Project,concert,Bengaluru,13.0144,77.5718,2026-08-03 19:00:00,An evening of sufi in Bengaluru. weekend pe plans chahiye
+161,104,partner_a,Pottery Workshop with Mehfil Trio,Mehfil Trio,workshop,Pune,18.5213,73.7946,2026-12-01 21:00:00,An evening of pottery in Pune. always up for a good show
+162,104,partner_b,Pottery Workshop with Mehfil Trio,Mehfil Trio,workshop,Pune,18.521,73.7945,2026-12-01 20:30:00,An evening of pottery in Pune. always up for a good show
+163,105,partner_a,Kavya Sessions presents a theatre evening,Kavya Sessions,theatre,Pune,18.4743,73.8858,2026-07-10 21:00:00,An evening of theatre in Pune. weekend pe plans chahiye
+164,105,partner_b,KAVYA SESSIONS PRESENTS A THEATRE EVENING,Kavya Sessions,theatre,Pune,18.4739,73.8858,2026-07-10 21:00:00,An evening of theatre in Pune. weekend pe plans chahiye
+165,106,partner_a,Hyderabad Dynamos vs Tigers (kabaddi),Saffron Trio,sports,Hyderabad,17.3123,78.5082,2026-12-04 21:00:00,"An evening of kabaddi in Hyderabad. new city, new friends"
+166,106,partner_b,Hyderabad Dynamos vs Tigers (kabaddi) | Tickets,Saffron Trio,sports,Hyderabad,17.3129,78.5075,2026-12-04 21:00:00,"An evening of kabaddi in Hyderabad. new city, new friends"
+167,107,partner_a,DJ Neon Sessions: Stand-up Special,DJ Neon Sessions,comedy,Bengaluru,12.928,77.6909,2026-12-06 19:00:00,An evening of improv in Bengaluru. chalo saath chalte hain
+168,108,partner_a,Hollywood Films Marathon: Saffron Sessions Premiere,Saffron Sessions,movie,Hyderabad,17.4499,78.5754,2026-07-27 20:00:00,An evening of hollywood films in Hyderabad. ekdum mast vibe
+169,108,partner_b,Hollywood Films Marathon - Saffron Sessions Premiere,Saffron Sessions,movie,Hyderabad,17.4498,78.5756,2026-07-27 20:30:00,An evening of hollywood films in Hyderabad. ekdum mast vibe
+170,109,partner_a,The Monsoon Band Live in Pune,The Monsoon Band,concert,Pune,18.5213,73.7946,2027-01-03 18:00:00,An evening of indie music in Pune. ekdum mast vibe
+171,110,partner_a,Comedy Night ft. Riya Project,Riya Project,comedy,Bengaluru,12.928,77.6909,2026-08-31 20:00:00,"An evening of improv in Bengaluru. new city, new friends"
+172,110,partner_b,COMEDY NIGHT FT. RIYA PROJECT,Riya Project,comedy,Bengaluru,12.9277,77.6911,2026-08-31 19:30:00,"An evening of improv in Bengaluru. new city, new friends"
+173,111,partner_a,Aarav Express Live in Pune,Aarav Express,concert,Pune,18.5683,73.8686,2026-07-09 21:00:00,"An evening of rock in Pune. new city, new friends"
+174,111,partner_b,Aarav Express LIVE @ Pune,Aarav Express,concert,Pune,18.5685,73.8684,2026-07-09 20:30:00,"An evening of rock in Pune. new city, new friends"
+175,112,partner_a,Bengaluru Startups Summit 2026,DJ Neon Sessions,conference,Bengaluru,13.0144,77.5718,2026-07-01 21:00:00,An evening of startups in Bengaluru. ekdum mast vibe
+176,112,partner_b,BENGALURU STARTUPS SUMMIT 2026,DJ Neon Sessions,conference,Bengaluru,13.0142,77.5715,2026-07-01 21:00:00,An evening of startups in Bengaluru. ekdum mast vibe
+177,113,partner_a,Pune Tech Summit 2026,Blue Lantern Project,conference,Pune,18.5144,73.8568,2026-12-07 17:00:00,An evening of tech in Pune.
+178,114,partner_a,Mehfil Live Live in Bengaluru,Mehfil Live,concert,Bengaluru,13.0273,77.5959,2026-11-01 20:00:00,An evening of indie music in Bengaluru. always up for a good show
+179,114,partner_b,Mehfil Live LIVE @ Bengaluru,Mehfil Live,concert,Bengaluru,13.0267,77.5957,2026-11-01 20:00:00,An evening of indie music in Bengaluru. always up for a good show
+180,115,partner_a,Coding Workshop with Blue Lantern Trio,Blue Lantern Trio,workshop,Delhi,28.6247,77.1649,2026-11-05 17:00:00,An evening of coding in Delhi. weekend pe plans chahiye
+181,115,partner_b,Coding Workshop with Blue Lantern Trio | Tickets,Blue Lantern Trio,workshop,Delhi,28.6245,77.1645,2026-11-05 17:00:00,An evening of coding in Delhi. weekend pe plans chahiye
+182,116,partner_a,Anime Marathon: Mehfil Project Premiere,Mehfil Project,movie,Mumbai,19.067,72.8295,2026-10-04 21:00:00,An evening of anime in Mumbai. weekend pe plans chahiye
+183,117,partner_a,Delhi Mavericks vs Tigers (kabaddi),Kavya Band,sports,Delhi,28.6348,77.258,2026-09-21 17:00:00,An evening of kabaddi in Delhi.
+184,117,partner_b,Delhi Mavericks vs Tigers (kabaddi),Kavya Band,sports,Delhi,28.6349,77.2585,2026-09-21 17:00:00,An evening of kabaddi in Delhi.
+185,118,partner_a,Mumbai Mavericks vs Tigers (cricket),Midnight Chai Trio,sports,Mumbai,19.067,72.8295,2026-08-20 21:00:00,An evening of cricket in Mumbai. weekend pe plans chahiye
+186,119,partner_a,DJ Neon Live Live in Pune,DJ Neon Live,concert,Pune,18.5144,73.8568,2027-01-01 20:00:00,"An evening of bollywood music in Pune. new city, new friends"
+187,119,partner_b,DJ Neon Live LIVE @ Pune,DJ Neon Live,concert,Pune,18.5145,73.8564,2027-01-01 20:00:00,"An evening of bollywood music in Pune. new city, new friends"
+188,120,partner_a,Mehfil Band: Stand-up Special,Mehfil Band,comedy,Hyderabad,17.3312,78.4836,2026-08-22 21:00:00,An evening of stand-up comedy in Hyderabad. weekend pe plans chahiye
+189,121,partner_a,Pune Tech Summit 2026,Mehfil Trio,conference,Pune,18.5144,73.8568,2026-07-17 18:00:00,An evening of tech in Pune. always up for a good show
+190,122,partner_a,The Monsoon Band presents a theatre evening,The Monsoon Band,theatre,Delhi,28.5907,77.1862,2026-07-21 17:00:00,"An evening of theatre in Delhi. new city, new friends"
+191,123,partner_a,Saffron Live - Bollywood Music Night,Saffron Live,concert,Delhi,28.5907,77.1862,2026-10-22 20:00:00,An evening of bollywood music in Delhi. weekend pe plans chahiye
+192,123,partner_b,Saffron Live - Bollywood Music Night,Saffron Live,concert,Delhi,28.5906,77.1862,2026-10-22 19:30:00,An evening of bollywood music in Delhi. weekend pe plans chahiye
+193,124,partner_a,Delhi Tech Summit 2026,Riya Express,conference,Delhi,28.6348,77.258,2026-10-02 20:00:00,"An evening of tech in Delhi. new city, new friends"
+194,124,partner_b,Delhi Tech Summit 2026,Riya Express,conference,Delhi,28.6344,77.2582,2026-10-02 20:00:00,"An evening of tech in Delhi. new city, new friends"
+195,125,partner_a,Photography Workshop with Kavya Project,Kavya Project,workshop,Pune,18.5683,73.8686,2026-11-24 19:00:00,An evening of photography in Pune. weekend pe plans chahiye
+196,125,partner_b,Photography Workshop with Kavya Project,Kavya Project,workshop,Pune,18.5684,73.8686,2026-11-24 18:30:00,An evening of photography in Pune. weekend pe plans chahiye
+197,126,partner_a,Pottery Workshop with The Monsoon Project,The Monsoon Project,workshop,Pune,18.4675,73.8723,2026-12-03 18:00:00,"An evening of pottery in Pune. new city, new friends"
+198,126,partner_b,Pottery Workshop with The Monsoon Project,The Monsoon Project,workshop,Pune,18.4672,73.8722,2026-12-03 18:00:00,"An evening of pottery in Pune. new city, new friends"
+199,127,partner_a,Mehfil Trio Live in Pune,Mehfil Trio,concert,Pune,18.5213,73.7946,2026-08-30 20:00:00,An evening of bollywood music in Pune. ekdum mast vibe
+200,127,partner_b,MEHFIL TRIO LIVE IN PUNE,Mehfil Trio,concert,Pune,18.5213,73.7946,2026-08-30 20:00:00,An evening of bollywood music in Pune. ekdum mast vibe
+201,128,partner_a,Mumbai Titans vs Royals (cricket),Static Tides Sessions,sports,Mumbai,19.0901,72.8287,2026-06-19 17:00:00,An evening of cricket in Mumbai. weekend pe plans chahiye
+202,128,partner_b,Mumbai Titans vs Royals (cricket),Static Tides Sessions,sports,Mumbai,19.09,72.8288,2026-06-19 17:00:00,An evening of cricket in Mumbai. weekend pe plans chahiye
+203,129,partner_a,Delhi Music Festivals Carnival,DJ Neon Project,festival,Delhi,28.6274,77.2426,2026-07-20 17:00:00,An evening of music festivals in Delhi. weekend pe plans chahiye
+204,129,partner_b,Delhi Music Festivals Carnival,DJ Neon Project,festival,Delhi,28.6274,77.2426,2026-07-20 17:00:00,An evening of music festivals in Delhi. weekend pe plans chahiye
+205,130,partner_a,Hyderabad Tech Summit 2026,Static Tides Sessions,conference,Hyderabad,17.3149,78.4586,2026-10-18 18:00:00,An evening of tech in Hyderabad. chalo saath chalte hain
+206,130,partner_b,Hyderabad Tech Summit 2026,Static Tides Sessions,conference,Hyderabad,17.3151,78.459,2026-10-18 17:30:00,An evening of tech in Hyderabad. chalo saath chalte hain
+207,131,partner_a,Hollywood Films Marathon: Blue Lantern Sessions Premiere,Blue Lantern Sessions,movie,Mumbai,19.1697,72.8776,2026-10-17 19:00:00,An evening of hollywood films in Mumbai. ekdum mast vibe
+208,132,partner_a,Comedy Night ft. Midnight Chai Collective,Midnight Chai Collective,comedy,Mumbai,19.1697,72.8776,2026-10-05 18:00:00,"An evening of improv in Mumbai. new city, new friends"
+209,132,partner_b,COMEDY NIGHT FT. MIDNIGHT CHAI COLLECTIVE,Midnight Chai Collective,comedy,Mumbai,19.1702,72.8781,2026-10-05 17:30:00,"An evening of improv in Mumbai. new city, new friends"
+210,133,partner_a,Kavya Trio presents a musicals evening,Kavya Trio,theatre,Pune,18.4933,73.8493,2026-07-19 19:00:00,An evening of musicals in Pune.
+211,133,partner_b,Kavya Trio presents a musicals evening,Kavya Trio,theatre,Pune,18.4932,73.8496,2026-07-19 19:00:00,An evening of musicals in Pune.
+212,134,partner_a,Pottery Workshop with Kavya Trio,Kavya Trio,workshop,Mumbai,19.0901,72.8287,2026-08-20 20:00:00,An evening of pottery in Mumbai.
+213,134,partner_b,Pottery Workshop with Kavya Trio,Kavya Trio,workshop,Mumbai,19.0907,72.8286,2026-08-20 19:30:00,An evening of pottery in Mumbai.
+214,135,partner_a,Midnight Chai Sessions - Sufi Night,Midnight Chai Sessions,concert,Delhi,28.5907,77.1862,2026-12-31 20:00:00,An evening of sufi in Delhi. ekdum mast vibe
+215,136,partner_a,Midnight Chai Live: Stand-up Special,Midnight Chai Live,comedy,Hyderabad,17.4405,78.5003,2026-09-09 21:00:00,An evening of stand-up comedy in Hyderabad.
+216,136,partner_b,Midnight Chai Live: Stand-up Special,Midnight Chai Live,comedy,Hyderabad,17.4403,78.5002,2026-09-09 20:30:00,An evening of stand-up comedy in Hyderabad.
+217,137,partner_a,Static Tides Trio presents a musicals evening,Static Tides Trio,theatre,Bengaluru,13.0421,77.6685,2026-11-30 20:00:00,An evening of musicals in Bengaluru. weekend pe plans chahiye
+218,138,partner_a,Aarav Trio - Hip Hop Night,Aarav Trio,concert,Hyderabad,17.4499,78.5754,2026-11-16 18:00:00,An evening of hip hop in Hyderabad. always up for a good show
+219,139,partner_a,Riya Band: Stand-up Special,Riya Band,comedy,Hyderabad,17.3848,78.4976,2026-09-23 19:00:00,An evening of stand-up comedy in Hyderabad. weekend pe plans chahiye
+220,139,partner_b,Riya Band: Stand-up Special,Riya Band,comedy,Hyderabad,17.3847,78.498,2026-09-23 18:30:00,An evening of stand-up comedy in Hyderabad. weekend pe plans chahiye
+221,140,partner_a,Pune Food Festivals Carnival,Blue Lantern Sessions,festival,Pune,18.4833,73.9283,2026-11-01 19:00:00,"An evening of food festivals in Pune. new city, new friends"
+222,140,partner_b,Pune Food Festivals Carnival,Blue Lantern Sessions,festival,Pune,18.4829,73.9283,2026-11-01 19:00:00,"An evening of food festivals in Pune. new city, new friends"
+223,141,partner_a,Pune Music Festivals Carnival,Static Tides Collective,festival,Pune,18.4743,73.8858,2026-09-30 18:00:00,An evening of music festivals in Pune. chalo saath chalte hain
+224,142,partner_a,The Monsoon Collective presents a musicals evening,The Monsoon Collective,theatre,Delhi,28.6274,77.2426,2026-08-11 18:00:00,An evening of musicals in Delhi.
+225,142,partner_b,The Monsoon Collective presents a musicals evening,The Monsoon Collective,theatre,Delhi,28.6277,77.2428,2026-08-11 18:00:00,An evening of musicals in Delhi.
+226,143,partner_a,Bengaluru Mavericks vs Mavericks (cricket),The Monsoon Collective,sports,Bengaluru,13.0144,77.5718,2027-01-11 19:00:00,"An evening of cricket in Bengaluru. new city, new friends"
+227,144,partner_a,Bengaluru Food Festivals Fest,Riya Collective,festival,Bengaluru,13.0428,77.5678,2026-09-17 21:00:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+228,145,partner_a,The Monsoon Live presents a theatre evening,The Monsoon Live,theatre,Pune,18.4743,73.8858,2026-08-21 21:00:00,An evening of theatre in Pune. ekdum mast vibe
+229,146,partner_a,Pune Strikers vs Mavericks (kabaddi),Riya Express,sports,Pune,18.5213,73.7946,2026-07-18 18:00:00,An evening of kabaddi in Pune. chalo saath chalte hain
+230,146,partner_b,Pune Strikers vs Mavericks (kabaddi),Riya Express,sports,Pune,18.5212,73.7951,2026-07-18 17:30:00,An evening of kabaddi in Pune. chalo saath chalte hain
+231,147,partner_a,Saffron Collective: Stand-up Special,Saffron Collective,comedy,Pune,18.5144,73.8568,2026-11-09 18:00:00,An evening of improv in Pune.
+232,147,partner_b,Saffron Collective - Stand-up Special,Saffron Collective,comedy,Pune,18.514,73.8566,2026-11-09 18:00:00,An evening of improv in Pune.
+233,148,partner_a,Bollywood Films Marathon: DJ Neon Express Premiere,DJ Neon Express,movie,Pune,18.5595,73.9874,2026-11-27 20:00:00,An evening of bollywood films in Pune. chalo saath chalte hain
+234,148,partner_b,Bollywood Films Marathon: DJ Neon Express Premiere | Tickets,DJ Neon Express,movie,Pune,18.5596,73.9873,2026-11-27 20:00:00,An evening of bollywood films in Pune. chalo saath chalte hain
+235,149,partner_a,Static Tides Collective: Stand-up Special,Static Tides Collective,comedy,Bengaluru,13.0144,77.5718,2026-10-04 21:00:00,An evening of improv in Bengaluru.
+236,149,partner_b,Static Tides Collective - Stand-up Special,Static Tides Collective,comedy,Bengaluru,13.0148,77.5723,2026-10-04 21:00:00,An evening of improv in Bengaluru.
+237,150,partner_a,Midnight Chai Sessions Live in Bengaluru,Midnight Chai Sessions,concert,Bengaluru,13.0273,77.5959,2026-11-23 19:00:00,An evening of bollywood music in Bengaluru. always up for a good show
+238,151,partner_a,Pottery Workshop with Aarav Live,Aarav Live,workshop,Hyderabad,17.4499,78.5754,2027-01-26 18:00:00,An evening of pottery in Hyderabad.
+239,152,partner_a,Aarav Express Live in Mumbai,Aarav Express,concert,Mumbai,19.1697,72.8776,2026-12-05 21:00:00,An evening of bollywood music in Mumbai.
+240,152,partner_b,Aarav Express Live in Mumbai,Aarav Express,concert,Mumbai,19.1693,72.8781,2026-12-05 21:30:00,An evening of bollywood music in Mumbai.
+241,153,partner_a,Delhi Dynamos vs Strikers (cricket),Mehfil Sessions,sports,Delhi,28.571,77.1801,2026-11-22 19:00:00,An evening of cricket in Delhi. weekend pe plans chahiye
+242,153,partner_b,Delhi Dynamos vs Strikers (cricket),Mehfil Sessions,sports,Delhi,28.5712,77.1803,2026-11-22 18:30:00,An evening of cricket in Delhi. weekend pe plans chahiye
+243,154,partner_a,Coding Workshop with Aarav Express,Aarav Express,workshop,Mumbai,19.1581,72.9795,2026-10-03 18:00:00,An evening of coding in Mumbai.
+244,154,partner_b,CODING WORKSHOP WITH AARAV EXPRESS,Aarav Express,workshop,Mumbai,19.1582,72.9794,2026-10-03 18:00:00,An evening of coding in Mumbai.
+245,155,partner_a,Hollywood Films Marathon: Blue Lantern Band Premiere,Blue Lantern Band,movie,Bengaluru,13.0283,77.6532,2026-06-21 20:00:00,An evening of hollywood films in Bengaluru. ekdum mast vibe
+246,155,partner_b,Hollywood Films Marathon - Blue Lantern Band Premiere,Blue Lantern Band,movie,Bengaluru,13.0281,77.6532,2026-06-21 20:00:00,An evening of hollywood films in Bengaluru. ekdum mast vibe
+247,156,partner_a,Comedy Night ft. DJ Neon Live,DJ Neon Live,comedy,Hyderabad,17.3915,78.5249,2026-06-14 20:00:00,An evening of stand-up comedy in Hyderabad.
+248,156,partner_b,Comedy Night ft. DJ Neon Live,DJ Neon Live,comedy,Hyderabad,17.3914,78.5251,2026-06-14 20:00:00,An evening of stand-up comedy in Hyderabad.
+249,157,partner_a,Pottery Workshop with Aarav Express,Aarav Express,workshop,Hyderabad,17.3848,78.4976,2026-12-22 21:00:00,"An evening of pottery in Hyderabad. new city, new friends"
+250,158,partner_a,Mumbai Mavericks vs Dynamos (cricket),Saffron Trio,sports,Mumbai,19.1081,72.9657,2026-08-14 17:00:00,"An evening of cricket in Mumbai. new city, new friends"
+251,159,partner_a,Mumbai Dynamos vs Royals (football),DJ Neon Express,sports,Mumbai,19.067,72.8295,2026-06-12 17:00:00,An evening of football in Mumbai. weekend pe plans chahiye
+252,159,partner_b,Mumbai Dynamos vs Royals (football),DJ Neon Express,sports,Mumbai,19.0668,72.8294,2026-06-12 16:30:00,An evening of football in Mumbai. weekend pe plans chahiye
+253,160,partner_a,Photography Workshop with Aarav Live,Aarav Live,workshop,Delhi,28.6022,77.2427,2026-10-10 18:00:00,An evening of photography in Delhi. always up for a good show
+254,160,partner_b,PHOTOGRAPHY WORKSHOP WITH AARAV LIVE,Aarav Live,workshop,Delhi,28.6018,77.2424,2026-10-10 18:00:00,An evening of photography in Delhi. always up for a good show
+255,161,partner_a,Photography Workshop with Saffron Express,Saffron Express,workshop,Bengaluru,12.928,77.6909,2026-11-28 17:00:00,An evening of photography in Bengaluru. always up for a good show
+256,161,partner_b,PHOTOGRAPHY WORKSHOP WITH SAFFRON EXPRESS,Saffron Express,workshop,Bengaluru,12.9278,77.6911,2026-11-28 17:30:00,An evening of photography in Bengaluru. always up for a good show
+257,162,partner_a,Bengaluru Food Festivals Carnival,The Monsoon Project,festival,Bengaluru,13.0428,77.5678,2026-09-17 19:00:00,An evening of food festivals in Bengaluru. always up for a good show
+258,162,partner_b,BENGALURU FOOD FESTIVALS CARNIVAL,The Monsoon Project,festival,Bengaluru,13.0429,77.5678,2026-09-17 18:30:00,An evening of food festivals in Bengaluru. always up for a good show
+259,163,partner_a,Anime Marathon: Kavya Band Premiere,Kavya Band,movie,Bengaluru,13.0421,77.6685,2026-09-28 21:00:00,An evening of anime in Bengaluru. always up for a good show
+260,163,partner_b,ANIME MARATHON: KAVYA BAND PREMIERE,Kavya Band,movie,Bengaluru,13.0423,77.6684,2026-09-28 20:30:00,An evening of anime in Bengaluru. always up for a good show
+261,164,partner_a,Delhi Food Festivals Carnival,DJ Neon Express,festival,Delhi,28.5718,77.2247,2026-08-30 19:00:00,An evening of food festivals in Delhi. always up for a good show
+262,164,partner_b,Delhi Food Festivals Carnival,DJ Neon Express,festival,Delhi,28.572,77.2246,2026-08-30 18:30:00,An evening of food festivals in Delhi. always up for a good show
+263,165,partner_a,Saffron Band - Hip Hop Night,Saffron Band,concert,Pune,18.5683,73.8686,2026-06-27 21:00:00,"An evening of hip hop in Pune. new city, new friends"
+264,166,partner_a,Hyderabad Startups Summit 2026,Static Tides Sessions,conference,Hyderabad,17.3312,78.4836,2026-08-26 17:00:00,An evening of startups in Hyderabad.
+265,167,partner_a,Mumbai Mavericks vs Royals (kabaddi),Midnight Chai Project,sports,Mumbai,19.0901,72.8287,2026-12-16 21:00:00,"An evening of kabaddi in Mumbai. new city, new friends"
+266,168,partner_a,Delhi Startups Summit 2026,Blue Lantern Band,conference,Delhi,28.6274,77.2426,2026-08-09 17:00:00,An evening of startups in Delhi.
+267,168,partner_b,Delhi Startups Summit 2026,Blue Lantern Band,conference,Delhi,28.6277,77.2426,2026-08-09 17:00:00,An evening of startups in Delhi.
+268,169,partner_a,Hyderabad Music Festivals Carnival,DJ Neon Collective,festival,Hyderabad,17.3149,78.4586,2026-07-08 17:00:00,"An evening of music festivals in Hyderabad. new city, new friends"
+269,170,partner_a,Photography Workshop with Mehfil Sessions,Mehfil Sessions,workshop,Bengaluru,12.928,77.6909,2026-08-14 17:00:00,An evening of photography in Bengaluru. chalo saath chalte hain
+270,170,partner_b,Photography Workshop with Mehfil Sessions,Mehfil Sessions,workshop,Bengaluru,12.9279,77.691,2026-08-14 16:30:00,An evening of photography in Bengaluru. chalo saath chalte hain
+271,171,partner_a,Blue Lantern Live: Stand-up Special,Blue Lantern Live,comedy,Mumbai,19.1581,72.9795,2026-11-21 20:00:00,An evening of stand-up comedy in Mumbai.
+272,172,partner_a,Bengaluru Food Festivals Carnival,Midnight Chai Express,festival,Bengaluru,13.0273,77.5959,2026-10-15 20:00:00,"An evening of food festivals in Bengaluru. new city, new friends"
+273,173,partner_a,Pune Food Festivals Fest,Aarav Sessions,festival,Pune,18.5683,73.8686,2026-08-12 18:00:00,An evening of food festivals in Pune. ekdum mast vibe
+274,173,partner_b,Pune Food Festivals Fest,Aarav Sessions,festival,Pune,18.5684,73.8685,2026-08-12 18:30:00,An evening of food festivals in Pune. ekdum mast vibe
+275,174,partner_a,Blue Lantern Express: Stand-up Special,Blue Lantern Express,comedy,Bengaluru,12.928,77.6909,2026-08-11 20:00:00,An evening of stand-up comedy in Bengaluru. weekend pe plans chahiye
+276,174,partner_b,Blue Lantern Express: Stand-up Special,Blue Lantern Express,comedy,Bengaluru,12.9283,77.6908,2026-08-11 20:00:00,An evening of stand-up comedy in Bengaluru. weekend pe plans chahiye
+277,175,partner_a,Mehfil Express: Stand-up Special,Mehfil Express,comedy,Mumbai,19.1081,72.9657,2026-09-21 17:00:00,An evening of improv in Mumbai. weekend pe plans chahiye
+278,176,partner_a,Mumbai Food Festivals Fest,Kavya Project,festival,Mumbai,19.0901,72.8287,2026-07-06 19:00:00,An evening of food festivals in Mumbai. weekend pe plans chahiye
+279,177,partner_a,Blue Lantern Band: Stand-up Special,Blue Lantern Band,comedy,Mumbai,19.067,72.8295,2026-06-03 20:00:00,An evening of improv in Mumbai.
+280,178,partner_a,Comedy Night ft. The Monsoon Sessions,The Monsoon Sessions,comedy,Hyderabad,17.3123,78.5082,2026-06-03 20:00:00,An evening of improv in Hyderabad.
+281,178,partner_b,Comedy Night ft. The Monsoon Sessions,The Monsoon Sessions,comedy,Hyderabad,17.3116,78.5081,2026-06-03 20:30:00,An evening of improv in Hyderabad.
+282,179,partner_a,Riya Sessions presents a theatre evening,Riya Sessions,theatre,Hyderabad,17.4499,78.5754,2026-09-15 18:00:00,An evening of theatre in Hyderabad. weekend pe plans chahiye
+283,179,partner_b,Riya Sessions presents a theatre evening,Riya Sessions,theatre,Hyderabad,17.4497,78.5755,2026-09-15 17:30:00,An evening of theatre in Hyderabad. weekend pe plans chahiye
+284,180,partner_a,Hollywood Films Marathon: Midnight Chai Live Premiere,Midnight Chai Live,movie,Bengaluru,13.0273,77.5959,2026-11-03 19:00:00,"An evening of hollywood films in Bengaluru. new city, new friends"
+285,180,partner_b,Hollywood Films Marathon - Midnight Chai Live Premiere,Midnight Chai Live,movie,Bengaluru,13.0273,77.5961,2026-11-03 18:30:00,"An evening of hollywood films in Bengaluru. new city, new friends"
+286,181,partner_a,Mumbai Ai Summit 2026,Kavya Sessions,conference,Mumbai,19.1581,72.9795,2026-11-15 18:00:00,An evening of ai in Mumbai. weekend pe plans chahiye
+287,182,partner_a,Pune Food Festivals Fest,Static Tides Express,festival,Pune,18.4743,73.8858,2026-08-26 20:00:00,An evening of food festivals in Pune.
+288,182,partner_b,PUNE FOOD FESTIVALS FEST,Static Tides Express,festival,Pune,18.4742,73.8855,2026-08-26 19:30:00,An evening of food festivals in Pune.
+289,183,partner_a,Pune Music Festivals Fest,DJ Neon Live,festival,Pune,18.4933,73.8493,2027-01-16 19:00:00,An evening of music festivals in Pune. always up for a good show
+290,184,partner_a,Mumbai Food Festivals Fest,Aarav Live,festival,Mumbai,19.1697,72.8776,2026-11-15 18:00:00,An evening of food festivals in Mumbai. weekend pe plans chahiye
+291,184,partner_b,Mumbai Food Festivals Fest,Aarav Live,festival,Mumbai,19.1698,72.8775,2026-11-15 18:30:00,An evening of food festivals in Mumbai. weekend pe plans chahiye
+292,185,partner_a,Bengaluru Strikers vs Dynamos (kabaddi),Blue Lantern Sessions,sports,Bengaluru,12.928,77.6909,2026-10-31 18:00:00,An evening of kabaddi in Bengaluru. weekend pe plans chahiye
+293,186,partner_a,Pune Food Festivals Carnival,Static Tides Band,festival,Pune,18.5683,73.8686,2026-12-03 19:00:00,An evening of food festivals in Pune. weekend pe plans chahiye
+294,186,partner_b,PUNE FOOD FESTIVALS CARNIVAL,Static Tides Band,festival,Pune,18.5685,73.8688,2026-12-03 19:30:00,An evening of food festivals in Pune. weekend pe plans chahiye
+295,187,partner_a,Bengaluru Music Festivals Fest,Saffron Live,festival,Bengaluru,12.9731,77.5858,2027-01-17 20:00:00,An evening of music festivals in Bengaluru. weekend pe plans chahiye
+296,187,partner_b,Bengaluru Music Festivals Fest | Tickets,Saffron Live,festival,Bengaluru,12.9732,77.5861,2027-01-17 20:30:00,An evening of music festivals in Bengaluru. weekend pe plans chahiye
+297,188,partner_a,Photography Workshop with Aarav Sessions,Aarav Sessions,workshop,Mumbai,19.103,72.9041,2026-07-13 21:00:00,An evening of photography in Mumbai. weekend pe plans chahiye
+298,188,partner_b,PHOTOGRAPHY WORKSHOP WITH AARAV SESSIONS,Aarav Sessions,workshop,Mumbai,19.1031,72.9033,2026-07-13 21:00:00,An evening of photography in Mumbai. weekend pe plans chahiye
+299,189,partner_a,Bollywood Films Marathon: Static Tides Sessions Premiere,Static Tides Sessions,movie,Bengaluru,13.0493,77.5864,2026-06-27 18:00:00,"An evening of bollywood films in Bengaluru. new city, new friends"
+300,189,partner_b,BOLLYWOOD FILMS MARATHON: STATIC TIDES SESSIONS PREMIERE,Static Tides Sessions,movie,Bengaluru,13.0495,77.5863,2026-06-27 17:30:00,"An evening of bollywood films in Bengaluru. new city, new friends"
+301,190,partner_a,Anime Marathon: Static Tides Sessions Premiere,Static Tides Sessions,movie,Delhi,28.5907,77.1862,2026-07-10 19:00:00,An evening of anime in Delhi. chalo saath chalte hain
+302,190,partner_b,ANIME MARATHON: STATIC TIDES SESSIONS PREMIERE,Static Tides Sessions,movie,Delhi,28.591,77.1865,2026-07-10 19:00:00,An evening of anime in Delhi. chalo saath chalte hain
+303,191,partner_a,The Monsoon Band: Stand-up Special,The Monsoon Band,comedy,Hyderabad,17.4405,78.5003,2026-12-16 20:00:00,An evening of improv in Hyderabad. weekend pe plans chahiye
+304,192,partner_a,Bengaluru Music Festivals Carnival,Aarav Trio,festival,Bengaluru,13.0428,77.5678,2026-11-25 18:00:00,An evening of music festivals in Bengaluru. ekdum mast vibe
+305,192,partner_b,Bengaluru Music Festivals Carnival,Aarav Trio,festival,Bengaluru,13.0424,77.5677,2026-11-25 17:30:00,An evening of music festivals in Bengaluru. ekdum mast vibe
+306,193,partner_a,Midnight Chai Project presents a theatre evening,Midnight Chai Project,theatre,Mumbai,19.067,72.8295,2026-06-25 19:00:00,An evening of theatre in Mumbai. ekdum mast vibe
+307,193,partner_b,Midnight Chai Project presents a theatre evening,Midnight Chai Project,theatre,Mumbai,19.0668,72.8296,2026-06-25 18:30:00,An evening of theatre in Mumbai. ekdum mast vibe
+308,194,partner_a,Hyderabad Ai Summit 2026,DJ Neon Band,conference,Hyderabad,17.3123,78.5082,2026-07-18 19:00:00,An evening of ai in Hyderabad.
+309,194,partner_b,HYDERABAD AI SUMMIT 2026,DJ Neon Band,conference,Hyderabad,17.3118,78.5084,2026-07-18 19:00:00,An evening of ai in Hyderabad.
+310,195,partner_a,Riya Trio: Stand-up Special,Riya Trio,comedy,Hyderabad,17.4405,78.5003,2026-12-30 21:00:00,"An evening of stand-up comedy in Hyderabad. new city, new friends"
+311,196,partner_a,Mumbai Ai Summit 2026,Midnight Chai Band,conference,Mumbai,18.9995,72.9009,2027-01-26 21:00:00,An evening of ai in Mumbai. ekdum mast vibe
+312,196,partner_b,Mumbai Ai Summit 2026 | Tickets,Midnight Chai Band,conference,Mumbai,18.9993,72.9011,2027-01-26 21:30:00,An evening of ai in Mumbai. ekdum mast vibe
+313,197,partner_a,Anime Marathon: Kavya Band Premiere,Kavya Band,movie,Pune,18.4743,73.8858,2026-07-22 18:00:00,An evening of anime in Pune. always up for a good show
+314,197,partner_b,Anime Marathon: Kavya Band Premiere,Kavya Band,movie,Pune,18.4745,73.8856,2026-07-22 17:30:00,An evening of anime in Pune. always up for a good show
+315,198,partner_a,Delhi Startups Summit 2026,Midnight Chai Project,conference,Delhi,28.6022,77.2427,2026-06-12 17:00:00,An evening of startups in Delhi. weekend pe plans chahiye
+316,198,partner_b,Delhi Startups Summit 2026,Midnight Chai Project,conference,Delhi,28.6023,77.2426,2026-06-12 17:00:00,An evening of startups in Delhi. weekend pe plans chahiye
+317,199,partner_a,Bengaluru Tech Summit 2026,Aarav Sessions,conference,Bengaluru,13.0428,77.5678,2026-07-28 20:00:00,An evening of tech in Bengaluru. ekdum mast vibe
+318,200,partner_a,Blue Lantern Live: Stand-up Special,Blue Lantern Live,comedy,Bengaluru,12.928,77.6909,2026-11-05 20:00:00,An evening of improv in Bengaluru. chalo saath chalte hain
+319,201,partner_a,Coding Workshop with Saffron Project,Saffron Project,workshop,Pune,18.4833,73.9283,2026-11-08 17:00:00,An evening of coding in Pune.
+320,202,partner_a,Pune Food Festivals Carnival,Static Tides Live,festival,Pune,18.4833,73.9283,2026-07-30 17:00:00,An evening of food festivals in Pune. chalo saath chalte hain
+321,203,partner_a,Pune Titans vs Dynamos (cricket),Blue Lantern Collective,sports,Pune,18.5683,73.8686,2026-12-29 19:00:00,An evening of cricket in Pune. ekdum mast vibe
+322,204,partner_a,Pune Music Festivals Carnival,Midnight Chai Live,festival,Pune,18.4833,73.9283,2026-09-14 20:00:00,"An evening of music festivals in Pune. new city, new friends"
+323,204,partner_b,Pune Music Festivals Carnival | Tickets,Midnight Chai Live,festival,Pune,18.483,73.9284,2026-09-14 20:00:00,"An evening of music festivals in Pune. new city, new friends"
+324,205,partner_a,Static Tides Live - Rock Night,Static Tides Live,concert,Mumbai,19.1081,72.9657,2027-01-01 21:00:00,An evening of rock in Mumbai. chalo saath chalte hain
+325,205,partner_b,Static Tides Live - Rock Night,Static Tides Live,concert,Mumbai,19.1082,72.9655,2027-01-01 21:00:00,An evening of rock in Mumbai. chalo saath chalte hain
+326,206,partner_a,Hollywood Films Marathon: The Monsoon Express Premiere,The Monsoon Express,movie,Mumbai,18.9995,72.9009,2026-10-31 20:00:00,An evening of hollywood films in Mumbai.
+327,207,partner_a,Comedy Night ft. Saffron Band,Saffron Band,comedy,Hyderabad,17.3312,78.4836,2027-01-11 20:00:00,An evening of improv in Hyderabad. always up for a good show
+328,207,partner_b,Comedy Night ft. Saffron Band,Saffron Band,comedy,Hyderabad,17.3305,78.4836,2027-01-11 20:30:00,An evening of improv in Hyderabad. always up for a good show
+329,208,partner_a,Pune Tech Summit 2026,Riya Express,conference,Pune,18.4933,73.8493,2026-10-07 19:00:00,An evening of tech in Pune. weekend pe plans chahiye
+330,209,partner_a,Kavya Sessions Live in Hyderabad,Kavya Sessions,concert,Hyderabad,17.4499,78.5754,2026-08-23 19:00:00,An evening of indie music in Hyderabad. always up for a good show
+331,209,partner_b,Kavya Sessions Live in Hyderabad,Kavya Sessions,concert,Hyderabad,17.4501,78.5755,2026-08-23 19:00:00,An evening of indie music in Hyderabad. always up for a good show
+332,210,partner_a,Bollywood Films Marathon: Kavya Express Premiere,Kavya Express,movie,Mumbai,19.1697,72.8776,2026-07-13 21:00:00,An evening of bollywood films in Mumbai. always up for a good show
+333,210,partner_b,Bollywood Films Marathon: Kavya Express Premiere,Kavya Express,movie,Mumbai,19.1701,72.8771,2026-07-13 21:00:00,An evening of bollywood films in Mumbai. always up for a good show
+334,211,partner_a,Coding Workshop with Mehfil Project,Mehfil Project,workshop,Pune,18.5683,73.8686,2026-07-20 18:00:00,An evening of coding in Pune. chalo saath chalte hain
+335,211,partner_b,Coding Workshop with Mehfil Project,Mehfil Project,workshop,Pune,18.5684,73.8685,2026-07-20 17:30:00,An evening of coding in Pune. chalo saath chalte hain
+336,212,partner_a,Hyderabad Royals vs Royals (kabaddi),DJ Neon Band,sports,Hyderabad,17.3915,78.5249,2027-01-01 19:00:00,An evening of kabaddi in Hyderabad. weekend pe plans chahiye
+337,212,partner_b,Hyderabad Royals vs Royals (kabaddi),DJ Neon Band,sports,Hyderabad,17.392,78.525,2027-01-01 19:00:00,An evening of kabaddi in Hyderabad. weekend pe plans chahiye
+338,213,partner_a,Photography Workshop with Mehfil Project,Mehfil Project,workshop,Mumbai,19.103,72.9041,2026-09-05 19:00:00,An evening of photography in Mumbai.
+339,214,partner_a,Mumbai Food Festivals Fest,Kavya Express,festival,Mumbai,19.1081,72.9657,2026-10-27 19:00:00,An evening of food festivals in Mumbai. always up for a good show
+340,214,partner_b,Mumbai Food Festivals Fest,Kavya Express,festival,Mumbai,19.1086,72.9658,2026-10-27 18:30:00,An evening of food festivals in Mumbai. always up for a good show
+341,215,partner_a,The Monsoon Collective Live in Pune,The Monsoon Collective,concert,Pune,18.4933,73.8493,2026-11-27 18:00:00,An evening of bollywood music in Pune. chalo saath chalte hain
+342,215,partner_b,The Monsoon Collective Live in Pune | Tickets,The Monsoon Collective,concert,Pune,18.4936,73.8493,2026-11-27 18:00:00,An evening of bollywood music in Pune. chalo saath chalte hain
+343,216,partner_a,Blue Lantern Collective - Bollywood Music Night,Blue Lantern Collective,concert,Bengaluru,13.0273,77.5959,2026-10-18 20:00:00,An evening of bollywood music in Bengaluru. always up for a good show
+344,216,partner_b,BLUE LANTERN COLLECTIVE - BOLLYWOOD MUSIC NIGHT,Blue Lantern Collective,concert,Bengaluru,13.0269,77.5963,2026-10-18 20:30:00,An evening of bollywood music in Bengaluru. always up for a good show
+345,217,partner_a,Bollywood Films Marathon: Mehfil Band Premiere,Mehfil Band,movie,Pune,18.4833,73.9283,2026-12-25 18:00:00,"An evening of bollywood films in Pune. new city, new friends"
+346,217,partner_b,BOLLYWOOD FILMS MARATHON: MEHFIL BAND PREMIERE,Mehfil Band,movie,Pune,18.4835,73.9283,2026-12-25 18:00:00,"An evening of bollywood films in Pune. new city, new friends"
+347,218,partner_a,Anime Marathon: Midnight Chai Band Premiere,Midnight Chai Band,movie,Mumbai,19.103,72.9041,2026-06-10 19:00:00,An evening of anime in Mumbai. weekend pe plans chahiye
+348,219,partner_a,Anime Marathon: Kavya Trio Premiere,Kavya Trio,movie,Hyderabad,17.3933,78.5429,2026-10-27 19:00:00,An evening of anime in Hyderabad. ekdum mast vibe
+349,219,partner_b,Anime Marathon: Kavya Trio Premiere,Kavya Trio,movie,Hyderabad,17.3933,78.5429,2026-10-27 18:30:00,An evening of anime in Hyderabad. ekdum mast vibe
+350,220,partner_a,The Monsoon Band: Stand-up Special,The Monsoon Band,comedy,Delhi,28.5718,77.2247,2026-08-30 17:00:00,An evening of improv in Delhi. always up for a good show
+351,220,partner_b,THE MONSOON BAND: STAND-UP SPECIAL,The Monsoon Band,comedy,Delhi,28.5718,77.2248,2026-08-30 17:00:00,An evening of improv in Delhi. always up for a good show
+352,221,partner_a,Delhi Music Festivals Carnival,Kavya Live,festival,Delhi,28.571,77.1801,2026-11-18 20:00:00,An evening of music festivals in Delhi. chalo saath chalte hain
+353,222,partner_a,Photography Workshop with Static Tides Sessions,Static Tides Sessions,workshop,Pune,18.4743,73.8858,2026-10-20 19:00:00,An evening of photography in Pune. chalo saath chalte hain
+354,222,partner_b,Photography Workshop with Static Tides Sessions,Static Tides Sessions,workshop,Pune,18.4744,73.8859,2026-10-20 19:00:00,An evening of photography in Pune. chalo saath chalte hain
+355,223,partner_a,Delhi Food Festivals Fest,Static Tides Project,festival,Delhi,28.6022,77.2427,2026-11-30 18:00:00,An evening of food festivals in Delhi. ekdum mast vibe
+356,224,partner_a,Comedy Night ft. Mehfil Project,Mehfil Project,comedy,Bengaluru,13.0273,77.5959,2026-09-04 21:00:00,"An evening of improv in Bengaluru. new city, new friends"
+357,225,partner_a,Bollywood Films Marathon: Blue Lantern Collective Premiere,Blue Lantern Collective,movie,Delhi,28.5718,77.2247,2026-06-30 17:00:00,An evening of bollywood films in Delhi. chalo saath chalte hain
+358,225,partner_b,Bollywood Films Marathon: Blue Lantern Collective Premiere,Blue Lantern Collective,movie,Delhi,28.5716,77.2253,2026-06-30 17:00:00,An evening of bollywood films in Delhi. chalo saath chalte hain
+359,226,partner_a,Midnight Chai Band: Stand-up Special,Midnight Chai Band,comedy,Delhi,28.5718,77.2247,2026-09-25 18:00:00,An evening of stand-up comedy in Delhi. chalo saath chalte hain
+360,226,partner_b,Midnight Chai Band - Stand-up Special,Midnight Chai Band,comedy,Delhi,28.5713,77.2246,2026-09-25 17:30:00,An evening of stand-up comedy in Delhi. chalo saath chalte hain
+361,227,partner_a,Saffron Live presents a musicals evening,Saffron Live,theatre,Mumbai,19.0901,72.8287,2027-01-22 17:00:00,An evening of musicals in Mumbai. ekdum mast vibe
+362,227,partner_b,Saffron Live presents a musicals evening | Tickets,Saffron Live,theatre,Mumbai,19.0902,72.8286,2027-01-22 16:30:00,An evening of musicals in Mumbai. ekdum mast vibe
+363,228,partner_a,Delhi Mavericks vs Royals (football),Kavya Live,sports,Delhi,28.6348,77.258,2026-07-10 20:00:00,An evening of football in Delhi. chalo saath chalte hain
+364,228,partner_b,Delhi Mavericks vs Royals (football) | Tickets,Kavya Live,sports,Delhi,28.6344,77.2579,2026-07-10 20:00:00,An evening of football in Delhi. chalo saath chalte hain
+365,229,partner_a,Bollywood Films Marathon: Aarav Project Premiere,Aarav Project,movie,Delhi,28.5907,77.1862,2026-12-13 21:00:00,An evening of bollywood films in Delhi. chalo saath chalte hain
+366,229,partner_b,Bollywood Films Marathon: Aarav Project Premiere,Aarav Project,movie,Delhi,28.5914,77.1859,2026-12-13 21:00:00,An evening of bollywood films in Delhi. chalo saath chalte hain
+367,230,partner_a,Mumbai Mavericks vs Strikers (cricket),Blue Lantern Trio,sports,Mumbai,19.1697,72.8776,2026-06-25 18:00:00,An evening of cricket in Mumbai. chalo saath chalte hain
+368,230,partner_b,Mumbai Mavericks vs Strikers (cricket),Blue Lantern Trio,sports,Mumbai,19.1694,72.8781,2026-06-25 17:30:00,An evening of cricket in Mumbai. chalo saath chalte hain
+369,231,partner_a,Pottery Workshop with The Monsoon Trio,The Monsoon Trio,workshop,Delhi,28.6181,77.1774,2027-01-24 18:00:00,An evening of pottery in Delhi. always up for a good show
+370,232,partner_a,Coding Workshop with Kavya Trio,Kavya Trio,workshop,Mumbai,19.1697,72.8776,2026-11-19 21:00:00,An evening of coding in Mumbai. always up for a good show
+371,233,partner_a,Photography Workshop with Saffron Sessions,Saffron Sessions,workshop,Pune,18.4833,73.9283,2026-06-01 20:00:00,An evening of photography in Pune. chalo saath chalte hain
+372,233,partner_b,Photography Workshop with Saffron Sessions,Saffron Sessions,workshop,Pune,18.4832,73.9282,2026-06-01 20:00:00,An evening of photography in Pune. chalo saath chalte hain
+373,234,partner_a,Delhi Food Festivals Fest,Mehfil Trio,festival,Delhi,28.6022,77.2427,2027-01-01 18:00:00,"An evening of food festivals in Delhi. new city, new friends"
+374,234,partner_b,Delhi Food Festivals Fest,Mehfil Trio,festival,Delhi,28.6023,77.2429,2027-01-01 17:30:00,"An evening of food festivals in Delhi. new city, new friends"
+375,235,partner_a,Hyderabad Mavericks vs Dynamos (kabaddi),Midnight Chai Sessions,sports,Hyderabad,17.4499,78.5754,2026-08-24 21:00:00,An evening of kabaddi in Hyderabad.
+376,236,partner_a,Comedy Night ft. Midnight Chai Band,Midnight Chai Band,comedy,Bengaluru,13.0273,77.5959,2026-12-13 20:00:00,An evening of stand-up comedy in Bengaluru.
+377,237,partner_a,Hyderabad Strikers vs Royals (cricket),Aarav Collective,sports,Hyderabad,17.4405,78.5003,2026-10-17 19:00:00,An evening of cricket in Hyderabad.
+378,237,partner_b,Hyderabad Strikers vs Royals (cricket) | Tickets,Aarav Collective,sports,Hyderabad,17.441,78.5002,2026-10-17 19:00:00,An evening of cricket in Hyderabad.
+379,238,partner_a,Pune Dynamos vs Mavericks (football),Midnight Chai Express,sports,Pune,18.4833,73.9283,2026-11-25 21:00:00,An evening of football in Pune.
+380,238,partner_b,Pune Dynamos vs Mavericks (football),Midnight Chai Express,sports,Pune,18.4832,73.9278,2026-11-25 20:30:00,An evening of football in Pune.
+381,239,partner_a,Mehfil Collective presents a musicals evening,Mehfil Collective,theatre,Hyderabad,17.4405,78.5003,2026-12-30 17:00:00,An evening of musicals in Hyderabad. weekend pe plans chahiye
+382,239,partner_b,Mehfil Collective presents a musicals evening,Mehfil Collective,theatre,Hyderabad,17.4405,78.5003,2026-12-30 16:30:00,An evening of musicals in Hyderabad. weekend pe plans chahiye
+383,240,partner_a,Pune Music Festivals Carnival,Blue Lantern Collective,festival,Pune,18.5213,73.7946,2026-08-23 19:00:00,"An evening of music festivals in Pune. new city, new friends"
+384,241,partner_a,Static Tides Express - Indie Music Night,Static Tides Express,concert,Bengaluru,13.0421,77.6685,2026-06-19 21:00:00,An evening of indie music in Bengaluru.
+385,241,partner_b,Static Tides Express - Indie Music Night,Static Tides Express,concert,Bengaluru,13.0419,77.6687,2026-06-19 21:00:00,An evening of indie music in Bengaluru.
+386,242,partner_a,Coding Workshop with Static Tides Collective,Static Tides Collective,workshop,Hyderabad,17.3933,78.5429,2026-12-07 19:00:00,An evening of coding in Hyderabad. always up for a good show
+387,242,partner_b,CODING WORKSHOP WITH STATIC TIDES COLLECTIVE,Static Tides Collective,workshop,Hyderabad,17.393,78.543,2026-12-07 19:30:00,An evening of coding in Hyderabad. always up for a good show
+388,243,partner_a,Hyderabad Tigers vs Tigers (cricket),Saffron Trio,sports,Hyderabad,17.4499,78.5754,2026-12-18 21:00:00,An evening of cricket in Hyderabad.
+389,244,partner_a,Coding Workshop with Mehfil Trio,Mehfil Trio,workshop,Bengaluru,12.9731,77.5858,2026-11-02 21:00:00,An evening of coding in Bengaluru. weekend pe plans chahiye
+390,245,partner_a,Comedy Night ft. Kavya Sessions,Kavya Sessions,comedy,Bengaluru,13.0428,77.5678,2026-11-29 20:00:00,An evening of stand-up comedy in Bengaluru. ekdum mast vibe
+391,245,partner_b,Comedy Night ft. Kavya Sessions,Kavya Sessions,comedy,Bengaluru,13.0426,77.5679,2026-11-29 20:00:00,An evening of stand-up comedy in Bengaluru. ekdum mast vibe
+392,246,partner_a,Kavya Sessions presents a theatre evening,Kavya Sessions,theatre,Mumbai,19.0259,72.9696,2026-10-08 18:00:00,"An evening of theatre in Mumbai. new city, new friends"
+393,246,partner_b,Kavya Sessions presents a theatre evening | Tickets,Kavya Sessions,theatre,Mumbai,19.0258,72.9694,2026-10-08 18:00:00,"An evening of theatre in Mumbai. new city, new friends"
+394,247,partner_a,Mumbai Dynamos vs Titans (kabaddi),Mehfil Express,sports,Mumbai,19.067,72.8295,2026-08-12 17:00:00,An evening of kabaddi in Mumbai. weekend pe plans chahiye
+395,248,partner_a,Pune Royals vs Tigers (football),Aarav Sessions,sports,Pune,18.4743,73.8858,2026-10-30 21:00:00,An evening of football in Pune. ekdum mast vibe
+396,249,partner_a,Pune Mavericks vs Titans (cricket),The Monsoon Project,sports,Pune,18.5144,73.8568,2026-09-30 19:00:00,"An evening of cricket in Pune. new city, new friends"
+397,250,partner_a,Bollywood Films Marathon: Static Tides Live Premiere,Static Tides Live,movie,Bengaluru,13.0273,77.5959,2026-12-23 18:00:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+398,250,partner_b,Bollywood Films Marathon - Static Tides Live Premiere,Static Tides Live,movie,Bengaluru,13.0274,77.5959,2026-12-23 18:30:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+399,251,partner_a,The Monsoon Trio: Stand-up Special,The Monsoon Trio,comedy,Pune,18.4743,73.8858,2026-10-14 20:00:00,An evening of stand-up comedy in Pune. chalo saath chalte hain
+400,251,partner_b,The Monsoon Trio: Stand-up Special,The Monsoon Trio,comedy,Pune,18.4741,73.886,2026-10-14 20:30:00,An evening of stand-up comedy in Pune. chalo saath chalte hain
+401,252,partner_a,Pune Music Festivals Carnival,Saffron Sessions,festival,Pune,18.5595,73.9874,2026-07-01 19:00:00,An evening of music festivals in Pune. chalo saath chalte hain
+402,253,partner_a,Anime Marathon: The Monsoon Project Premiere,The Monsoon Project,movie,Hyderabad,17.3915,78.5249,2026-09-04 17:00:00,An evening of anime in Hyderabad. chalo saath chalte hain
+403,253,partner_b,ANIME MARATHON: THE MONSOON PROJECT PREMIERE,The Monsoon Project,movie,Hyderabad,17.3911,78.5249,2026-09-04 16:30:00,An evening of anime in Hyderabad. chalo saath chalte hain
+404,254,partner_a,Pune Food Festivals Carnival,Kavya Sessions,festival,Pune,18.5683,73.8686,2026-11-28 19:00:00,An evening of food festivals in Pune. weekend pe plans chahiye
+405,255,partner_a,Aarav Express Live in Hyderabad,Aarav Express,concert,Hyderabad,17.4499,78.5754,2027-01-14 20:00:00,An evening of sufi in Hyderabad.
+406,255,partner_b,AARAV EXPRESS LIVE IN HYDERABAD,Aarav Express,concert,Hyderabad,17.4501,78.5757,2027-01-14 19:30:00,An evening of sufi in Hyderabad.
+407,256,partner_a,Comedy Night ft. Aarav Project,Aarav Project,comedy,Bengaluru,12.928,77.6909,2026-08-11 17:00:00,An evening of improv in Bengaluru.
+408,256,partner_b,Comedy Night ft. Aarav Project,Aarav Project,comedy,Bengaluru,12.9282,77.6909,2026-08-11 16:30:00,An evening of improv in Bengaluru.
+409,257,partner_a,Pune Music Festivals Fest,The Monsoon Trio,festival,Pune,18.5683,73.8686,2026-11-20 18:00:00,"An evening of music festivals in Pune. new city, new friends"
+410,258,partner_a,Riya Band - Edm Night,Riya Band,concert,Pune,18.5595,73.9874,2027-01-12 17:00:00,An evening of edm in Pune. weekend pe plans chahiye
+411,258,partner_b,Riya Band - Edm Night,Riya Band,concert,Pune,18.5597,73.9879,2027-01-12 16:30:00,An evening of edm in Pune. weekend pe plans chahiye
+412,259,partner_a,Kavya Band: Stand-up Special,Kavya Band,comedy,Hyderabad,17.3933,78.5429,2026-07-14 17:00:00,An evening of improv in Hyderabad. always up for a good show
+413,259,partner_b,Kavya Band: Stand-up Special | Tickets,Kavya Band,comedy,Hyderabad,17.3933,78.5427,2026-07-14 16:30:00,An evening of improv in Hyderabad. always up for a good show
+414,260,partner_a,Riya Collective presents a musicals evening,Riya Collective,theatre,Bengaluru,12.9731,77.5858,2026-09-21 20:00:00,An evening of musicals in Bengaluru. ekdum mast vibe
+415,260,partner_b,Riya Collective presents a musicals evening,Riya Collective,theatre,Bengaluru,12.9735,77.5856,2026-09-21 20:30:00,An evening of musicals in Bengaluru. ekdum mast vibe
+416,261,partner_a,Pune Music Festivals Carnival,Kavya Band,festival,Pune,18.4743,73.8858,2026-07-21 18:00:00,An evening of music festivals in Pune. ekdum mast vibe
+417,262,partner_a,Bengaluru Food Festivals Fest,Kavya Collective,festival,Bengaluru,13.0421,77.6685,2026-09-17 19:00:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+418,263,partner_a,Photography Workshop with Midnight Chai Trio,Midnight Chai Trio,workshop,Hyderabad,17.3915,78.5249,2026-08-09 17:00:00,An evening of photography in Hyderabad. ekdum mast vibe
+419,264,partner_a,Coding Workshop with The Monsoon Live,The Monsoon Live,workshop,Hyderabad,17.3848,78.4976,2026-07-16 21:00:00,An evening of coding in Hyderabad.
+420,264,partner_b,Coding Workshop with The Monsoon Live,The Monsoon Live,workshop,Hyderabad,17.3849,78.4977,2026-07-16 20:30:00,An evening of coding in Hyderabad.
+421,265,partner_a,Bengaluru Food Festivals Carnival,Saffron Express,festival,Bengaluru,13.0421,77.6685,2026-11-11 18:00:00,An evening of food festivals in Bengaluru. chalo saath chalte hain
+422,265,partner_b,BENGALURU FOOD FESTIVALS CARNIVAL,Saffron Express,festival,Bengaluru,13.0425,77.6685,2026-11-11 18:30:00,An evening of food festivals in Bengaluru. chalo saath chalte hain
+423,266,partner_a,Hollywood Films Marathon: Saffron Project Premiere,Saffron Project,movie,Mumbai,19.103,72.9041,2026-12-23 17:00:00,An evening of hollywood films in Mumbai. always up for a good show
+424,267,partner_a,Pune Titans vs Tigers (kabaddi),Saffron Live,sports,Pune,18.5213,73.7946,2026-10-11 17:00:00,"An evening of kabaddi in Pune. new city, new friends"
+425,268,partner_a,Coding Workshop with The Monsoon Collective,The Monsoon Collective,workshop,Hyderabad,17.3848,78.4976,2026-09-06 18:00:00,An evening of coding in Hyderabad. weekend pe plans chahiye
+426,268,partner_b,Coding Workshop with The Monsoon Collective,The Monsoon Collective,workshop,Hyderabad,17.385,78.4983,2026-09-06 18:30:00,An evening of coding in Hyderabad. weekend pe plans chahiye
+427,269,partner_a,Static Tides Trio presents a musicals evening,Static Tides Trio,theatre,Mumbai,19.1581,72.9795,2026-10-26 18:00:00,An evening of musicals in Mumbai. always up for a good show
+428,270,partner_a,Blue Lantern Trio - Edm Night,Blue Lantern Trio,concert,Mumbai,19.0901,72.8287,2026-06-19 19:00:00,An evening of edm in Mumbai. ekdum mast vibe
+429,270,partner_b,BLUE LANTERN TRIO - EDM NIGHT,Blue Lantern Trio,concert,Mumbai,19.0901,72.8284,2026-06-19 19:00:00,An evening of edm in Mumbai. ekdum mast vibe
+430,271,partner_a,Blue Lantern Project - Rock Night,Blue Lantern Project,concert,Pune,18.4933,73.8493,2026-10-05 18:00:00,An evening of rock in Pune. ekdum mast vibe
+431,271,partner_b,BLUE LANTERN PROJECT - ROCK NIGHT,Blue Lantern Project,concert,Pune,18.4934,73.8495,2026-10-05 18:00:00,An evening of rock in Pune. ekdum mast vibe
+432,272,partner_a,Pune Royals vs Mavericks (football),Mehfil Express,sports,Pune,18.4933,73.8493,2027-01-04 17:00:00,"An evening of football in Pune. new city, new friends"
+433,272,partner_b,Pune Royals vs Mavericks (football),Mehfil Express,sports,Pune,18.4933,73.8492,2027-01-04 16:30:00,"An evening of football in Pune. new city, new friends"
+434,273,partner_a,Delhi Music Festivals Carnival,Mehfil Sessions,festival,Delhi,28.5718,77.2247,2026-07-31 17:00:00,An evening of music festivals in Delhi. ekdum mast vibe
+435,274,partner_a,Saffron Project presents a theatre evening,Saffron Project,theatre,Hyderabad,17.3312,78.4836,2027-01-01 19:00:00,"An evening of theatre in Hyderabad. new city, new friends"
+436,275,partner_a,Mumbai Royals vs Strikers (cricket),The Monsoon Band,sports,Mumbai,19.1581,72.9795,2026-08-16 21:00:00,An evening of cricket in Mumbai. weekend pe plans chahiye
+437,275,partner_b,Mumbai Royals vs Strikers (cricket),The Monsoon Band,sports,Mumbai,19.1581,72.9797,2026-08-16 21:00:00,An evening of cricket in Mumbai. weekend pe plans chahiye
+438,276,partner_a,Delhi Music Festivals Fest,The Monsoon Sessions,festival,Delhi,28.6274,77.2426,2027-01-06 21:00:00,An evening of music festivals in Delhi. always up for a good show
+439,276,partner_b,Delhi Music Festivals Fest,The Monsoon Sessions,festival,Delhi,28.6279,77.2418,2027-01-06 20:30:00,An evening of music festivals in Delhi. always up for a good show
+440,277,partner_a,Anime Marathon: Static Tides Sessions Premiere,Static Tides Sessions,movie,Hyderabad,17.3149,78.4586,2026-08-23 19:00:00,An evening of anime in Hyderabad. always up for a good show
+441,278,partner_a,Photography Workshop with DJ Neon Trio,DJ Neon Trio,workshop,Delhi,28.571,77.1801,2026-08-17 20:00:00,An evening of photography in Delhi. ekdum mast vibe
+442,278,partner_b,Photography Workshop with DJ Neon Trio,DJ Neon Trio,workshop,Delhi,28.5707,77.1805,2026-08-17 20:30:00,An evening of photography in Delhi. ekdum mast vibe
+443,279,partner_a,Delhi Music Festivals Carnival,Blue Lantern Express,festival,Delhi,28.6022,77.2427,2026-11-27 21:00:00,An evening of music festivals in Delhi. chalo saath chalte hain
+444,279,partner_b,Delhi Music Festivals Carnival | Tickets,Blue Lantern Express,festival,Delhi,28.6019,77.243,2026-11-27 21:00:00,An evening of music festivals in Delhi. chalo saath chalte hain
+445,280,partner_a,Mehfil Live - Bollywood Music Night,Mehfil Live,concert,Bengaluru,13.0144,77.5718,2026-09-23 21:00:00,An evening of bollywood music in Bengaluru. weekend pe plans chahiye
+446,281,partner_a,Coding Workshop with The Monsoon Band,The Monsoon Band,workshop,Pune,18.5213,73.7946,2026-09-08 20:00:00,An evening of coding in Pune.
+447,281,partner_b,Coding Workshop with The Monsoon Band,The Monsoon Band,workshop,Pune,18.521,73.7944,2026-09-08 20:30:00,An evening of coding in Pune.
+448,282,partner_a,Bollywood Films Marathon: Riya Express Premiere,Riya Express,movie,Delhi,28.6181,77.1774,2026-12-02 18:00:00,An evening of bollywood films in Delhi. always up for a good show
+449,282,partner_b,Bollywood Films Marathon - Riya Express Premiere,Riya Express,movie,Delhi,28.6182,77.1776,2026-12-02 18:00:00,An evening of bollywood films in Delhi. always up for a good show
+450,283,partner_a,Delhi Music Festivals Carnival,Midnight Chai Express,festival,Delhi,28.6181,77.1774,2026-09-22 19:00:00,"An evening of music festivals in Delhi. new city, new friends"
+451,283,partner_b,Delhi Music Festivals Carnival,Midnight Chai Express,festival,Delhi,28.618,77.1779,2026-09-22 19:00:00,"An evening of music festivals in Delhi. new city, new friends"
+452,284,partner_a,Hyderabad Mavericks vs Mavericks (kabaddi),Midnight Chai Project,sports,Hyderabad,17.4405,78.5003,2026-10-06 21:00:00,An evening of kabaddi in Hyderabad. weekend pe plans chahiye
+453,284,partner_b,HYDERABAD MAVERICKS VS MAVERICKS (KABADDI),Midnight Chai Project,sports,Hyderabad,17.4403,78.5001,2026-10-06 21:30:00,An evening of kabaddi in Hyderabad. weekend pe plans chahiye
+454,285,partner_a,Bengaluru Royals vs Titans (football),Riya Project,sports,Bengaluru,13.0493,77.5864,2026-11-13 21:00:00,"An evening of football in Bengaluru. new city, new friends"
+455,285,partner_b,Bengaluru Royals vs Titans (football),Riya Project,sports,Bengaluru,13.0494,77.5863,2026-11-13 21:00:00,"An evening of football in Bengaluru. new city, new friends"
+456,286,partner_a,Comedy Night ft. Kavya Live,Kavya Live,comedy,Delhi,28.6348,77.258,2027-01-08 20:00:00,An evening of improv in Delhi. chalo saath chalte hain
+457,287,partner_a,Photography Workshop with Kavya Live,Kavya Live,workshop,Mumbai,19.1581,72.9795,2026-09-13 20:00:00,An evening of photography in Mumbai.
+458,288,partner_a,Static Tides Project presents a theatre evening,Static Tides Project,theatre,Mumbai,19.103,72.9041,2026-08-31 19:00:00,An evening of theatre in Mumbai. weekend pe plans chahiye
+459,289,partner_a,Pune Mavericks vs Dynamos (football),Kavya Project,sports,Pune,18.5683,73.8686,2026-10-20 17:00:00,An evening of football in Pune. always up for a good show
+460,290,partner_a,Blue Lantern Express - Sufi Night,Blue Lantern Express,concert,Delhi,28.6348,77.258,2026-06-22 21:00:00,"An evening of sufi in Delhi. new city, new friends"
+461,290,partner_b,Blue Lantern Express - Sufi Night,Blue Lantern Express,concert,Delhi,28.6347,77.2579,2026-06-22 21:00:00,"An evening of sufi in Delhi. new city, new friends"
+462,291,partner_a,Bengaluru Food Festivals Fest,Static Tides Express,festival,Bengaluru,13.0144,77.5718,2026-07-19 18:00:00,An evening of food festivals in Bengaluru.
+463,291,partner_b,BENGALURU FOOD FESTIVALS FEST,Static Tides Express,festival,Bengaluru,13.0145,77.572,2026-07-19 17:30:00,An evening of food festivals in Bengaluru.
+464,292,partner_a,Midnight Chai Collective presents a theatre evening,Midnight Chai Collective,theatre,Bengaluru,13.0283,77.6532,2027-01-05 19:00:00,An evening of theatre in Bengaluru. ekdum mast vibe
+465,293,partner_a,Delhi Startups Summit 2026,Kavya Live,conference,Delhi,28.6022,77.2427,2026-06-11 20:00:00,An evening of startups in Delhi. ekdum mast vibe
+466,293,partner_b,Delhi Startups Summit 2026 | Tickets,Kavya Live,conference,Delhi,28.6021,77.243,2026-06-11 20:30:00,An evening of startups in Delhi. ekdum mast vibe
+467,294,partner_a,Mumbai Music Festivals Carnival,Aarav Collective,festival,Mumbai,19.1697,72.8776,2026-11-16 17:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+468,294,partner_b,MUMBAI MUSIC FESTIVALS CARNIVAL,Aarav Collective,festival,Mumbai,19.1694,72.8774,2026-11-16 17:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+469,295,partner_a,Pottery Workshop with Aarav Live,Aarav Live,workshop,Delhi,28.6348,77.258,2026-10-13 17:00:00,An evening of pottery in Delhi. ekdum mast vibe
+470,296,partner_a,Hyderabad Music Festivals Carnival,DJ Neon Band,festival,Hyderabad,17.3149,78.4586,2027-01-18 21:00:00,An evening of music festivals in Hyderabad. chalo saath chalte hain
+471,297,partner_a,Delhi Music Festivals Carnival,Kavya Collective,festival,Delhi,28.6247,77.1649,2026-11-20 17:00:00,"An evening of music festivals in Delhi. new city, new friends"
+472,297,partner_b,Delhi Music Festivals Carnival,Kavya Collective,festival,Delhi,28.6243,77.1653,2026-11-20 17:00:00,"An evening of music festivals in Delhi. new city, new friends"
+473,298,partner_a,Hyderabad Music Festivals Fest,Kavya Band,festival,Hyderabad,17.4405,78.5003,2026-08-27 17:00:00,An evening of music festivals in Hyderabad.
+474,298,partner_b,Hyderabad Music Festivals Fest,Kavya Band,festival,Hyderabad,17.4406,78.4998,2026-08-27 16:30:00,An evening of music festivals in Hyderabad.
+475,299,partner_a,Kavya Collective - Edm Night,Kavya Collective,concert,Delhi,28.6348,77.258,2026-10-21 19:00:00,An evening of edm in Delhi. always up for a good show
+476,299,partner_b,Kavya Collective - Edm Night,Kavya Collective,concert,Delhi,28.6352,77.2577,2026-10-21 19:00:00,An evening of edm in Delhi. always up for a good show
+477,300,partner_a,Comedy Night ft. Kavya Collective,Kavya Collective,comedy,Hyderabad,17.3123,78.5082,2027-01-24 19:00:00,"An evening of improv in Hyderabad. new city, new friends"
+478,301,partner_a,Bollywood Films Marathon: Saffron Live Premiere,Saffron Live,movie,Bengaluru,13.0421,77.6685,2026-08-04 21:00:00,An evening of bollywood films in Bengaluru. chalo saath chalte hain
+479,301,partner_b,Bollywood Films Marathon - Saffron Live Premiere,Saffron Live,movie,Bengaluru,13.0423,77.6682,2026-08-04 21:30:00,An evening of bollywood films in Bengaluru. chalo saath chalte hain
+480,302,partner_a,Bengaluru Food Festivals Fest,Blue Lantern Band,festival,Bengaluru,12.9731,77.5858,2026-08-17 21:00:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+481,302,partner_b,BENGALURU FOOD FESTIVALS FEST,Blue Lantern Band,festival,Bengaluru,12.9727,77.5859,2026-08-17 21:30:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+482,303,partner_a,Photography Workshop with Mehfil Project,Mehfil Project,workshop,Hyderabad,17.3933,78.5429,2026-07-04 20:00:00,An evening of photography in Hyderabad. weekend pe plans chahiye
+483,304,partner_a,Riya Trio: Stand-up Special,Riya Trio,comedy,Bengaluru,13.0493,77.5864,2026-07-07 20:00:00,An evening of improv in Bengaluru. weekend pe plans chahiye
+484,304,partner_b,Riya Trio: Stand-up Special | Tickets,Riya Trio,comedy,Bengaluru,13.0496,77.5867,2026-07-07 20:00:00,An evening of improv in Bengaluru. weekend pe plans chahiye
+485,305,partner_a,DJ Neon Project presents a theatre evening,DJ Neon Project,theatre,Delhi,28.5907,77.1862,2026-12-08 18:00:00,An evening of theatre in Delhi. ekdum mast vibe
+486,305,partner_b,DJ Neon Project presents a theatre evening,DJ Neon Project,theatre,Delhi,28.5907,77.1861,2026-12-08 18:00:00,An evening of theatre in Delhi. ekdum mast vibe
+487,306,partner_a,Midnight Chai Sessions - Hip Hop Night,Midnight Chai Sessions,concert,Hyderabad,17.3123,78.5082,2026-08-10 18:00:00,An evening of hip hop in Hyderabad. chalo saath chalte hain
+488,306,partner_b,Midnight Chai Sessions - Hip Hop Night,Midnight Chai Sessions,concert,Hyderabad,17.312,78.508,2026-08-10 18:00:00,An evening of hip hop in Hyderabad. chalo saath chalte hain
+489,307,partner_a,The Monsoon Live Live in Hyderabad,The Monsoon Live,concert,Hyderabad,17.3149,78.4586,2026-10-28 18:00:00,"An evening of edm in Hyderabad. new city, new friends"
+490,308,partner_a,Pune Startups Summit 2026,Mehfil Band,conference,Pune,18.5595,73.9874,2026-06-28 19:00:00,An evening of startups in Pune.
+491,309,partner_a,Pottery Workshop with The Monsoon Project,The Monsoon Project,workshop,Hyderabad,17.3149,78.4586,2027-01-20 19:00:00,An evening of pottery in Hyderabad. always up for a good show
+492,309,partner_b,Pottery Workshop with The Monsoon Project,The Monsoon Project,workshop,Hyderabad,17.3148,78.4589,2027-01-20 18:30:00,An evening of pottery in Hyderabad. always up for a good show
+493,310,partner_a,Mumbai Music Festivals Carnival,Mehfil Band,festival,Mumbai,19.103,72.9041,2026-09-09 17:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+494,311,partner_a,Aarav Project presents a theatre evening,Aarav Project,theatre,Bengaluru,13.0421,77.6685,2026-06-17 20:00:00,An evening of theatre in Bengaluru. always up for a good show
+495,311,partner_b,Aarav Project presents a theatre evening,Aarav Project,theatre,Bengaluru,13.0423,77.6679,2026-06-17 20:30:00,An evening of theatre in Bengaluru. always up for a good show
+496,312,partner_a,Pottery Workshop with The Monsoon Trio,The Monsoon Trio,workshop,Mumbai,19.067,72.8295,2026-06-25 17:00:00,An evening of pottery in Mumbai. weekend pe plans chahiye
+497,312,partner_b,Pottery Workshop with The Monsoon Trio,The Monsoon Trio,workshop,Mumbai,19.0673,72.8297,2026-06-25 17:00:00,An evening of pottery in Mumbai. weekend pe plans chahiye
+498,313,partner_a,Mumbai Startups Summit 2026,Saffron Project,conference,Mumbai,19.0901,72.8287,2026-07-18 19:00:00,"An evening of startups in Mumbai. new city, new friends"
+499,313,partner_b,Mumbai Startups Summit 2026 | Tickets,Saffron Project,conference,Mumbai,19.0904,72.8291,2026-07-18 19:00:00,"An evening of startups in Mumbai. new city, new friends"
+500,314,partner_a,Blue Lantern Collective: Stand-up Special,Blue Lantern Collective,comedy,Hyderabad,17.3312,78.4836,2026-11-24 21:00:00,An evening of stand-up comedy in Hyderabad. chalo saath chalte hain
+501,314,partner_b,Blue Lantern Collective - Stand-up Special,Blue Lantern Collective,comedy,Hyderabad,17.3312,78.4833,2026-11-24 21:00:00,An evening of stand-up comedy in Hyderabad. chalo saath chalte hain
+502,315,partner_a,Static Tides Live presents a musicals evening,Static Tides Live,theatre,Pune,18.5144,73.8568,2026-06-27 18:00:00,An evening of musicals in Pune. always up for a good show
+503,316,partner_a,Delhi Food Festivals Fest,DJ Neon Project,festival,Delhi,28.5718,77.2247,2026-11-20 19:00:00,An evening of food festivals in Delhi. always up for a good show
+504,316,partner_b,Delhi Food Festivals Fest,DJ Neon Project,festival,Delhi,28.5717,77.225,2026-11-20 19:30:00,An evening of food festivals in Delhi. always up for a good show
+505,317,partner_a,DJ Neon Trio Live in Hyderabad,DJ Neon Trio,concert,Hyderabad,17.3915,78.5249,2026-10-07 20:00:00,An evening of sufi in Hyderabad. weekend pe plans chahiye
+506,317,partner_b,DJ Neon Trio Live in Hyderabad,DJ Neon Trio,concert,Hyderabad,17.3916,78.525,2026-10-07 20:30:00,An evening of sufi in Hyderabad. weekend pe plans chahiye
+507,318,partner_a,Aarav Project presents a musicals evening,Aarav Project,theatre,Pune,18.5213,73.7946,2026-07-18 19:00:00,An evening of musicals in Pune. chalo saath chalte hain
+508,318,partner_b,Aarav Project presents a musicals evening | Tickets,Aarav Project,theatre,Pune,18.5216,73.7944,2026-07-18 18:30:00,An evening of musicals in Pune. chalo saath chalte hain
+509,319,partner_a,Comedy Night ft. Aarav Band,Aarav Band,comedy,Bengaluru,13.0421,77.6685,2027-01-24 18:00:00,An evening of stand-up comedy in Bengaluru. always up for a good show
+510,319,partner_b,COMEDY NIGHT FT. AARAV BAND,Aarav Band,comedy,Bengaluru,13.0423,77.6686,2027-01-24 18:00:00,An evening of stand-up comedy in Bengaluru. always up for a good show
+511,320,partner_a,The Monsoon Project - Sufi Night,The Monsoon Project,concert,Pune,18.4933,73.8493,2026-11-07 20:00:00,An evening of sufi in Pune.
+512,321,partner_a,Static Tides Band presents a musicals evening,Static Tides Band,theatre,Bengaluru,12.9731,77.5858,2026-06-19 17:00:00,An evening of musicals in Bengaluru. ekdum mast vibe
+513,321,partner_b,Static Tides Band presents a musicals evening,Static Tides Band,theatre,Bengaluru,12.9728,77.5862,2026-06-19 17:00:00,An evening of musicals in Bengaluru. ekdum mast vibe
+514,322,partner_a,Saffron Sessions: Stand-up Special,Saffron Sessions,comedy,Delhi,28.6348,77.258,2026-08-18 18:00:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+515,322,partner_b,Saffron Sessions - Stand-up Special,Saffron Sessions,comedy,Delhi,28.6345,77.258,2026-08-18 18:00:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+516,323,partner_a,Mumbai Music Festivals Fest,Static Tides Live,festival,Mumbai,19.1581,72.9795,2026-11-22 19:00:00,"An evening of music festivals in Mumbai. new city, new friends"
+517,324,partner_a,Photography Workshop with Saffron Express,Saffron Express,workshop,Pune,18.5144,73.8568,2026-11-28 20:00:00,An evening of photography in Pune.
+518,325,partner_a,Delhi Food Festivals Fest,Blue Lantern Live,festival,Delhi,28.6022,77.2427,2026-10-16 20:00:00,An evening of food festivals in Delhi. always up for a good show
+519,325,partner_b,DELHI FOOD FESTIVALS FEST,Blue Lantern Live,festival,Delhi,28.6017,77.2427,2026-10-16 20:30:00,An evening of food festivals in Delhi. always up for a good show
+520,326,partner_a,Hyderabad Tech Summit 2026,The Monsoon Live,conference,Hyderabad,17.3312,78.4836,2026-12-23 21:00:00,"An evening of tech in Hyderabad. new city, new friends"
+521,327,partner_a,Comedy Night ft. DJ Neon Collective,DJ Neon Collective,comedy,Delhi,28.6181,77.1774,2026-06-26 19:00:00,An evening of improv in Delhi. chalo saath chalte hain
+522,328,partner_a,Midnight Chai Collective presents a musicals evening,Midnight Chai Collective,theatre,Hyderabad,17.3848,78.4976,2026-12-03 18:00:00,An evening of musicals in Hyderabad. weekend pe plans chahiye
+523,328,partner_b,Midnight Chai Collective presents a musicals evening,Midnight Chai Collective,theatre,Hyderabad,17.385,78.4972,2026-12-03 18:30:00,An evening of musicals in Hyderabad. weekend pe plans chahiye
+524,329,partner_a,Bengaluru Food Festivals Carnival,Kavya Collective,festival,Bengaluru,13.0421,77.6685,2026-09-16 21:00:00,An evening of food festivals in Bengaluru.
+525,329,partner_b,BENGALURU FOOD FESTIVALS CARNIVAL,Kavya Collective,festival,Bengaluru,13.0425,77.6685,2026-09-16 21:00:00,An evening of food festivals in Bengaluru.
+526,330,partner_a,Midnight Chai Express - Rock Night,Midnight Chai Express,concert,Pune,18.5144,73.8568,2026-12-14 20:00:00,"An evening of rock in Pune. new city, new friends"
+527,330,partner_b,Midnight Chai Express - Rock Night,Midnight Chai Express,concert,Pune,18.5145,73.8567,2026-12-14 19:30:00,"An evening of rock in Pune. new city, new friends"
+528,331,partner_a,Delhi Strikers vs Titans (kabaddi),Riya Sessions,sports,Delhi,28.6181,77.1774,2026-08-10 21:00:00,"An evening of kabaddi in Delhi. new city, new friends"
+529,331,partner_b,Delhi Strikers vs Titans (kabaddi) | Tickets,Riya Sessions,sports,Delhi,28.6181,77.177,2026-08-10 21:00:00,"An evening of kabaddi in Delhi. new city, new friends"
+530,332,partner_a,Coding Workshop with Saffron Sessions,Saffron Sessions,workshop,Delhi,28.5907,77.1862,2026-11-19 17:00:00,An evening of coding in Delhi. ekdum mast vibe
+531,332,partner_b,Coding Workshop with Saffron Sessions | Tickets,Saffron Sessions,workshop,Delhi,28.5904,77.1861,2026-11-19 16:30:00,An evening of coding in Delhi. ekdum mast vibe
+532,333,partner_a,Hollywood Films Marathon: The Monsoon Band Premiere,The Monsoon Band,movie,Hyderabad,17.3123,78.5082,2026-06-05 20:00:00,An evening of hollywood films in Hyderabad. weekend pe plans chahiye
+533,334,partner_a,Riya Sessions presents a theatre evening,Riya Sessions,theatre,Delhi,28.5718,77.2247,2026-07-12 18:00:00,An evening of theatre in Delhi. weekend pe plans chahiye
+534,335,partner_a,Photography Workshop with The Monsoon Trio,The Monsoon Trio,workshop,Pune,18.5213,73.7946,2026-06-28 19:00:00,An evening of photography in Pune. weekend pe plans chahiye
+535,335,partner_b,Photography Workshop with The Monsoon Trio,The Monsoon Trio,workshop,Pune,18.521,73.7944,2026-06-28 19:30:00,An evening of photography in Pune. weekend pe plans chahiye
+536,336,partner_a,Hyderabad Mavericks vs Dynamos (kabaddi),Saffron Band,sports,Hyderabad,17.4405,78.5003,2027-01-25 18:00:00,"An evening of kabaddi in Hyderabad. new city, new friends"
+537,336,partner_b,Hyderabad Mavericks vs Dynamos (kabaddi),Saffron Band,sports,Hyderabad,17.4404,78.5005,2027-01-25 18:30:00,"An evening of kabaddi in Hyderabad. new city, new friends"
+538,337,partner_a,The Monsoon Collective: Stand-up Special,The Monsoon Collective,comedy,Mumbai,19.0901,72.8287,2026-12-02 21:00:00,An evening of stand-up comedy in Mumbai. chalo saath chalte hain
+539,338,partner_a,Delhi Dynamos vs Mavericks (kabaddi),Midnight Chai Live,sports,Delhi,28.571,77.1801,2026-08-09 17:00:00,An evening of kabaddi in Delhi. always up for a good show
+540,339,partner_a,The Monsoon Collective - Bollywood Music Night,The Monsoon Collective,concert,Hyderabad,17.3123,78.5082,2026-09-06 19:00:00,An evening of bollywood music in Hyderabad. chalo saath chalte hain
+541,340,partner_a,Aarav Express presents a theatre evening,Aarav Express,theatre,Mumbai,18.9995,72.9009,2026-12-31 19:00:00,An evening of theatre in Mumbai. weekend pe plans chahiye
+542,340,partner_b,AARAV EXPRESS PRESENTS A THEATRE EVENING,Aarav Express,theatre,Mumbai,19.0001,72.9004,2026-12-31 18:30:00,An evening of theatre in Mumbai. weekend pe plans chahiye
+543,341,partner_a,Static Tides Live - Sufi Night,Static Tides Live,concert,Hyderabad,17.4405,78.5003,2026-06-26 21:00:00,An evening of sufi in Hyderabad. chalo saath chalte hain
+544,341,partner_b,Static Tides Live - Sufi Night | Tickets,Static Tides Live,concert,Hyderabad,17.4404,78.5001,2026-06-26 21:00:00,An evening of sufi in Hyderabad. chalo saath chalte hain
+545,342,partner_a,Kavya Sessions presents a musicals evening,Kavya Sessions,theatre,Pune,18.5683,73.8686,2027-01-10 19:00:00,"An evening of musicals in Pune. new city, new friends"
+546,343,partner_a,Bengaluru Tech Summit 2026,Saffron Project,conference,Bengaluru,13.0428,77.5678,2026-07-04 17:00:00,An evening of tech in Bengaluru. chalo saath chalte hain
+547,344,partner_a,Pune Food Festivals Fest,Aarav Trio,festival,Pune,18.4743,73.8858,2026-07-12 18:00:00,An evening of food festivals in Pune. ekdum mast vibe
+548,344,partner_b,Pune Food Festivals Fest | Tickets,Aarav Trio,festival,Pune,18.4741,73.8855,2026-07-12 18:30:00,An evening of food festivals in Pune. ekdum mast vibe
+549,345,partner_a,Photography Workshop with The Monsoon Project,The Monsoon Project,workshop,Bengaluru,13.0144,77.5718,2026-08-09 17:00:00,An evening of photography in Bengaluru. always up for a good show
+550,346,partner_a,Anime Marathon: Riya Sessions Premiere,Riya Sessions,movie,Mumbai,19.103,72.9041,2026-06-21 19:00:00,"An evening of anime in Mumbai. new city, new friends"
+551,347,partner_a,Mumbai Ai Summit 2026,Kavya Collective,conference,Mumbai,18.9995,72.9009,2026-10-12 17:00:00,"An evening of ai in Mumbai. new city, new friends"
+552,348,partner_a,Pottery Workshop with The Monsoon Express,The Monsoon Express,workshop,Pune,18.5144,73.8568,2026-08-01 20:00:00,An evening of pottery in Pune. ekdum mast vibe
+553,349,partner_a,Midnight Chai Express: Stand-up Special,Midnight Chai Express,comedy,Pune,18.4743,73.8858,2026-08-02 20:00:00,An evening of improv in Pune.
+554,349,partner_b,MIDNIGHT CHAI EXPRESS: STAND-UP SPECIAL,Midnight Chai Express,comedy,Pune,18.4743,73.8862,2026-08-02 19:30:00,An evening of improv in Pune.
+555,350,partner_a,Bengaluru Music Festivals Fest,Mehfil Collective,festival,Bengaluru,13.0428,77.5678,2026-10-29 18:00:00,An evening of music festivals in Bengaluru. ekdum mast vibe
+556,351,partner_a,Coding Workshop with Aarav Express,Aarav Express,workshop,Hyderabad,17.3312,78.4836,2026-06-09 19:00:00,An evening of coding in Hyderabad.
+557,352,partner_a,Delhi Tech Summit 2026,Riya Sessions,conference,Delhi,28.6247,77.1649,2026-08-18 20:00:00,An evening of tech in Delhi. weekend pe plans chahiye
+558,352,partner_b,Delhi Tech Summit 2026 | Tickets,Riya Sessions,conference,Delhi,28.6244,77.1647,2026-08-18 19:30:00,An evening of tech in Delhi. weekend pe plans chahiye
+559,353,partner_a,Comedy Night ft. Mehfil Band,Mehfil Band,comedy,Delhi,28.6022,77.2427,2026-06-15 20:00:00,An evening of stand-up comedy in Delhi. ekdum mast vibe
+560,353,partner_b,Comedy Night ft. Mehfil Band,Mehfil Band,comedy,Delhi,28.6019,77.2422,2026-06-15 20:30:00,An evening of stand-up comedy in Delhi. ekdum mast vibe
+561,354,partner_a,Delhi Tech Summit 2026,Mehfil Sessions,conference,Delhi,28.6247,77.1649,2026-12-25 17:00:00,"An evening of tech in Delhi. new city, new friends"
+562,355,partner_a,Delhi Royals vs Royals (football),Saffron Sessions,sports,Delhi,28.6274,77.2426,2026-09-28 18:00:00,An evening of football in Delhi. chalo saath chalte hain
+563,355,partner_b,Delhi Royals vs Royals (football) | Tickets,Saffron Sessions,sports,Delhi,28.6274,77.2428,2026-09-28 17:30:00,An evening of football in Delhi. chalo saath chalte hain
+564,356,partner_a,Pune Titans vs Royals (football),Mehfil Express,sports,Pune,18.5213,73.7946,2027-01-23 18:00:00,An evening of football in Pune.
+565,356,partner_b,Pune Titans vs Royals (football),Mehfil Express,sports,Pune,18.5214,73.7944,2027-01-23 18:00:00,An evening of football in Pune.
+566,357,partner_a,Delhi Titans vs Mavericks (cricket),Kavya Project,sports,Delhi,28.6247,77.1649,2026-07-05 20:00:00,An evening of cricket in Delhi. always up for a good show
+567,357,partner_b,DELHI TITANS VS MAVERICKS (CRICKET),Kavya Project,sports,Delhi,28.6248,77.165,2026-07-05 20:30:00,An evening of cricket in Delhi. always up for a good show
+568,358,partner_a,Bollywood Films Marathon: Aarav Collective Premiere,Aarav Collective,movie,Delhi,28.5907,77.1862,2026-11-21 19:00:00,"An evening of bollywood films in Delhi. new city, new friends"
+569,358,partner_b,Bollywood Films Marathon: Aarav Collective Premiere,Aarav Collective,movie,Delhi,28.5909,77.1861,2026-11-21 19:00:00,"An evening of bollywood films in Delhi. new city, new friends"
+570,359,partner_a,Mumbai Tigers vs Tigers (kabaddi),Midnight Chai Sessions,sports,Mumbai,19.1581,72.9795,2026-11-21 19:00:00,An evening of kabaddi in Mumbai. ekdum mast vibe
+571,360,partner_a,Pune Food Festivals Fest,Saffron Live,festival,Pune,18.4675,73.8723,2026-12-28 17:00:00,An evening of food festivals in Pune. weekend pe plans chahiye
+572,360,partner_b,Pune Food Festivals Fest,Saffron Live,festival,Pune,18.4677,73.8716,2026-12-28 16:30:00,An evening of food festivals in Pune. weekend pe plans chahiye
+573,361,partner_a,Blue Lantern Collective Live in Pune,Blue Lantern Collective,concert,Pune,18.5144,73.8568,2026-10-24 17:00:00,An evening of sufi in Pune. ekdum mast vibe
+574,361,partner_b,Blue Lantern Collective Live in Pune | Tickets,Blue Lantern Collective,concert,Pune,18.5146,73.8565,2026-10-24 17:00:00,An evening of sufi in Pune. ekdum mast vibe
+575,362,partner_a,Pune Startups Summit 2026,Blue Lantern Collective,conference,Pune,18.4933,73.8493,2026-06-18 21:00:00,An evening of startups in Pune. always up for a good show
+576,363,partner_a,Pune Music Festivals Carnival,Riya Project,festival,Pune,18.4743,73.8858,2026-11-16 18:00:00,An evening of music festivals in Pune. weekend pe plans chahiye
+577,363,partner_b,Pune Music Festivals Carnival | Tickets,Riya Project,festival,Pune,18.4743,73.8865,2026-11-16 18:00:00,An evening of music festivals in Pune. weekend pe plans chahiye
+578,364,partner_a,Coding Workshop with Mehfil Live,Mehfil Live,workshop,Bengaluru,13.0283,77.6532,2027-01-19 19:00:00,An evening of coding in Bengaluru.
+579,364,partner_b,Coding Workshop with Mehfil Live | Tickets,Mehfil Live,workshop,Bengaluru,13.0284,77.6532,2027-01-19 19:00:00,An evening of coding in Bengaluru.
+580,365,partner_a,The Monsoon Collective - Sufi Night,The Monsoon Collective,concert,Pune,18.5144,73.8568,2026-06-24 19:00:00,An evening of sufi in Pune. always up for a good show
+581,365,partner_b,The Monsoon Collective - Sufi Night,The Monsoon Collective,concert,Pune,18.5144,73.8575,2026-06-24 19:30:00,An evening of sufi in Pune. always up for a good show
+582,366,partner_a,Coding Workshop with Riya Trio,Riya Trio,workshop,Delhi,28.6348,77.258,2026-12-15 18:00:00,An evening of coding in Delhi. ekdum mast vibe
+583,367,partner_a,Blue Lantern Sessions - Bollywood Music Night,Blue Lantern Sessions,concert,Delhi,28.6348,77.258,2026-10-06 20:00:00,An evening of bollywood music in Delhi. chalo saath chalte hain
+584,368,partner_a,Bengaluru Startups Summit 2026,Mehfil Collective,conference,Bengaluru,13.0421,77.6685,2026-10-05 19:00:00,An evening of startups in Bengaluru.
+585,368,partner_b,Bengaluru Startups Summit 2026 | Tickets,Mehfil Collective,conference,Bengaluru,13.0422,77.6684,2026-10-05 19:30:00,An evening of startups in Bengaluru.
+586,369,partner_a,The Monsoon Live presents a theatre evening,The Monsoon Live,theatre,Bengaluru,13.0428,77.5678,2026-12-27 20:00:00,An evening of theatre in Bengaluru. ekdum mast vibe
+587,369,partner_b,THE MONSOON LIVE PRESENTS A THEATRE EVENING,The Monsoon Live,theatre,Bengaluru,13.0427,77.5681,2026-12-27 20:00:00,An evening of theatre in Bengaluru. ekdum mast vibe
+588,370,partner_a,Bengaluru Music Festivals Fest,Kavya Collective,festival,Bengaluru,13.0273,77.5959,2026-06-06 19:00:00,An evening of music festivals in Bengaluru. weekend pe plans chahiye
+589,370,partner_b,Bengaluru Music Festivals Fest,Kavya Collective,festival,Bengaluru,13.0274,77.5954,2026-06-06 19:00:00,An evening of music festivals in Bengaluru. weekend pe plans chahiye
+590,371,partner_a,Hyderabad Dynamos vs Tigers (kabaddi),DJ Neon Band,sports,Hyderabad,17.4405,78.5003,2026-12-21 17:00:00,An evening of kabaddi in Hyderabad. weekend pe plans chahiye
+591,371,partner_b,HYDERABAD DYNAMOS VS TIGERS (KABADDI),DJ Neon Band,sports,Hyderabad,17.4403,78.5001,2026-12-21 17:00:00,An evening of kabaddi in Hyderabad. weekend pe plans chahiye
+592,372,partner_a,Comedy Night ft. Kavya Collective,Kavya Collective,comedy,Pune,18.5683,73.8686,2026-08-14 20:00:00,An evening of stand-up comedy in Pune.
+593,372,partner_b,Comedy Night ft. Kavya Collective,Kavya Collective,comedy,Pune,18.5679,73.8687,2026-08-14 20:00:00,An evening of stand-up comedy in Pune.
+594,373,partner_a,Pune Royals vs Royals (football),Static Tides Express,sports,Pune,18.4933,73.8493,2026-10-29 19:00:00,An evening of football in Pune. ekdum mast vibe
+595,373,partner_b,Pune Royals vs Royals (football),Static Tides Express,sports,Pune,18.4933,73.8497,2026-10-29 19:30:00,An evening of football in Pune. ekdum mast vibe
+596,374,partner_a,Hollywood Films Marathon: The Monsoon Band Premiere,The Monsoon Band,movie,Hyderabad,17.3312,78.4836,2026-07-19 21:00:00,An evening of hollywood films in Hyderabad. always up for a good show
+597,374,partner_b,Hollywood Films Marathon - The Monsoon Band Premiere,The Monsoon Band,movie,Hyderabad,17.3314,78.4834,2026-07-19 20:30:00,An evening of hollywood films in Hyderabad. always up for a good show
+598,375,partner_a,Comedy Night ft. Saffron Band,Saffron Band,comedy,Bengaluru,13.0144,77.5718,2026-11-16 17:00:00,"An evening of stand-up comedy in Bengaluru. new city, new friends"
+599,375,partner_b,Comedy Night ft. Saffron Band,Saffron Band,comedy,Bengaluru,13.015,77.5723,2026-11-16 17:00:00,"An evening of stand-up comedy in Bengaluru. new city, new friends"
+600,376,partner_a,Hyderabad Music Festivals Fest,Mehfil Sessions,festival,Hyderabad,17.4499,78.5754,2026-06-12 20:00:00,An evening of music festivals in Hyderabad. weekend pe plans chahiye
+601,376,partner_b,Hyderabad Music Festivals Fest,Mehfil Sessions,festival,Hyderabad,17.4502,78.5757,2026-06-12 19:30:00,An evening of music festivals in Hyderabad. weekend pe plans chahiye
+602,377,partner_a,Delhi Tech Summit 2026,DJ Neon Project,conference,Delhi,28.6348,77.258,2027-01-08 18:00:00,An evening of tech in Delhi. always up for a good show
+603,378,partner_a,Mumbai Titans vs Royals (cricket),Midnight Chai Band,sports,Mumbai,19.103,72.9041,2026-07-04 18:00:00,An evening of cricket in Mumbai. chalo saath chalte hain
+604,378,partner_b,Mumbai Titans vs Royals (cricket),Midnight Chai Band,sports,Mumbai,19.1036,72.9043,2026-07-04 18:30:00,An evening of cricket in Mumbai. chalo saath chalte hain
+605,379,partner_a,Pottery Workshop with Midnight Chai Band,Midnight Chai Band,workshop,Hyderabad,17.3123,78.5082,2026-11-12 20:00:00,An evening of pottery in Hyderabad. chalo saath chalte hain
+606,379,partner_b,Pottery Workshop with Midnight Chai Band,Midnight Chai Band,workshop,Hyderabad,17.3124,78.5084,2026-11-12 20:30:00,An evening of pottery in Hyderabad. chalo saath chalte hain
+607,380,partner_a,Bengaluru Startups Summit 2026,The Monsoon Project,conference,Bengaluru,13.0493,77.5864,2026-10-06 21:00:00,"An evening of startups in Bengaluru. new city, new friends"
+608,381,partner_a,Mumbai Tigers vs Tigers (football),DJ Neon Trio,sports,Mumbai,18.9995,72.9009,2026-11-08 21:00:00,An evening of football in Mumbai. ekdum mast vibe
+609,382,partner_a,Bengaluru Mavericks vs Dynamos (football),DJ Neon Sessions,sports,Bengaluru,12.928,77.6909,2026-08-06 17:00:00,An evening of football in Bengaluru. ekdum mast vibe
+610,382,partner_b,BENGALURU MAVERICKS VS DYNAMOS (FOOTBALL),DJ Neon Sessions,sports,Bengaluru,12.9281,77.6907,2026-08-06 16:30:00,An evening of football in Bengaluru. ekdum mast vibe
+611,383,partner_a,Mumbai Music Festivals Carnival,Midnight Chai Sessions,festival,Mumbai,19.0901,72.8287,2026-07-06 20:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+612,383,partner_b,Mumbai Music Festivals Carnival,Midnight Chai Sessions,festival,Mumbai,19.0899,72.8287,2026-07-06 20:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+613,384,partner_a,Hollywood Films Marathon: Mehfil Band Premiere,Mehfil Band,movie,Delhi,28.6022,77.2427,2027-01-12 18:00:00,An evening of hollywood films in Delhi. weekend pe plans chahiye
+614,385,partner_a,Bengaluru Royals vs Tigers (cricket),Static Tides Live,sports,Bengaluru,13.0493,77.5864,2026-10-11 18:00:00,An evening of cricket in Bengaluru. ekdum mast vibe
+615,386,partner_a,DJ Neon Sessions presents a theatre evening,DJ Neon Sessions,theatre,Hyderabad,17.3123,78.5082,2026-10-29 19:00:00,An evening of theatre in Hyderabad. chalo saath chalte hain
+616,386,partner_b,DJ Neon Sessions presents a theatre evening | Tickets,DJ Neon Sessions,theatre,Hyderabad,17.312,78.5076,2026-10-29 19:00:00,An evening of theatre in Hyderabad. chalo saath chalte hain
+617,387,partner_a,Photography Workshop with DJ Neon Collective,DJ Neon Collective,workshop,Hyderabad,17.4499,78.5754,2026-09-07 18:00:00,An evening of photography in Hyderabad. chalo saath chalte hain
+618,387,partner_b,Photography Workshop with DJ Neon Collective,DJ Neon Collective,workshop,Hyderabad,17.4504,78.5749,2026-09-07 17:30:00,An evening of photography in Hyderabad. chalo saath chalte hain
+619,388,partner_a,Photography Workshop with Midnight Chai Sessions,Midnight Chai Sessions,workshop,Pune,18.5213,73.7946,2026-07-05 20:00:00,"An evening of photography in Pune. new city, new friends"
+620,389,partner_a,Pottery Workshop with The Monsoon Band,The Monsoon Band,workshop,Delhi,28.5907,77.1862,2026-10-23 19:00:00,An evening of pottery in Delhi. ekdum mast vibe
+621,389,partner_b,Pottery Workshop with The Monsoon Band | Tickets,The Monsoon Band,workshop,Delhi,28.5901,77.1862,2026-10-23 18:30:00,An evening of pottery in Delhi. ekdum mast vibe
+622,390,partner_a,Blue Lantern Project presents a musicals evening,Blue Lantern Project,theatre,Delhi,28.6022,77.2427,2026-11-08 21:00:00,"An evening of musicals in Delhi. new city, new friends"
+623,390,partner_b,BLUE LANTERN PROJECT PRESENTS A MUSICALS EVENING,Blue Lantern Project,theatre,Delhi,28.6023,77.2428,2026-11-08 21:30:00,"An evening of musicals in Delhi. new city, new friends"
+624,391,partner_a,Kavya Project Live in Delhi,Kavya Project,concert,Delhi,28.5907,77.1862,2027-01-10 20:00:00,An evening of rock in Delhi.
+625,392,partner_a,Bengaluru Startups Summit 2026,Riya Band,conference,Bengaluru,13.0428,77.5678,2026-08-24 21:00:00,"An evening of startups in Bengaluru. new city, new friends"
+626,393,partner_a,Hyderabad Music Festivals Carnival,Blue Lantern Project,festival,Hyderabad,17.3149,78.4586,2026-06-03 19:00:00,An evening of music festivals in Hyderabad.
+627,394,partner_a,Kavya Collective presents a theatre evening,Kavya Collective,theatre,Hyderabad,17.3123,78.5082,2026-11-09 17:00:00,An evening of theatre in Hyderabad.
+628,395,partner_a,Delhi Music Festivals Fest,Saffron Sessions,festival,Delhi,28.571,77.1801,2026-06-10 19:00:00,An evening of music festivals in Delhi. always up for a good show
+629,396,partner_a,Anime Marathon: Saffron Collective Premiere,Saffron Collective,movie,Mumbai,19.103,72.9041,2026-12-24 18:00:00,An evening of anime in Mumbai. always up for a good show
+630,396,partner_b,Anime Marathon - Saffron Collective Premiere,Saffron Collective,movie,Mumbai,19.1033,72.904,2026-12-24 18:00:00,An evening of anime in Mumbai. always up for a good show
+631,397,partner_a,Delhi Strikers vs Royals (football),Midnight Chai Sessions,sports,Delhi,28.6348,77.258,2026-11-29 18:00:00,An evening of football in Delhi. always up for a good show
+632,398,partner_a,Delhi Strikers vs Royals (cricket),Kavya Collective,sports,Delhi,28.571,77.1801,2026-09-04 17:00:00,An evening of cricket in Delhi. ekdum mast vibe
+633,398,partner_b,DELHI STRIKERS VS ROYALS (CRICKET),Kavya Collective,sports,Delhi,28.5711,77.1804,2026-09-04 17:00:00,An evening of cricket in Delhi. ekdum mast vibe
+634,399,partner_a,Pune Tigers vs Titans (cricket),The Monsoon Express,sports,Pune,18.4743,73.8858,2026-09-29 18:00:00,An evening of cricket in Pune. weekend pe plans chahiye
+635,400,partner_a,Aarav Project presents a musicals evening,Aarav Project,theatre,Pune,18.4675,73.8723,2026-10-13 18:00:00,An evening of musicals in Pune. ekdum mast vibe
+636,401,partner_a,Comedy Night ft. Riya Live,Riya Live,comedy,Pune,18.5213,73.7946,2026-07-07 18:00:00,An evening of stand-up comedy in Pune. always up for a good show
+637,402,partner_a,Midnight Chai Live - Hip Hop Night,Midnight Chai Live,concert,Hyderabad,17.4499,78.5754,2026-06-21 17:00:00,"An evening of hip hop in Hyderabad. new city, new friends"
+638,402,partner_b,Midnight Chai Live - Hip Hop Night,Midnight Chai Live,concert,Hyderabad,17.4498,78.5757,2026-06-21 17:00:00,"An evening of hip hop in Hyderabad. new city, new friends"
+639,403,partner_a,Static Tides Project presents a musicals evening,Static Tides Project,theatre,Pune,18.5213,73.7946,2026-11-19 20:00:00,An evening of musicals in Pune. weekend pe plans chahiye
+640,403,partner_b,Static Tides Project presents a musicals evening,Static Tides Project,theatre,Pune,18.5209,73.7943,2026-11-19 19:30:00,An evening of musicals in Pune. weekend pe plans chahiye
+641,404,partner_a,Hyderabad Titans vs Tigers (cricket),DJ Neon Collective,sports,Hyderabad,17.3123,78.5082,2026-10-27 20:00:00,"An evening of cricket in Hyderabad. new city, new friends"
+642,404,partner_b,Hyderabad Titans vs Tigers (cricket) | Tickets,DJ Neon Collective,sports,Hyderabad,17.3121,78.5081,2026-10-27 19:30:00,"An evening of cricket in Hyderabad. new city, new friends"
+643,405,partner_a,DJ Neon Live: Stand-up Special,DJ Neon Live,comedy,Hyderabad,17.3123,78.5082,2026-10-07 19:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+644,405,partner_b,DJ Neon Live: Stand-up Special | Tickets,DJ Neon Live,comedy,Hyderabad,17.3119,78.5084,2026-10-07 19:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+645,406,partner_a,Mumbai Food Festivals Fest,Riya Live,festival,Mumbai,19.067,72.8295,2026-07-07 20:00:00,An evening of food festivals in Mumbai. always up for a good show
+646,407,partner_a,Bollywood Films Marathon: Aarav Live Premiere,Aarav Live,movie,Bengaluru,13.0428,77.5678,2026-11-22 21:00:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+647,407,partner_b,Bollywood Films Marathon: Aarav Live Premiere,Aarav Live,movie,Bengaluru,13.0426,77.5681,2026-11-22 21:00:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+648,408,partner_a,Bengaluru Music Festivals Carnival,Static Tides Live,festival,Bengaluru,13.0421,77.6685,2026-09-29 20:00:00,An evening of music festivals in Bengaluru.
+649,409,partner_a,Pune Tech Summit 2026,Blue Lantern Express,conference,Pune,18.4933,73.8493,2026-11-04 19:00:00,An evening of tech in Pune. chalo saath chalte hain
+650,410,partner_a,Pottery Workshop with Riya Express,Riya Express,workshop,Mumbai,18.9995,72.9009,2027-01-12 21:00:00,"An evening of pottery in Mumbai. new city, new friends"
+651,411,partner_a,Hyderabad Ai Summit 2026,Static Tides Band,conference,Hyderabad,17.3933,78.5429,2026-07-21 17:00:00,"An evening of ai in Hyderabad. new city, new friends"
+652,411,partner_b,Hyderabad Ai Summit 2026,Static Tides Band,conference,Hyderabad,17.3931,78.543,2026-07-21 16:30:00,"An evening of ai in Hyderabad. new city, new friends"
+653,412,partner_a,Bollywood Films Marathon: DJ Neon Band Premiere,DJ Neon Band,movie,Mumbai,19.1081,72.9657,2026-10-06 20:00:00,An evening of bollywood films in Mumbai. ekdum mast vibe
+654,412,partner_b,Bollywood Films Marathon - DJ Neon Band Premiere,DJ Neon Band,movie,Mumbai,19.1082,72.9658,2026-10-06 19:30:00,An evening of bollywood films in Mumbai. ekdum mast vibe
+655,413,partner_a,Anime Marathon: Blue Lantern Trio Premiere,Blue Lantern Trio,movie,Bengaluru,13.0493,77.5864,2026-07-25 21:00:00,"An evening of anime in Bengaluru. new city, new friends"
+656,413,partner_b,ANIME MARATHON: BLUE LANTERN TRIO PREMIERE,Blue Lantern Trio,movie,Bengaluru,13.0494,77.5863,2026-07-25 21:30:00,"An evening of anime in Bengaluru. new city, new friends"
+657,414,partner_a,Riya Live: Stand-up Special,Riya Live,comedy,Hyderabad,17.3312,78.4836,2027-01-08 18:00:00,An evening of stand-up comedy in Hyderabad.
+658,414,partner_b,Riya Live: Stand-up Special | Tickets,Riya Live,comedy,Hyderabad,17.331,78.483,2027-01-08 18:30:00,An evening of stand-up comedy in Hyderabad.
+659,415,partner_a,Aarav Trio presents a musicals evening,Aarav Trio,theatre,Pune,18.5144,73.8568,2026-08-02 21:00:00,An evening of musicals in Pune.
+660,415,partner_b,Aarav Trio presents a musicals evening,Aarav Trio,theatre,Pune,18.5149,73.857,2026-08-02 21:00:00,An evening of musicals in Pune.
+661,416,partner_a,Mumbai Music Festivals Carnival,Saffron Collective,festival,Mumbai,19.0259,72.9696,2026-07-16 19:00:00,"An evening of music festivals in Mumbai. new city, new friends"
+662,416,partner_b,Mumbai Music Festivals Carnival,Saffron Collective,festival,Mumbai,19.0258,72.97,2026-07-16 18:30:00,"An evening of music festivals in Mumbai. new city, new friends"
+663,417,partner_a,Bollywood Films Marathon: Midnight Chai Trio Premiere,Midnight Chai Trio,movie,Bengaluru,13.0421,77.6685,2026-07-27 17:00:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+664,418,partner_a,Mumbai Food Festivals Carnival,Mehfil Sessions,festival,Mumbai,19.1697,72.8776,2026-06-19 18:00:00,An evening of food festivals in Mumbai.
+665,418,partner_b,Mumbai Food Festivals Carnival,Mehfil Sessions,festival,Mumbai,19.1695,72.8774,2026-06-19 18:30:00,An evening of food festivals in Mumbai.
+666,419,partner_a,Delhi Mavericks vs Royals (cricket),Aarav Project,sports,Delhi,28.6274,77.2426,2026-06-15 20:00:00,An evening of cricket in Delhi.
+667,419,partner_b,DELHI MAVERICKS VS ROYALS (CRICKET),Aarav Project,sports,Delhi,28.6278,77.2425,2026-06-15 20:00:00,An evening of cricket in Delhi.
+668,420,partner_a,Saffron Project presents a theatre evening,Saffron Project,theatre,Hyderabad,17.3123,78.5082,2026-09-10 21:00:00,An evening of theatre in Hyderabad. always up for a good show
+669,420,partner_b,Saffron Project presents a theatre evening,Saffron Project,theatre,Hyderabad,17.3125,78.5085,2026-09-10 21:00:00,An evening of theatre in Hyderabad. always up for a good show
+670,421,partner_a,Midnight Chai Express presents a musicals evening,Midnight Chai Express,theatre,Delhi,28.6181,77.1774,2026-09-29 18:00:00,An evening of musicals in Delhi. chalo saath chalte hain
+671,421,partner_b,Midnight Chai Express presents a musicals evening | Tickets,Midnight Chai Express,theatre,Delhi,28.6181,77.1773,2026-09-29 18:00:00,An evening of musicals in Delhi. chalo saath chalte hain
+672,422,partner_a,The Monsoon Band: Stand-up Special,The Monsoon Band,comedy,Mumbai,19.1581,72.9795,2026-07-16 20:00:00,An evening of improv in Mumbai. always up for a good show
+673,422,partner_b,The Monsoon Band: Stand-up Special,The Monsoon Band,comedy,Mumbai,19.1577,72.9797,2026-07-16 20:00:00,An evening of improv in Mumbai. always up for a good show
+674,423,partner_a,Comedy Night ft. Aarav Sessions,Aarav Sessions,comedy,Mumbai,19.0901,72.8287,2026-10-21 18:00:00,An evening of improv in Mumbai.
+675,424,partner_a,Aarav Project presents a theatre evening,Aarav Project,theatre,Pune,18.4933,73.8493,2026-10-03 17:00:00,An evening of theatre in Pune.
+676,425,partner_a,Bollywood Films Marathon: Saffron Sessions Premiere,Saffron Sessions,movie,Mumbai,19.1697,72.8776,2026-07-16 18:00:00,An evening of bollywood films in Mumbai.
+677,425,partner_b,Bollywood Films Marathon: Saffron Sessions Premiere,Saffron Sessions,movie,Mumbai,19.1697,72.8781,2026-07-16 17:30:00,An evening of bollywood films in Mumbai.
+678,426,partner_a,Hyderabad Mavericks vs Royals (cricket),Saffron Trio,sports,Hyderabad,17.3933,78.5429,2026-07-24 20:00:00,An evening of cricket in Hyderabad. always up for a good show
+679,426,partner_b,Hyderabad Mavericks vs Royals (cricket),Saffron Trio,sports,Hyderabad,17.3929,78.5428,2026-07-24 20:00:00,An evening of cricket in Hyderabad. always up for a good show
+680,427,partner_a,Mumbai Music Festivals Fest,Kavya Band,festival,Mumbai,19.067,72.8295,2026-06-13 20:00:00,An evening of music festivals in Mumbai. ekdum mast vibe
+681,427,partner_b,Mumbai Music Festivals Fest | Tickets,Kavya Band,festival,Mumbai,19.0673,72.8298,2026-06-13 20:30:00,An evening of music festivals in Mumbai. ekdum mast vibe
+682,428,partner_a,Delhi Dynamos vs Titans (cricket),Mehfil Live,sports,Delhi,28.5907,77.1862,2026-11-04 20:00:00,An evening of cricket in Delhi. always up for a good show
+683,429,partner_a,Hollywood Films Marathon: Mehfil Express Premiere,Mehfil Express,movie,Pune,18.4675,73.8723,2026-10-08 19:00:00,An evening of hollywood films in Pune. chalo saath chalte hain
+684,430,partner_a,Bengaluru Mavericks vs Royals (kabaddi),Saffron Project,sports,Bengaluru,12.928,77.6909,2026-07-20 20:00:00,An evening of kabaddi in Bengaluru. ekdum mast vibe
+685,431,partner_a,Hollywood Films Marathon: Aarav Sessions Premiere,Aarav Sessions,movie,Mumbai,19.1581,72.9795,2026-06-23 20:00:00,An evening of hollywood films in Mumbai. always up for a good show
+686,432,partner_a,Blue Lantern Trio Live in Hyderabad,Blue Lantern Trio,concert,Hyderabad,17.3123,78.5082,2027-01-06 17:00:00,An evening of bollywood music in Hyderabad.
+687,432,partner_b,Blue Lantern Trio Live in Hyderabad,Blue Lantern Trio,concert,Hyderabad,17.3123,78.5081,2027-01-06 17:00:00,An evening of bollywood music in Hyderabad.
+688,433,partner_a,Bengaluru Music Festivals Carnival,Kavya Trio,festival,Bengaluru,13.0283,77.6532,2026-10-10 21:00:00,"An evening of music festivals in Bengaluru. new city, new friends"
+689,433,partner_b,Bengaluru Music Festivals Carnival | Tickets,Kavya Trio,festival,Bengaluru,13.0284,77.653,2026-10-10 21:00:00,"An evening of music festivals in Bengaluru. new city, new friends"
+690,434,partner_a,The Monsoon Collective - Bollywood Music Night,The Monsoon Collective,concert,Delhi,28.5718,77.2247,2026-06-01 19:00:00,An evening of bollywood music in Delhi. chalo saath chalte hain
+691,435,partner_a,Riya Collective presents a musicals evening,Riya Collective,theatre,Hyderabad,17.3123,78.5082,2026-09-09 18:00:00,An evening of musicals in Hyderabad. always up for a good show
+692,435,partner_b,Riya Collective presents a musicals evening,Riya Collective,theatre,Hyderabad,17.312,78.5084,2026-09-09 18:00:00,An evening of musicals in Hyderabad. always up for a good show
+693,436,partner_a,Bollywood Films Marathon: Midnight Chai Band Premiere,Midnight Chai Band,movie,Mumbai,19.1081,72.9657,2026-09-24 21:00:00,An evening of bollywood films in Mumbai. chalo saath chalte hain
+694,436,partner_b,Bollywood Films Marathon: Midnight Chai Band Premiere,Midnight Chai Band,movie,Mumbai,19.1085,72.9654,2026-09-24 21:00:00,An evening of bollywood films in Mumbai. chalo saath chalte hain
+695,437,partner_a,Bollywood Films Marathon: DJ Neon Band Premiere,DJ Neon Band,movie,Bengaluru,12.9731,77.5858,2027-01-02 20:00:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+696,438,partner_a,Mumbai Dynamos vs Strikers (kabaddi),The Monsoon Live,sports,Mumbai,19.1081,72.9657,2026-12-31 19:00:00,An evening of kabaddi in Mumbai.
+697,439,partner_a,Mumbai Music Festivals Carnival,The Monsoon Express,festival,Mumbai,19.0901,72.8287,2026-06-14 21:00:00,An evening of music festivals in Mumbai. ekdum mast vibe
+698,439,partner_b,MUMBAI MUSIC FESTIVALS CARNIVAL,The Monsoon Express,festival,Mumbai,19.09,72.8287,2026-06-14 21:00:00,An evening of music festivals in Mumbai. ekdum mast vibe
+699,440,partner_a,Comedy Night ft. Midnight Chai Project,Midnight Chai Project,comedy,Delhi,28.6181,77.1774,2026-06-28 21:00:00,"An evening of improv in Delhi. new city, new friends"
+700,441,partner_a,Mumbai Food Festivals Carnival,Riya Sessions,festival,Mumbai,19.067,72.8295,2027-01-14 17:00:00,An evening of food festivals in Mumbai.
+701,442,partner_a,Pottery Workshop with Midnight Chai Sessions,Midnight Chai Sessions,workshop,Bengaluru,13.0283,77.6532,2026-06-05 21:00:00,An evening of pottery in Bengaluru. ekdum mast vibe
+702,442,partner_b,Pottery Workshop with Midnight Chai Sessions,Midnight Chai Sessions,workshop,Bengaluru,13.0282,77.6535,2026-06-05 21:00:00,An evening of pottery in Bengaluru. ekdum mast vibe
+703,443,partner_a,Delhi Food Festivals Fest,Midnight Chai Band,festival,Delhi,28.6181,77.1774,2026-08-17 20:00:00,An evening of food festivals in Delhi. weekend pe plans chahiye
+704,443,partner_b,Delhi Food Festivals Fest,Midnight Chai Band,festival,Delhi,28.618,77.1778,2026-08-17 20:30:00,An evening of food festivals in Delhi. weekend pe plans chahiye
+705,444,partner_a,Mumbai Titans vs Mavericks (cricket),Static Tides Trio,sports,Mumbai,19.1697,72.8776,2026-09-12 17:00:00,An evening of cricket in Mumbai. ekdum mast vibe
+706,445,partner_a,Mumbai Strikers vs Strikers (football),Aarav Sessions,sports,Mumbai,19.0259,72.9696,2026-08-21 20:00:00,An evening of football in Mumbai. weekend pe plans chahiye
+707,445,partner_b,Mumbai Strikers vs Strikers (football),Aarav Sessions,sports,Mumbai,19.0259,72.9698,2026-08-21 20:30:00,An evening of football in Mumbai. weekend pe plans chahiye
+708,446,partner_a,Midnight Chai Express: Stand-up Special,Midnight Chai Express,comedy,Mumbai,19.1081,72.9657,2026-10-24 21:00:00,An evening of improv in Mumbai. ekdum mast vibe
+709,446,partner_b,Midnight Chai Express: Stand-up Special,Midnight Chai Express,comedy,Mumbai,19.1083,72.9655,2026-10-24 21:30:00,An evening of improv in Mumbai. ekdum mast vibe
+710,447,partner_a,Anime Marathon: Kavya Collective Premiere,Kavya Collective,movie,Hyderabad,17.3149,78.4586,2026-09-15 21:00:00,An evening of anime in Hyderabad. ekdum mast vibe
+711,447,partner_b,Anime Marathon: Kavya Collective Premiere,Kavya Collective,movie,Hyderabad,17.3151,78.4582,2026-09-15 21:00:00,An evening of anime in Hyderabad. ekdum mast vibe
+712,448,partner_a,Delhi Mavericks vs Titans (cricket),Midnight Chai Trio,sports,Delhi,28.6022,77.2427,2026-11-13 20:00:00,An evening of cricket in Delhi. weekend pe plans chahiye
+713,449,partner_a,Blue Lantern Collective: Stand-up Special,Blue Lantern Collective,comedy,Bengaluru,12.928,77.6909,2026-07-09 18:00:00,An evening of stand-up comedy in Bengaluru. chalo saath chalte hain
+714,450,partner_a,Pune Tigers vs Strikers (kabaddi),Blue Lantern Collective,sports,Pune,18.5595,73.9874,2026-09-05 20:00:00,An evening of kabaddi in Pune. chalo saath chalte hain
+715,450,partner_b,Pune Tigers vs Strikers (kabaddi) | Tickets,Blue Lantern Collective,sports,Pune,18.5598,73.9873,2026-09-05 20:00:00,An evening of kabaddi in Pune. chalo saath chalte hain
+716,451,partner_a,Bengaluru Royals vs Strikers (cricket),Static Tides Trio,sports,Bengaluru,13.0283,77.6532,2026-12-01 18:00:00,An evening of cricket in Bengaluru. weekend pe plans chahiye
+717,452,partner_a,Hyderabad Titans vs Mavericks (football),Saffron Collective,sports,Hyderabad,17.3123,78.5082,2026-07-01 20:00:00,An evening of football in Hyderabad. ekdum mast vibe
+718,453,partner_a,Pune Music Festivals Fest,Aarav Express,festival,Pune,18.5213,73.7946,2026-08-22 18:00:00,An evening of music festivals in Pune. chalo saath chalte hain
+719,454,partner_a,Bengaluru Food Festivals Carnival,Saffron Trio,festival,Bengaluru,13.0283,77.6532,2026-06-28 20:00:00,An evening of food festivals in Bengaluru. always up for a good show
+720,454,partner_b,Bengaluru Food Festivals Carnival,Saffron Trio,festival,Bengaluru,13.028,77.6536,2026-06-28 19:30:00,An evening of food festivals in Bengaluru. always up for a good show
+721,455,partner_a,Bengaluru Food Festivals Carnival,Static Tides Project,festival,Bengaluru,13.0273,77.5959,2026-10-08 18:00:00,An evening of food festivals in Bengaluru. always up for a good show
+722,455,partner_b,Bengaluru Food Festivals Carnival,Static Tides Project,festival,Bengaluru,13.0275,77.596,2026-10-08 17:30:00,An evening of food festivals in Bengaluru. always up for a good show
+723,456,partner_a,Photography Workshop with Mehfil Express,Mehfil Express,workshop,Delhi,28.6348,77.258,2026-07-22 19:00:00,An evening of photography in Delhi. always up for a good show
+724,456,partner_b,Photography Workshop with Mehfil Express,Mehfil Express,workshop,Delhi,28.6345,77.2581,2026-07-22 19:00:00,An evening of photography in Delhi. always up for a good show
+725,457,partner_a,Delhi Music Festivals Carnival,Blue Lantern Live,festival,Delhi,28.5718,77.2247,2026-08-31 20:00:00,An evening of music festivals in Delhi.
+726,458,partner_a,Bollywood Films Marathon: Saffron Trio Premiere,Saffron Trio,movie,Bengaluru,13.0273,77.5959,2026-10-15 18:00:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+727,458,partner_b,Bollywood Films Marathon - Saffron Trio Premiere,Saffron Trio,movie,Bengaluru,13.0271,77.5964,2026-10-15 18:30:00,An evening of bollywood films in Bengaluru. weekend pe plans chahiye
+728,459,partner_a,Pune Tigers vs Dynamos (kabaddi),Blue Lantern Express,sports,Pune,18.5683,73.8686,2027-01-18 20:00:00,An evening of kabaddi in Pune. always up for a good show
+729,460,partner_a,Coding Workshop with Mehfil Project,Mehfil Project,workshop,Pune,18.5213,73.7946,2026-06-21 20:00:00,An evening of coding in Pune. chalo saath chalte hain
+730,460,partner_b,Coding Workshop with Mehfil Project,Mehfil Project,workshop,Pune,18.5208,73.7944,2026-06-21 19:30:00,An evening of coding in Pune. chalo saath chalte hain
+731,461,partner_a,Delhi Ai Summit 2026,Saffron Project,conference,Delhi,28.6181,77.1774,2026-12-21 17:00:00,An evening of ai in Delhi. weekend pe plans chahiye
+732,461,partner_b,DELHI AI SUMMIT 2026,Saffron Project,conference,Delhi,28.6187,77.1774,2026-12-21 17:00:00,An evening of ai in Delhi. weekend pe plans chahiye
+733,462,partner_a,Pune Food Festivals Fest,The Monsoon Collective,festival,Pune,18.5595,73.9874,2026-09-13 21:00:00,An evening of food festivals in Pune. always up for a good show
+734,462,partner_b,Pune Food Festivals Fest,The Monsoon Collective,festival,Pune,18.5595,73.9871,2026-09-13 21:30:00,An evening of food festivals in Pune. always up for a good show
+735,463,partner_a,DJ Neon Band - Rock Night,DJ Neon Band,concert,Delhi,28.6022,77.2427,2027-01-22 18:00:00,"An evening of rock in Delhi. new city, new friends"
+736,464,partner_a,Bengaluru Strikers vs Dynamos (football),DJ Neon Collective,sports,Bengaluru,13.0273,77.5959,2026-09-26 20:00:00,An evening of football in Bengaluru. always up for a good show
+737,464,partner_b,Bengaluru Strikers vs Dynamos (football) | Tickets,DJ Neon Collective,sports,Bengaluru,13.027,77.5953,2026-09-26 20:00:00,An evening of football in Bengaluru. always up for a good show
+738,465,partner_a,Bengaluru Food Festivals Carnival,Kavya Express,festival,Bengaluru,12.928,77.6909,2026-06-16 19:00:00,An evening of food festivals in Bengaluru. always up for a good show
+739,466,partner_a,Bollywood Films Marathon: Riya Collective Premiere,Riya Collective,movie,Hyderabad,17.4405,78.5003,2026-09-02 19:00:00,"An evening of bollywood films in Hyderabad. new city, new friends"
+740,466,partner_b,BOLLYWOOD FILMS MARATHON: RIYA COLLECTIVE PREMIERE,Riya Collective,movie,Hyderabad,17.4402,78.5006,2026-09-02 19:00:00,"An evening of bollywood films in Hyderabad. new city, new friends"
+741,467,partner_a,Comedy Night ft. Saffron Express,Saffron Express,comedy,Delhi,28.6348,77.258,2026-09-08 17:00:00,An evening of stand-up comedy in Delhi. always up for a good show
+742,467,partner_b,COMEDY NIGHT FT. SAFFRON EXPRESS,Saffron Express,comedy,Delhi,28.6349,77.258,2026-09-08 17:00:00,An evening of stand-up comedy in Delhi. always up for a good show
+743,468,partner_a,Blue Lantern Band Live in Hyderabad,Blue Lantern Band,concert,Hyderabad,17.3933,78.5429,2026-07-29 17:00:00,An evening of rock in Hyderabad. weekend pe plans chahiye
+744,468,partner_b,BLUE LANTERN BAND LIVE IN HYDERABAD,Blue Lantern Band,concert,Hyderabad,17.393,78.5427,2026-07-29 17:00:00,An evening of rock in Hyderabad. weekend pe plans chahiye
+745,469,partner_a,Hyderabad Titans vs Royals (football),DJ Neon Trio,sports,Hyderabad,17.3848,78.4976,2026-10-27 20:00:00,An evening of football in Hyderabad. weekend pe plans chahiye
+746,469,partner_b,Hyderabad Titans vs Royals (football) | Tickets,DJ Neon Trio,sports,Hyderabad,17.385,78.4979,2026-10-27 20:00:00,An evening of football in Hyderabad. weekend pe plans chahiye
+747,470,partner_a,Bollywood Films Marathon: Aarav Collective Premiere,Aarav Collective,movie,Delhi,28.5907,77.1862,2026-09-30 18:00:00,An evening of bollywood films in Delhi.
+748,470,partner_b,Bollywood Films Marathon: Aarav Collective Premiere,Aarav Collective,movie,Delhi,28.5912,77.1858,2026-09-30 17:30:00,An evening of bollywood films in Delhi.
+749,471,partner_a,Mehfil Live presents a theatre evening,Mehfil Live,theatre,Bengaluru,13.0493,77.5864,2027-01-09 18:00:00,An evening of theatre in Bengaluru. always up for a good show
+750,471,partner_b,MEHFIL LIVE PRESENTS A THEATRE EVENING,Mehfil Live,theatre,Bengaluru,13.0492,77.5869,2027-01-09 18:30:00,An evening of theatre in Bengaluru. always up for a good show
+751,472,partner_a,Delhi Ai Summit 2026,DJ Neon Band,conference,Delhi,28.6022,77.2427,2026-08-01 19:00:00,"An evening of ai in Delhi. new city, new friends"
+752,472,partner_b,Delhi Ai Summit 2026 | Tickets,DJ Neon Band,conference,Delhi,28.602,77.2426,2026-08-01 19:30:00,"An evening of ai in Delhi. new city, new friends"
+753,473,partner_a,Comedy Night ft. Kavya Project,Kavya Project,comedy,Mumbai,19.1081,72.9657,2027-01-18 19:00:00,"An evening of stand-up comedy in Mumbai. new city, new friends"
+754,474,partner_a,Blue Lantern Band Live in Mumbai,Blue Lantern Band,concert,Mumbai,19.067,72.8295,2026-08-18 18:00:00,An evening of sufi in Mumbai. chalo saath chalte hain
+755,474,partner_b,Blue Lantern Band LIVE @ Mumbai,Blue Lantern Band,concert,Mumbai,19.0673,72.8298,2026-08-18 17:30:00,An evening of sufi in Mumbai. chalo saath chalte hain
+756,475,partner_a,Midnight Chai Collective presents a theatre evening,Midnight Chai Collective,theatre,Mumbai,19.0901,72.8287,2026-12-28 19:00:00,"An evening of theatre in Mumbai. new city, new friends"
+757,475,partner_b,Midnight Chai Collective presents a theatre evening,Midnight Chai Collective,theatre,Mumbai,19.09,72.8289,2026-12-28 19:00:00,"An evening of theatre in Mumbai. new city, new friends"
+758,476,partner_a,Blue Lantern Live: Stand-up Special,Blue Lantern Live,comedy,Hyderabad,17.4405,78.5003,2027-01-12 18:00:00,An evening of improv in Hyderabad. weekend pe plans chahiye
+759,477,partner_a,Comedy Night ft. Kavya Sessions,Kavya Sessions,comedy,Mumbai,19.0901,72.8287,2026-06-18 20:00:00,An evening of improv in Mumbai. always up for a good show
+760,478,partner_a,Aarav Project Live in Hyderabad,Aarav Project,concert,Hyderabad,17.4405,78.5003,2026-06-03 20:00:00,An evening of indie music in Hyderabad. chalo saath chalte hain
+761,479,partner_a,Mumbai Strikers vs Tigers (football),Saffron Trio,sports,Mumbai,19.0901,72.8287,2026-10-16 19:00:00,An evening of football in Mumbai. ekdum mast vibe
+762,479,partner_b,Mumbai Strikers vs Tigers (football) | Tickets,Saffron Trio,sports,Mumbai,19.0901,72.8288,2026-10-16 19:00:00,An evening of football in Mumbai. ekdum mast vibe
+763,480,partner_a,Comedy Night ft. The Monsoon Express,The Monsoon Express,comedy,Hyderabad,17.4405,78.5003,2026-08-30 20:00:00,An evening of stand-up comedy in Hyderabad. weekend pe plans chahiye
+764,480,partner_b,COMEDY NIGHT FT. THE MONSOON EXPRESS,The Monsoon Express,comedy,Hyderabad,17.4401,78.5004,2026-08-30 20:30:00,An evening of stand-up comedy in Hyderabad. weekend pe plans chahiye
+765,481,partner_a,DJ Neon Band presents a theatre evening,DJ Neon Band,theatre,Delhi,28.6274,77.2426,2026-07-27 18:00:00,An evening of theatre in Delhi. weekend pe plans chahiye
+766,481,partner_b,DJ Neon Band presents a theatre evening | Tickets,DJ Neon Band,theatre,Delhi,28.6272,77.2422,2026-07-27 18:00:00,An evening of theatre in Delhi. weekend pe plans chahiye
+767,482,partner_a,Photography Workshop with Saffron Live,Saffron Live,workshop,Bengaluru,13.0493,77.5864,2026-10-09 18:00:00,"An evening of photography in Bengaluru. new city, new friends"
+768,483,partner_a,Midnight Chai Collective presents a musicals evening,Midnight Chai Collective,theatre,Bengaluru,13.0283,77.6532,2026-07-12 19:00:00,An evening of musicals in Bengaluru.
+769,484,partner_a,Pottery Workshop with Riya Live,Riya Live,workshop,Pune,18.5595,73.9874,2026-06-20 18:00:00,"An evening of pottery in Pune. new city, new friends"
+770,484,partner_b,Pottery Workshop with Riya Live,Riya Live,workshop,Pune,18.5595,73.9873,2026-06-20 17:30:00,"An evening of pottery in Pune. new city, new friends"
+771,485,partner_a,Bollywood Films Marathon: DJ Neon Live Premiere,DJ Neon Live,movie,Mumbai,18.9995,72.9009,2026-09-16 21:00:00,An evening of bollywood films in Mumbai. ekdum mast vibe
+772,486,partner_a,Pottery Workshop with Kavya Sessions,Kavya Sessions,workshop,Hyderabad,17.4499,78.5754,2026-07-18 20:00:00,An evening of pottery in Hyderabad. always up for a good show
+773,486,partner_b,Pottery Workshop with Kavya Sessions,Kavya Sessions,workshop,Hyderabad,17.4499,78.5754,2026-07-18 20:30:00,An evening of pottery in Hyderabad. always up for a good show
+774,487,partner_a,Pune Tigers vs Strikers (football),Midnight Chai Trio,sports,Pune,18.4833,73.9283,2026-06-20 18:00:00,An evening of football in Pune. always up for a good show
+775,487,partner_b,Pune Tigers vs Strikers (football),Midnight Chai Trio,sports,Pune,18.4837,73.9285,2026-06-20 18:00:00,An evening of football in Pune. always up for a good show
+776,488,partner_a,Aarav Sessions - Sufi Night,Aarav Sessions,concert,Mumbai,19.0259,72.9696,2026-10-29 19:00:00,"An evening of sufi in Mumbai. new city, new friends"
+777,489,partner_a,Bengaluru Food Festivals Carnival,Static Tides Trio,festival,Bengaluru,13.0493,77.5864,2027-01-08 17:00:00,An evening of food festivals in Bengaluru. always up for a good show
+778,489,partner_b,Bengaluru Food Festivals Carnival,Static Tides Trio,festival,Bengaluru,13.0494,77.5868,2027-01-08 17:00:00,An evening of food festivals in Bengaluru. always up for a good show
+779,490,partner_a,Riya Collective Live in Bengaluru,Riya Collective,concert,Bengaluru,12.9731,77.5858,2026-08-12 19:00:00,An evening of sufi in Bengaluru. ekdum mast vibe
+780,490,partner_b,Riya Collective Live in Bengaluru | Tickets,Riya Collective,concert,Bengaluru,12.9729,77.5857,2026-08-12 19:30:00,An evening of sufi in Bengaluru. ekdum mast vibe
+781,491,partner_a,Kavya Collective: Stand-up Special,Kavya Collective,comedy,Bengaluru,13.0283,77.6532,2026-09-28 18:00:00,An evening of stand-up comedy in Bengaluru. chalo saath chalte hain
+782,491,partner_b,Kavya Collective: Stand-up Special,Kavya Collective,comedy,Bengaluru,13.0286,77.6534,2026-09-28 17:30:00,An evening of stand-up comedy in Bengaluru. chalo saath chalte hain
+783,492,partner_a,Midnight Chai Sessions Live in Bengaluru,Midnight Chai Sessions,concert,Bengaluru,13.0421,77.6685,2026-11-27 20:00:00,An evening of hip hop in Bengaluru. weekend pe plans chahiye
+784,493,partner_a,Static Tides Band - Edm Night,Static Tides Band,concert,Mumbai,19.067,72.8295,2026-06-12 19:00:00,An evening of edm in Mumbai.
+785,493,partner_b,STATIC TIDES BAND - EDM NIGHT,Static Tides Band,concert,Mumbai,19.0672,72.8297,2026-06-12 19:30:00,An evening of edm in Mumbai.
+786,494,partner_a,Comedy Night ft. Midnight Chai Collective,Midnight Chai Collective,comedy,Bengaluru,13.0493,77.5864,2026-08-24 21:00:00,An evening of stand-up comedy in Bengaluru. weekend pe plans chahiye
+787,494,partner_b,COMEDY NIGHT FT. MIDNIGHT CHAI COLLECTIVE,Midnight Chai Collective,comedy,Bengaluru,13.0493,77.5866,2026-08-24 21:30:00,An evening of stand-up comedy in Bengaluru. weekend pe plans chahiye
+788,495,partner_a,Mumbai Music Festivals Fest,Riya Live,festival,Mumbai,18.9995,72.9009,2026-11-19 21:00:00,An evening of music festivals in Mumbai. ekdum mast vibe
+789,495,partner_b,Mumbai Music Festivals Fest | Tickets,Riya Live,festival,Mumbai,18.9994,72.9004,2026-11-19 20:30:00,An evening of music festivals in Mumbai. ekdum mast vibe
+790,496,partner_a,DJ Neon Live - Bollywood Music Night,DJ Neon Live,concert,Mumbai,19.1081,72.9657,2026-10-29 20:00:00,"An evening of bollywood music in Mumbai. new city, new friends"
+791,496,partner_b,DJ Neon Live - Bollywood Music Night | Tickets,DJ Neon Live,concert,Mumbai,19.1083,72.9665,2026-10-29 20:00:00,"An evening of bollywood music in Mumbai. new city, new friends"
+792,497,partner_a,Photography Workshop with Aarav Band,Aarav Band,workshop,Hyderabad,17.4405,78.5003,2026-11-18 19:00:00,"An evening of photography in Hyderabad. new city, new friends"
+793,498,partner_a,The Monsoon Trio Live in Mumbai,The Monsoon Trio,concert,Mumbai,19.0901,72.8287,2027-01-22 17:00:00,An evening of indie music in Mumbai.
+794,498,partner_b,The Monsoon Trio LIVE @ Mumbai,The Monsoon Trio,concert,Mumbai,19.0908,72.8293,2027-01-22 16:30:00,An evening of indie music in Mumbai.
+795,499,partner_a,Hollywood Films Marathon: Kavya Project Premiere,Kavya Project,movie,Hyderabad,17.4405,78.5003,2026-07-29 17:00:00,"An evening of hollywood films in Hyderabad. new city, new friends"
+796,499,partner_b,Hollywood Films Marathon: Kavya Project Premiere,Kavya Project,movie,Hyderabad,17.4402,78.5006,2026-07-29 17:00:00,"An evening of hollywood films in Hyderabad. new city, new friends"
+797,500,partner_a,Midnight Chai Trio - Edm Night,Midnight Chai Trio,concert,Bengaluru,13.0144,77.5718,2026-10-23 19:00:00,An evening of edm in Bengaluru. ekdum mast vibe
+798,501,partner_a,Mehfil Express Live in Hyderabad,Mehfil Express,concert,Hyderabad,17.3123,78.5082,2026-09-08 17:00:00,An evening of rock in Hyderabad. weekend pe plans chahiye
+799,501,partner_b,MEHFIL EXPRESS LIVE IN HYDERABAD,Mehfil Express,concert,Hyderabad,17.3123,78.5085,2026-09-08 17:00:00,An evening of rock in Hyderabad. weekend pe plans chahiye
+800,502,partner_a,Mumbai Food Festivals Carnival,Midnight Chai Trio,festival,Mumbai,19.103,72.9041,2026-09-21 20:00:00,An evening of food festivals in Mumbai. chalo saath chalte hain
+801,502,partner_b,Mumbai Food Festivals Carnival,Midnight Chai Trio,festival,Mumbai,19.1033,72.9039,2026-09-21 20:00:00,An evening of food festivals in Mumbai. chalo saath chalte hain
+802,503,partner_a,Mumbai Tech Summit 2026,Midnight Chai Collective,conference,Mumbai,19.103,72.9041,2027-01-03 21:00:00,An evening of tech in Mumbai.
+803,504,partner_a,Kavya Band: Stand-up Special,Kavya Band,comedy,Hyderabad,17.3848,78.4976,2026-12-05 21:00:00,An evening of improv in Hyderabad. always up for a good show
+804,504,partner_b,KAVYA BAND: STAND-UP SPECIAL,Kavya Band,comedy,Hyderabad,17.3845,78.4977,2026-12-05 21:30:00,An evening of improv in Hyderabad. always up for a good show
+805,505,partner_a,Hyderabad Food Festivals Carnival,Aarav Band,festival,Hyderabad,17.3123,78.5082,2026-12-05 21:00:00,An evening of food festivals in Hyderabad. weekend pe plans chahiye
+806,505,partner_b,Hyderabad Food Festivals Carnival | Tickets,Aarav Band,festival,Hyderabad,17.3123,78.5083,2026-12-05 20:30:00,An evening of food festivals in Hyderabad. weekend pe plans chahiye
+807,506,partner_a,Aarav Collective presents a theatre evening,Aarav Collective,theatre,Delhi,28.6274,77.2426,2026-09-10 21:00:00,An evening of theatre in Delhi. chalo saath chalte hain
+808,507,partner_a,Comedy Night ft. DJ Neon Express,DJ Neon Express,comedy,Delhi,28.5907,77.1862,2027-01-16 21:00:00,An evening of improv in Delhi. chalo saath chalte hain
+809,508,partner_a,Pottery Workshop with Mehfil Project,Mehfil Project,workshop,Pune,18.5144,73.8568,2027-01-07 17:00:00,An evening of pottery in Pune. weekend pe plans chahiye
+810,508,partner_b,Pottery Workshop with Mehfil Project,Mehfil Project,workshop,Pune,18.5145,73.8574,2027-01-07 16:30:00,An evening of pottery in Pune. weekend pe plans chahiye
+811,509,partner_a,Delhi Dynamos vs Titans (football),Riya Project,sports,Delhi,28.5718,77.2247,2026-10-17 20:00:00,"An evening of football in Delhi. new city, new friends"
+812,509,partner_b,Delhi Dynamos vs Titans (football),Riya Project,sports,Delhi,28.5721,77.2245,2026-10-17 20:00:00,"An evening of football in Delhi. new city, new friends"
+813,510,partner_a,Coding Workshop with Midnight Chai Collective,Midnight Chai Collective,workshop,Hyderabad,17.4499,78.5754,2027-01-04 18:00:00,"An evening of coding in Hyderabad. new city, new friends"
+814,511,partner_a,Mumbai Food Festivals Fest,The Monsoon Sessions,festival,Mumbai,19.1081,72.9657,2027-01-07 17:00:00,An evening of food festivals in Mumbai. always up for a good show
+815,512,partner_a,Pune Mavericks vs Tigers (cricket),Kavya Live,sports,Pune,18.5144,73.8568,2026-07-01 21:00:00,An evening of cricket in Pune. always up for a good show
+816,512,partner_b,Pune Mavericks vs Tigers (cricket),Kavya Live,sports,Pune,18.5146,73.8571,2026-07-01 21:30:00,An evening of cricket in Pune. always up for a good show
+817,513,partner_a,Delhi Ai Summit 2026,Midnight Chai Express,conference,Delhi,28.6181,77.1774,2026-06-27 19:00:00,An evening of ai in Delhi. always up for a good show
+818,514,partner_a,Midnight Chai Sessions Live in Delhi,Midnight Chai Sessions,concert,Delhi,28.6274,77.2426,2026-09-23 19:00:00,"An evening of rock in Delhi. new city, new friends"
+819,514,partner_b,Midnight Chai Sessions Live in Delhi | Tickets,Midnight Chai Sessions,concert,Delhi,28.6277,77.2426,2026-09-23 19:30:00,"An evening of rock in Delhi. new city, new friends"
+820,515,partner_a,The Monsoon Collective Live in Hyderabad,The Monsoon Collective,concert,Hyderabad,17.3915,78.5249,2026-12-05 20:00:00,An evening of edm in Hyderabad. weekend pe plans chahiye
+821,515,partner_b,The Monsoon Collective Live in Hyderabad,The Monsoon Collective,concert,Hyderabad,17.3913,78.5249,2026-12-05 20:30:00,An evening of edm in Hyderabad. weekend pe plans chahiye
+822,516,partner_a,Anime Marathon: Midnight Chai Live Premiere,Midnight Chai Live,movie,Delhi,28.6247,77.1649,2026-12-02 18:00:00,"An evening of anime in Delhi. new city, new friends"
+823,516,partner_b,Anime Marathon: Midnight Chai Live Premiere,Midnight Chai Live,movie,Delhi,28.6247,77.1649,2026-12-02 17:30:00,"An evening of anime in Delhi. new city, new friends"
+824,517,partner_a,Kavya Express - Bollywood Music Night,Kavya Express,concert,Mumbai,19.067,72.8295,2026-09-17 19:00:00,An evening of bollywood music in Mumbai. ekdum mast vibe
+825,517,partner_b,Kavya Express - Bollywood Music Night | Tickets,Kavya Express,concert,Mumbai,19.0666,72.8295,2026-09-17 19:00:00,An evening of bollywood music in Mumbai. ekdum mast vibe
+826,518,partner_a,Pottery Workshop with DJ Neon Live,DJ Neon Live,workshop,Bengaluru,13.0421,77.6685,2026-08-05 17:00:00,An evening of pottery in Bengaluru.
+827,519,partner_a,Hyderabad Ai Summit 2026,Blue Lantern Project,conference,Hyderabad,17.3149,78.4586,2026-11-03 20:00:00,An evening of ai in Hyderabad.
+828,520,partner_a,Bollywood Films Marathon: Riya Sessions Premiere,Riya Sessions,movie,Pune,18.4933,73.8493,2027-01-15 18:00:00,An evening of bollywood films in Pune. always up for a good show
+829,520,partner_b,Bollywood Films Marathon - Riya Sessions Premiere,Riya Sessions,movie,Pune,18.4932,73.8491,2027-01-15 18:30:00,An evening of bollywood films in Pune. always up for a good show
+830,521,partner_a,DJ Neon Live presents a theatre evening,DJ Neon Live,theatre,Pune,18.4743,73.8858,2026-11-13 17:00:00,An evening of theatre in Pune. weekend pe plans chahiye
+831,522,partner_a,Pune Startups Summit 2026,Saffron Band,conference,Pune,18.5683,73.8686,2026-12-06 17:00:00,An evening of startups in Pune.
+832,523,partner_a,Delhi Food Festivals Fest,Mehfil Collective,festival,Delhi,28.6022,77.2427,2026-10-16 19:00:00,An evening of food festivals in Delhi. always up for a good show
+833,523,partner_b,Delhi Food Festivals Fest,Mehfil Collective,festival,Delhi,28.6023,77.2425,2026-10-16 19:00:00,An evening of food festivals in Delhi. always up for a good show
+834,524,partner_a,Comedy Night ft. Blue Lantern Project,Blue Lantern Project,comedy,Delhi,28.6274,77.2426,2026-08-17 19:00:00,An evening of stand-up comedy in Delhi. weekend pe plans chahiye
+835,524,partner_b,COMEDY NIGHT FT. BLUE LANTERN PROJECT,Blue Lantern Project,comedy,Delhi,28.6271,77.2423,2026-08-17 19:30:00,An evening of stand-up comedy in Delhi. weekend pe plans chahiye
+836,525,partner_a,Pune Music Festivals Carnival,Midnight Chai Collective,festival,Pune,18.5213,73.7946,2026-10-30 17:00:00,An evening of music festivals in Pune. weekend pe plans chahiye
+837,526,partner_a,Coding Workshop with Kavya Trio,Kavya Trio,workshop,Delhi,28.6181,77.1774,2026-08-17 21:00:00,An evening of coding in Delhi. weekend pe plans chahiye
+838,526,partner_b,Coding Workshop with Kavya Trio,Kavya Trio,workshop,Delhi,28.6178,77.177,2026-08-17 21:00:00,An evening of coding in Delhi. weekend pe plans chahiye
+839,527,partner_a,Blue Lantern Project: Stand-up Special,Blue Lantern Project,comedy,Delhi,28.5907,77.1862,2026-11-04 20:00:00,An evening of improv in Delhi. chalo saath chalte hain
+840,527,partner_b,Blue Lantern Project: Stand-up Special,Blue Lantern Project,comedy,Delhi,28.5909,77.186,2026-11-04 20:30:00,An evening of improv in Delhi. chalo saath chalte hain
+841,528,partner_a,Anime Marathon: Blue Lantern Express Premiere,Blue Lantern Express,movie,Hyderabad,17.3149,78.4586,2026-06-25 17:00:00,An evening of anime in Hyderabad. chalo saath chalte hain
+842,529,partner_a,Hyderabad Music Festivals Fest,Kavya Trio,festival,Hyderabad,17.3933,78.5429,2026-07-11 17:00:00,An evening of music festivals in Hyderabad.
+843,530,partner_a,Bengaluru Startups Summit 2026,Midnight Chai Collective,conference,Bengaluru,12.9731,77.5858,2026-11-23 18:00:00,An evening of startups in Bengaluru.
+844,531,partner_a,Saffron Trio - Rock Night,Saffron Trio,concert,Bengaluru,13.0283,77.6532,2026-10-20 18:00:00,An evening of rock in Bengaluru. chalo saath chalte hain
+845,532,partner_a,Aarav Band: Stand-up Special,Aarav Band,comedy,Pune,18.4833,73.9283,2026-10-12 17:00:00,An evening of stand-up comedy in Pune.
+846,532,partner_b,Aarav Band: Stand-up Special | Tickets,Aarav Band,comedy,Pune,18.4832,73.9284,2026-10-12 17:00:00,An evening of stand-up comedy in Pune.
+847,533,partner_a,Pune Music Festivals Fest,Saffron Band,festival,Pune,18.4933,73.8493,2026-07-24 17:00:00,An evening of music festivals in Pune. ekdum mast vibe
+848,533,partner_b,Pune Music Festivals Fest,Saffron Band,festival,Pune,18.493,73.849,2026-07-24 17:00:00,An evening of music festivals in Pune. ekdum mast vibe
+849,534,partner_a,The Monsoon Band presents a musicals evening,The Monsoon Band,theatre,Bengaluru,12.9731,77.5858,2026-11-15 18:00:00,"An evening of musicals in Bengaluru. new city, new friends"
+850,534,partner_b,The Monsoon Band presents a musicals evening,The Monsoon Band,theatre,Bengaluru,12.9737,77.5859,2026-11-15 18:00:00,"An evening of musicals in Bengaluru. new city, new friends"
+851,535,partner_a,Pune Dynamos vs Titans (kabaddi),Saffron Live,sports,Pune,18.4675,73.8723,2026-10-02 21:00:00,An evening of kabaddi in Pune. always up for a good show
+852,535,partner_b,PUNE DYNAMOS VS TITANS (KABADDI),Saffron Live,sports,Pune,18.4675,73.8725,2026-10-02 20:30:00,An evening of kabaddi in Pune. always up for a good show
+853,536,partner_a,Pune Titans vs Mavericks (football),Kavya Live,sports,Pune,18.4933,73.8493,2026-07-04 21:00:00,"An evening of football in Pune. new city, new friends"
+854,536,partner_b,PUNE TITANS VS MAVERICKS (FOOTBALL),Kavya Live,sports,Pune,18.4932,73.8494,2026-07-04 20:30:00,"An evening of football in Pune. new city, new friends"
+855,537,partner_a,Hollywood Films Marathon: DJ Neon Collective Premiere,DJ Neon Collective,movie,Bengaluru,13.0283,77.6532,2026-09-08 17:00:00,An evening of hollywood films in Bengaluru. weekend pe plans chahiye
+856,538,partner_a,Delhi Tigers vs Strikers (cricket),Riya Trio,sports,Delhi,28.5907,77.1862,2026-11-05 19:00:00,An evening of cricket in Delhi. ekdum mast vibe
+857,538,partner_b,Delhi Tigers vs Strikers (cricket),Riya Trio,sports,Delhi,28.5906,77.1863,2026-11-05 19:00:00,An evening of cricket in Delhi. ekdum mast vibe
+858,539,partner_a,Photography Workshop with The Monsoon Trio,The Monsoon Trio,workshop,Hyderabad,17.4499,78.5754,2026-12-30 18:00:00,An evening of photography in Hyderabad. weekend pe plans chahiye
+859,540,partner_a,Blue Lantern Collective presents a musicals evening,Blue Lantern Collective,theatre,Hyderabad,17.3149,78.4586,2026-06-09 17:00:00,An evening of musicals in Hyderabad. chalo saath chalte hain
+860,540,partner_b,Blue Lantern Collective presents a musicals evening,Blue Lantern Collective,theatre,Hyderabad,17.315,78.4585,2026-06-09 17:30:00,An evening of musicals in Hyderabad. chalo saath chalte hain
+861,541,partner_a,Riya Project: Stand-up Special,Riya Project,comedy,Pune,18.5683,73.8686,2026-11-01 20:00:00,An evening of improv in Pune.
+862,542,partner_a,Pune Dynamos vs Mavericks (kabaddi),The Monsoon Project,sports,Pune,18.5213,73.7946,2026-08-11 20:00:00,An evening of kabaddi in Pune.
+863,542,partner_b,Pune Dynamos vs Mavericks (kabaddi),The Monsoon Project,sports,Pune,18.5214,73.7938,2026-08-11 20:00:00,An evening of kabaddi in Pune.
+864,543,partner_a,Aarav Sessions presents a musicals evening,Aarav Sessions,theatre,Delhi,28.6348,77.258,2027-01-08 19:00:00,An evening of musicals in Delhi.
+865,543,partner_b,Aarav Sessions presents a musicals evening,Aarav Sessions,theatre,Delhi,28.635,77.2582,2027-01-08 18:30:00,An evening of musicals in Delhi.
+866,544,partner_a,Hyderabad Food Festivals Fest,Static Tides Live,festival,Hyderabad,17.3149,78.4586,2027-01-11 20:00:00,An evening of food festivals in Hyderabad.
+867,545,partner_a,Hollywood Films Marathon: Aarav Live Premiere,Aarav Live,movie,Mumbai,18.9995,72.9009,2026-08-20 20:00:00,"An evening of hollywood films in Mumbai. new city, new friends"
+868,545,partner_b,HOLLYWOOD FILMS MARATHON: AARAV LIVE PREMIERE,Aarav Live,movie,Mumbai,18.9998,72.9011,2026-08-20 20:30:00,"An evening of hollywood films in Mumbai. new city, new friends"
+869,546,partner_a,Pottery Workshop with DJ Neon Sessions,DJ Neon Sessions,workshop,Bengaluru,13.0493,77.5864,2026-12-03 17:00:00,An evening of pottery in Bengaluru. weekend pe plans chahiye
+870,546,partner_b,POTTERY WORKSHOP WITH DJ NEON SESSIONS,DJ Neon Sessions,workshop,Bengaluru,13.049,77.5866,2026-12-03 17:00:00,An evening of pottery in Bengaluru. weekend pe plans chahiye
+871,547,partner_a,Hollywood Films Marathon: DJ Neon Project Premiere,DJ Neon Project,movie,Mumbai,19.067,72.8295,2026-07-30 20:00:00,An evening of hollywood films in Mumbai. chalo saath chalte hain
+872,547,partner_b,HOLLYWOOD FILMS MARATHON: DJ NEON PROJECT PREMIERE,DJ Neon Project,movie,Mumbai,19.0669,72.8295,2026-07-30 20:00:00,An evening of hollywood films in Mumbai. chalo saath chalte hain
+873,548,partner_a,Static Tides Express Live in Mumbai,Static Tides Express,concert,Mumbai,19.0901,72.8287,2026-11-08 18:00:00,An evening of hip hop in Mumbai. weekend pe plans chahiye
+874,549,partner_a,DJ Neon Band presents a theatre evening,DJ Neon Band,theatre,Bengaluru,13.0273,77.5959,2026-09-11 17:00:00,An evening of theatre in Bengaluru.
+875,549,partner_b,DJ Neon Band presents a theatre evening,DJ Neon Band,theatre,Bengaluru,13.0274,77.5957,2026-09-11 17:30:00,An evening of theatre in Bengaluru.
+876,550,partner_a,Hollywood Films Marathon: Aarav Live Premiere,Aarav Live,movie,Delhi,28.6181,77.1774,2026-08-22 17:00:00,An evening of hollywood films in Delhi. chalo saath chalte hain
+877,551,partner_a,DJ Neon Trio - Indie Music Night,DJ Neon Trio,concert,Mumbai,19.067,72.8295,2026-12-27 20:00:00,An evening of indie music in Mumbai. always up for a good show
+878,551,partner_b,DJ Neon Trio - Indie Music Night,DJ Neon Trio,concert,Mumbai,19.067,72.8293,2026-12-27 20:00:00,An evening of indie music in Mumbai. always up for a good show
+879,552,partner_a,Bengaluru Ai Summit 2026,DJ Neon Live,conference,Bengaluru,13.0493,77.5864,2026-10-02 21:00:00,An evening of ai in Bengaluru. always up for a good show
+880,552,partner_b,BENGALURU AI SUMMIT 2026,DJ Neon Live,conference,Bengaluru,13.0495,77.5865,2026-10-02 21:00:00,An evening of ai in Bengaluru. always up for a good show
+881,553,partner_a,Hollywood Films Marathon: DJ Neon Project Premiere,DJ Neon Project,movie,Mumbai,19.103,72.9041,2026-12-28 20:00:00,An evening of hollywood films in Mumbai. weekend pe plans chahiye
+882,553,partner_b,HOLLYWOOD FILMS MARATHON: DJ NEON PROJECT PREMIERE,DJ Neon Project,movie,Mumbai,19.1033,72.904,2026-12-28 19:30:00,An evening of hollywood films in Mumbai. weekend pe plans chahiye
+883,554,partner_a,Midnight Chai Live: Stand-up Special,Midnight Chai Live,comedy,Pune,18.4933,73.8493,2026-09-04 21:00:00,An evening of improv in Pune. always up for a good show
+884,555,partner_a,Midnight Chai Live Live in Bengaluru,Midnight Chai Live,concert,Bengaluru,13.0493,77.5864,2026-11-14 17:00:00,An evening of sufi in Bengaluru.
+885,556,partner_a,Comedy Night ft. Riya Express,Riya Express,comedy,Pune,18.4675,73.8723,2027-01-20 21:00:00,An evening of improv in Pune. ekdum mast vibe
+886,556,partner_b,Comedy Night ft. Riya Express,Riya Express,comedy,Pune,18.4676,73.8724,2027-01-20 20:30:00,An evening of improv in Pune. ekdum mast vibe
+887,557,partner_a,Delhi Strikers vs Titans (football),Saffron Express,sports,Delhi,28.6348,77.258,2026-07-04 20:00:00,An evening of football in Delhi. chalo saath chalte hain
+888,557,partner_b,DELHI STRIKERS VS TITANS (FOOTBALL),Saffron Express,sports,Delhi,28.6349,77.2579,2026-07-04 20:00:00,An evening of football in Delhi. chalo saath chalte hain
+889,558,partner_a,Saffron Trio - Bollywood Music Night,Saffron Trio,concert,Bengaluru,12.928,77.6909,2026-09-13 18:00:00,An evening of bollywood music in Bengaluru. ekdum mast vibe
+890,559,partner_a,Photography Workshop with Kavya Trio,Kavya Trio,workshop,Delhi,28.571,77.1801,2026-09-03 18:00:00,An evening of photography in Delhi. chalo saath chalte hain
+891,560,partner_a,Photography Workshop with Kavya Band,Kavya Band,workshop,Bengaluru,13.0493,77.5864,2026-12-24 21:00:00,An evening of photography in Bengaluru. ekdum mast vibe
+892,560,partner_b,Photography Workshop with Kavya Band,Kavya Band,workshop,Bengaluru,13.0496,77.5862,2026-12-24 20:30:00,An evening of photography in Bengaluru. ekdum mast vibe
+893,561,partner_a,The Monsoon Live - Hip Hop Night,The Monsoon Live,concert,Pune,18.5213,73.7946,2026-07-05 21:00:00,An evening of hip hop in Pune. ekdum mast vibe
+894,561,partner_b,The Monsoon Live - Hip Hop Night | Tickets,The Monsoon Live,concert,Pune,18.5211,73.7947,2026-07-05 20:30:00,An evening of hip hop in Pune. ekdum mast vibe
+895,562,partner_a,Pune Royals vs Tigers (football),Riya Express,sports,Pune,18.4933,73.8493,2026-08-22 21:00:00,An evening of football in Pune. chalo saath chalte hain
+896,562,partner_b,PUNE ROYALS VS TIGERS (FOOTBALL),Riya Express,sports,Pune,18.4936,73.8493,2026-08-22 21:30:00,An evening of football in Pune. chalo saath chalte hain
+897,563,partner_a,Pune Strikers vs Mavericks (kabaddi),Blue Lantern Project,sports,Pune,18.5683,73.8686,2026-07-11 18:00:00,An evening of kabaddi in Pune. weekend pe plans chahiye
+898,563,partner_b,Pune Strikers vs Mavericks (kabaddi) | Tickets,Blue Lantern Project,sports,Pune,18.5682,73.8689,2026-07-11 18:30:00,An evening of kabaddi in Pune. weekend pe plans chahiye
+899,564,partner_a,Blue Lantern Band - Indie Music Night,Blue Lantern Band,concert,Bengaluru,13.0283,77.6532,2026-10-18 21:00:00,An evening of indie music in Bengaluru. chalo saath chalte hain
+900,564,partner_b,Blue Lantern Band - Indie Music Night,Blue Lantern Band,concert,Bengaluru,13.0283,77.6536,2026-10-18 21:00:00,An evening of indie music in Bengaluru. chalo saath chalte hain
+901,565,partner_a,Pune Ai Summit 2026,DJ Neon Sessions,conference,Pune,18.4933,73.8493,2027-01-22 18:00:00,An evening of ai in Pune. weekend pe plans chahiye
+902,566,partner_a,Hyderabad Music Festivals Carnival,Midnight Chai Sessions,festival,Hyderabad,17.3123,78.5082,2026-09-06 18:00:00,An evening of music festivals in Hyderabad. weekend pe plans chahiye
+903,567,partner_a,Delhi Food Festivals Carnival,Aarav Project,festival,Delhi,28.5907,77.1862,2026-10-18 19:00:00,An evening of food festivals in Delhi. ekdum mast vibe
+904,568,partner_a,Delhi Music Festivals Fest,Mehfil Collective,festival,Delhi,28.571,77.1801,2026-07-06 17:00:00,An evening of music festivals in Delhi. chalo saath chalte hain
+905,568,partner_b,Delhi Music Festivals Fest,Mehfil Collective,festival,Delhi,28.5712,77.18,2026-07-06 17:30:00,An evening of music festivals in Delhi. chalo saath chalte hain
+906,569,partner_a,Anime Marathon: The Monsoon Band Premiere,The Monsoon Band,movie,Mumbai,19.1581,72.9795,2027-01-02 18:00:00,An evening of anime in Mumbai. weekend pe plans chahiye
+907,569,partner_b,Anime Marathon - The Monsoon Band Premiere,The Monsoon Band,movie,Mumbai,19.1582,72.9799,2027-01-02 17:30:00,An evening of anime in Mumbai. weekend pe plans chahiye
+908,570,partner_a,DJ Neon Band: Stand-up Special,DJ Neon Band,comedy,Pune,18.5595,73.9874,2026-08-31 19:00:00,An evening of improv in Pune.
+909,570,partner_b,DJ Neon Band: Stand-up Special | Tickets,DJ Neon Band,comedy,Pune,18.5595,73.9876,2026-08-31 18:30:00,An evening of improv in Pune.
+910,571,partner_a,Mumbai Tigers vs Royals (football),Static Tides Project,sports,Mumbai,19.067,72.8295,2026-12-11 19:00:00,An evening of football in Mumbai.
+911,571,partner_b,Mumbai Tigers vs Royals (football),Static Tides Project,sports,Mumbai,19.0676,72.8297,2026-12-11 19:00:00,An evening of football in Mumbai.
+912,572,partner_a,Static Tides Sessions presents a musicals evening,Static Tides Sessions,theatre,Bengaluru,13.0421,77.6685,2026-11-20 19:00:00,An evening of musicals in Bengaluru. chalo saath chalte hain
+913,573,partner_a,Hyderabad Tech Summit 2026,DJ Neon Band,conference,Hyderabad,17.3149,78.4586,2026-10-30 18:00:00,An evening of tech in Hyderabad. always up for a good show
+914,574,partner_a,Anime Marathon: Saffron Sessions Premiere,Saffron Sessions,movie,Hyderabad,17.3123,78.5082,2026-10-23 19:00:00,An evening of anime in Hyderabad. weekend pe plans chahiye
+915,575,partner_a,Delhi Ai Summit 2026,Saffron Band,conference,Delhi,28.6348,77.258,2026-07-27 20:00:00,An evening of ai in Delhi. chalo saath chalte hain
+916,576,partner_a,Pune Titans vs Titans (kabaddi),Aarav Project,sports,Pune,18.4833,73.9283,2026-06-07 20:00:00,An evening of kabaddi in Pune. weekend pe plans chahiye
+917,576,partner_b,Pune Titans vs Titans (kabaddi) | Tickets,Aarav Project,sports,Pune,18.4833,73.9287,2026-06-07 20:30:00,An evening of kabaddi in Pune. weekend pe plans chahiye
+918,577,partner_a,Mumbai Food Festivals Fest,Saffron Sessions,festival,Mumbai,19.1081,72.9657,2026-08-22 17:00:00,"An evening of food festivals in Mumbai. new city, new friends"
+919,577,partner_b,Mumbai Food Festivals Fest,Saffron Sessions,festival,Mumbai,19.108,72.9654,2026-08-22 17:30:00,"An evening of food festivals in Mumbai. new city, new friends"
+920,578,partner_a,Pottery Workshop with Riya Project,Riya Project,workshop,Delhi,28.6274,77.2426,2026-09-21 19:00:00,An evening of pottery in Delhi. ekdum mast vibe
+921,579,partner_a,Pottery Workshop with Mehfil Express,Mehfil Express,workshop,Delhi,28.6348,77.258,2026-11-01 19:00:00,An evening of pottery in Delhi.
+922,579,partner_b,Pottery Workshop with Mehfil Express,Mehfil Express,workshop,Delhi,28.6345,77.258,2026-11-01 19:00:00,An evening of pottery in Delhi.
+923,580,partner_a,DJ Neon Live - Hip Hop Night,DJ Neon Live,concert,Mumbai,19.0901,72.8287,2026-09-30 19:00:00,"An evening of hip hop in Mumbai. new city, new friends"
+924,580,partner_b,DJ Neon Live - Hip Hop Night,DJ Neon Live,concert,Mumbai,19.0896,72.8285,2026-09-30 19:30:00,"An evening of hip hop in Mumbai. new city, new friends"
+925,581,partner_a,Midnight Chai Express - Indie Music Night,Midnight Chai Express,concert,Hyderabad,17.3933,78.5429,2026-12-23 20:00:00,"An evening of indie music in Hyderabad. new city, new friends"
+926,581,partner_b,MIDNIGHT CHAI EXPRESS - INDIE MUSIC NIGHT,Midnight Chai Express,concert,Hyderabad,17.3936,78.5428,2026-12-23 20:00:00,"An evening of indie music in Hyderabad. new city, new friends"
+927,582,partner_a,Aarav Express Live in Delhi,Aarav Express,concert,Delhi,28.6022,77.2427,2026-12-04 18:00:00,An evening of hip hop in Delhi. ekdum mast vibe
+928,583,partner_a,Delhi Music Festivals Carnival,Static Tides Sessions,festival,Delhi,28.6022,77.2427,2026-07-17 19:00:00,"An evening of music festivals in Delhi. new city, new friends"
+929,584,partner_a,Comedy Night ft. Riya Express,Riya Express,comedy,Hyderabad,17.4499,78.5754,2026-06-01 18:00:00,An evening of improv in Hyderabad. weekend pe plans chahiye
+930,585,partner_a,Comedy Night ft. Blue Lantern Project,Blue Lantern Project,comedy,Bengaluru,13.0273,77.5959,2026-09-23 19:00:00,"An evening of stand-up comedy in Bengaluru. new city, new friends"
+931,585,partner_b,Comedy Night ft. Blue Lantern Project,Blue Lantern Project,comedy,Bengaluru,13.0274,77.5958,2026-09-23 19:30:00,"An evening of stand-up comedy in Bengaluru. new city, new friends"
+932,586,partner_a,Aarav Collective presents a theatre evening,Aarav Collective,theatre,Mumbai,19.0259,72.9696,2026-10-31 17:00:00,An evening of theatre in Mumbai.
+933,586,partner_b,Aarav Collective presents a theatre evening,Aarav Collective,theatre,Mumbai,19.0257,72.9695,2026-10-31 17:00:00,An evening of theatre in Mumbai.
+934,587,partner_a,Riya Trio - Sufi Night,Riya Trio,concert,Mumbai,19.103,72.9041,2026-10-24 17:00:00,An evening of sufi in Mumbai. always up for a good show
+935,587,partner_b,Riya Trio - Sufi Night | Tickets,Riya Trio,concert,Mumbai,19.1026,72.9041,2026-10-24 16:30:00,An evening of sufi in Mumbai. always up for a good show
+936,588,partner_a,Hyderabad Mavericks vs Mavericks (kabaddi),Saffron Collective,sports,Hyderabad,17.3933,78.5429,2026-10-31 18:00:00,An evening of kabaddi in Hyderabad.
+937,589,partner_a,Pune Strikers vs Strikers (football),Mehfil Collective,sports,Pune,18.4833,73.9283,2026-10-07 21:00:00,"An evening of football in Pune. new city, new friends"
+938,589,partner_b,PUNE STRIKERS VS STRIKERS (FOOTBALL),Mehfil Collective,sports,Pune,18.4831,73.9279,2026-10-07 21:00:00,"An evening of football in Pune. new city, new friends"
+939,590,partner_a,Saffron Project - Hip Hop Night,Saffron Project,concert,Delhi,28.571,77.1801,2026-08-10 17:00:00,An evening of hip hop in Delhi. always up for a good show
+940,591,partner_a,Kavya Band presents a theatre evening,Kavya Band,theatre,Bengaluru,12.9731,77.5858,2026-12-26 18:00:00,An evening of theatre in Bengaluru. always up for a good show
+941,592,partner_a,Coding Workshop with Aarav Project,Aarav Project,workshop,Pune,18.5683,73.8686,2026-07-20 21:00:00,An evening of coding in Pune. chalo saath chalte hain
+942,592,partner_b,Coding Workshop with Aarav Project,Aarav Project,workshop,Pune,18.5681,73.8686,2026-07-20 20:30:00,An evening of coding in Pune. chalo saath chalte hain
+943,593,partner_a,Riya Project - Bollywood Music Night,Riya Project,concert,Bengaluru,12.9731,77.5858,2026-12-02 18:00:00,"An evening of bollywood music in Bengaluru. new city, new friends"
+944,593,partner_b,Riya Project - Bollywood Music Night,Riya Project,concert,Bengaluru,12.9732,77.5858,2026-12-02 18:00:00,"An evening of bollywood music in Bengaluru. new city, new friends"
+945,594,partner_a,Comedy Night ft. Saffron Band,Saffron Band,comedy,Hyderabad,17.3915,78.5249,2026-10-06 20:00:00,An evening of stand-up comedy in Hyderabad. chalo saath chalte hain
+946,594,partner_b,Comedy Night ft. Saffron Band | Tickets,Saffron Band,comedy,Hyderabad,17.3917,78.5251,2026-10-06 20:00:00,An evening of stand-up comedy in Hyderabad. chalo saath chalte hain
+947,595,partner_a,Mumbai Food Festivals Fest,The Monsoon Project,festival,Mumbai,18.9995,72.9009,2026-10-04 20:00:00,"An evening of food festivals in Mumbai. new city, new friends"
+948,595,partner_b,MUMBAI FOOD FESTIVALS FEST,The Monsoon Project,festival,Mumbai,18.9998,72.9005,2026-10-04 20:00:00,"An evening of food festivals in Mumbai. new city, new friends"
+949,596,partner_a,Pune Ai Summit 2026,Riya Project,conference,Pune,18.4675,73.8723,2026-12-19 21:00:00,An evening of ai in Pune. weekend pe plans chahiye
+950,597,partner_a,The Monsoon Project: Stand-up Special,The Monsoon Project,comedy,Delhi,28.5718,77.2247,2026-10-02 17:00:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+951,597,partner_b,THE MONSOON PROJECT: STAND-UP SPECIAL,The Monsoon Project,comedy,Delhi,28.5718,77.2249,2026-10-02 17:30:00,"An evening of stand-up comedy in Delhi. new city, new friends"
+952,598,partner_a,Kavya Collective Live in Hyderabad,Kavya Collective,concert,Hyderabad,17.3915,78.5249,2026-08-29 17:00:00,An evening of rock in Hyderabad. weekend pe plans chahiye
+953,598,partner_b,Kavya Collective LIVE @ Hyderabad,Kavya Collective,concert,Hyderabad,17.3914,78.5253,2026-08-29 17:00:00,An evening of rock in Hyderabad. weekend pe plans chahiye
+954,599,partner_a,The Monsoon Sessions - Rock Night,The Monsoon Sessions,concert,Delhi,28.6022,77.2427,2026-12-28 18:00:00,An evening of rock in Delhi. ekdum mast vibe
+955,600,partner_a,Delhi Music Festivals Carnival,Mehfil Trio,festival,Delhi,28.5907,77.1862,2026-07-01 20:00:00,An evening of music festivals in Delhi. weekend pe plans chahiye
+956,600,partner_b,Delhi Music Festivals Carnival,Mehfil Trio,festival,Delhi,28.5908,77.1863,2026-07-01 19:30:00,An evening of music festivals in Delhi. weekend pe plans chahiye
+957,601,partner_a,Anime Marathon: Midnight Chai Trio Premiere,Midnight Chai Trio,movie,Hyderabad,17.3149,78.4586,2026-09-15 23:00:00,An evening of anime in Hyderabad. ekdum mast vibe
+958,602,partner_a,Comedy Night ft. DJ Neon Sessions,DJ Neon Sessions,comedy,Hyderabad,17.3123,78.5082,2026-10-07 21:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+959,602,partner_b,COMEDY NIGHT FT. DJ NEON SESSIONS,DJ Neon Sessions,comedy,Hyderabad,17.3123,78.5079,2026-10-07 21:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+960,603,partner_a,Coding Workshop with Aarav Band,Aarav Band,workshop,Hyderabad,17.4499,78.5754,2027-01-04 20:00:00,"An evening of coding in Hyderabad. new city, new friends"
+961,604,partner_a,Photography Workshop with Saffron Express,Saffron Express,workshop,Delhi,28.6348,77.258,2026-07-22 21:00:00,An evening of photography in Delhi. always up for a good show
+962,605,partner_a,Pune Food Festivals Fest,Mehfil Band,festival,Pune,18.4833,73.9283,2026-07-30 19:00:00,An evening of food festivals in Pune. chalo saath chalte hain
+963,605,partner_b,Pune Food Festivals Fest,Mehfil Band,festival,Pune,18.4842,73.9286,2026-07-30 19:00:00,An evening of food festivals in Pune. chalo saath chalte hain
+964,606,partner_a,Mumbai Tigers vs Mavericks (cricket),Saffron Express,sports,Mumbai,19.103,72.9041,2026-08-08 21:00:00,An evening of cricket in Mumbai. ekdum mast vibe
+965,606,partner_b,Mumbai Tigers vs Mavericks (cricket),Saffron Express,sports,Mumbai,19.1028,72.904,2026-08-08 21:30:00,An evening of cricket in Mumbai. ekdum mast vibe
+966,607,partner_a,Mumbai Music Festivals Fest,Riya Band,festival,Mumbai,19.0259,72.9696,2026-07-16 21:00:00,"An evening of music festivals in Mumbai. new city, new friends"
+967,607,partner_b,Mumbai Music Festivals Fest,Riya Band,festival,Mumbai,19.0256,72.9692,2026-07-16 20:30:00,"An evening of music festivals in Mumbai. new city, new friends"
+968,608,partner_a,The Monsoon Express presents a theatre evening,The Monsoon Express,theatre,Bengaluru,13.0273,77.5959,2026-09-11 19:00:00,An evening of theatre in Bengaluru.
+969,609,partner_a,Mumbai Ai Summit 2026,Saffron Live,conference,Mumbai,19.0259,72.9696,2026-06-03 22:00:00,An evening of ai in Mumbai. weekend pe plans chahiye
+970,609,partner_b,Mumbai Ai Summit 2026,Saffron Live,conference,Mumbai,19.0264,72.97,2026-06-03 21:30:00,An evening of ai in Mumbai. weekend pe plans chahiye
+971,610,partner_a,Hyderabad Startups Summit 2026,Riya Sessions,conference,Hyderabad,17.3312,78.4836,2026-08-26 19:00:00,An evening of startups in Hyderabad.
+972,611,partner_a,Photography Workshop with Blue Lantern Band,Blue Lantern Band,workshop,Pune,18.5213,73.7946,2026-06-28 21:00:00,An evening of photography in Pune. weekend pe plans chahiye
+973,612,partner_a,Aarav Band Live in Pune,Aarav Band,concert,Pune,18.5144,73.8568,2026-12-14 22:00:00,"An evening of rock in Pune. new city, new friends"
+974,613,partner_a,Bengaluru Food Festivals Carnival,Midnight Chai Collective,festival,Bengaluru,13.0144,77.5718,2026-09-30 23:00:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+975,613,partner_b,Bengaluru Food Festivals Carnival,Midnight Chai Collective,festival,Bengaluru,13.0141,77.5714,2026-09-30 22:30:00,An evening of food festivals in Bengaluru. weekend pe plans chahiye
+976,614,partner_a,Aarav Band: Stand-up Special,Aarav Band,comedy,Pune,18.4833,73.9283,2026-10-12 19:00:00,An evening of stand-up comedy in Pune.
+977,614,partner_b,Aarav Band: Stand-up Special,Aarav Band,comedy,Pune,18.4832,73.928,2026-10-12 18:30:00,An evening of stand-up comedy in Pune.
+978,615,partner_a,Photography Workshop with DJ Neon Band,DJ Neon Band,workshop,Pune,18.4833,73.9283,2026-06-01 22:00:00,An evening of photography in Pune. chalo saath chalte hain
+979,615,partner_b,PHOTOGRAPHY WORKSHOP WITH DJ NEON BAND,DJ Neon Band,workshop,Pune,18.4833,73.928,2026-06-01 21:30:00,An evening of photography in Pune. chalo saath chalte hain
+980,616,partner_a,Coding Workshop with Saffron Express,Saffron Express,workshop,Pune,18.4833,73.9283,2026-11-08 19:00:00,An evening of coding in Pune.
+981,617,partner_a,Bollywood Films Marathon: Saffron Live Premiere,Saffron Live,movie,Pune,18.5595,73.9874,2026-11-27 22:00:00,An evening of bollywood films in Pune. chalo saath chalte hain
+982,617,partner_b,Bollywood Films Marathon: Saffron Live Premiere | Tickets,Saffron Live,movie,Pune,18.5598,73.9873,2026-11-27 22:00:00,An evening of bollywood films in Pune. chalo saath chalte hain
+983,618,partner_a,Static Tides Express Live in Mumbai,Static Tides Express,concert,Mumbai,19.067,72.8295,2026-08-18 20:00:00,An evening of sufi in Mumbai. chalo saath chalte hain
+984,618,partner_b,STATIC TIDES EXPRESS LIVE IN MUMBAI,Static Tides Express,concert,Mumbai,19.0672,72.8297,2026-08-18 20:00:00,An evening of sufi in Mumbai. chalo saath chalte hain
+985,619,partner_a,Hyderabad Tigers vs Tigers (football),Saffron Band,sports,Hyderabad,17.3123,78.5082,2026-07-01 22:00:00,An evening of football in Hyderabad. ekdum mast vibe
+986,619,partner_b,Hyderabad Tigers vs Tigers (football),Saffron Band,sports,Hyderabad,17.312,78.5081,2026-07-01 22:00:00,An evening of football in Hyderabad. ekdum mast vibe
+987,620,partner_a,Photography Workshop with Static Tides Collective,Static Tides Collective,workshop,Hyderabad,17.4405,78.5003,2026-11-18 21:00:00,"An evening of photography in Hyderabad. new city, new friends"
+988,621,partner_a,Aarav Live presents a theatre evening,Aarav Live,theatre,Mumbai,19.1697,72.8776,2026-09-20 23:00:00,An evening of theatre in Mumbai. weekend pe plans chahiye
+989,622,partner_a,Mumbai Food Festivals Fest,Blue Lantern Sessions,festival,Mumbai,19.1081,72.9657,2027-01-07 19:00:00,An evening of food festivals in Mumbai. always up for a good show
+990,623,partner_a,Aarav Live presents a musicals evening,Aarav Live,theatre,Mumbai,19.1581,72.9795,2026-10-26 20:00:00,An evening of musicals in Mumbai. always up for a good show
+991,623,partner_b,AARAV LIVE PRESENTS A MUSICALS EVENING,Aarav Live,theatre,Mumbai,19.1576,72.9799,2026-10-26 19:30:00,An evening of musicals in Mumbai. always up for a good show
+992,624,partner_a,Mumbai Titans vs Titans (kabaddi),Blue Lantern Express,sports,Mumbai,19.1581,72.9795,2026-11-21 21:00:00,An evening of kabaddi in Mumbai. ekdum mast vibe
+993,625,partner_a,Midnight Chai Express - Sufi Night,Midnight Chai Express,concert,Delhi,28.6348,77.258,2026-06-22 23:00:00,"An evening of sufi in Delhi. new city, new friends"
+994,625,partner_b,Midnight Chai Express - Sufi Night,Midnight Chai Express,concert,Delhi,28.6349,77.2582,2026-06-22 22:30:00,"An evening of sufi in Delhi. new city, new friends"
+995,626,partner_a,Pottery Workshop with Static Tides Trio,Static Tides Trio,workshop,Pune,18.5595,73.9874,2026-06-20 20:00:00,"An evening of pottery in Pune. new city, new friends"
+996,626,partner_b,Pottery Workshop with Static Tides Trio,Static Tides Trio,workshop,Pune,18.56,73.9875,2026-06-20 20:00:00,"An evening of pottery in Pune. new city, new friends"
+997,627,partner_a,Bengaluru Mavericks vs Royals (kabaddi),Kavya Sessions,sports,Bengaluru,12.928,77.6909,2026-07-20 22:00:00,An evening of kabaddi in Bengaluru. ekdum mast vibe
+998,628,partner_a,Saffron Sessions: Stand-up Special,Saffron Sessions,comedy,Delhi,28.6348,77.258,2026-08-17 21:00:00,An evening of improv in Delhi. weekend pe plans chahiye
+999,629,partner_a,Riya Collective: Stand-up Special,Riya Collective,comedy,Bengaluru,13.0273,77.5959,2026-09-04 23:00:00,"An evening of improv in Bengaluru. new city, new friends"
+1000,630,partner_a,Pune Food Festivals Fest,Saffron Trio,festival,Pune,18.5683,73.8686,2026-12-03 21:00:00,An evening of food festivals in Pune. weekend pe plans chahiye
+1001,631,partner_a,Hollywood Films Marathon: Aarav Live Premiere,Aarav Live,movie,Mumbai,19.1581,72.9795,2026-06-23 22:00:00,An evening of hollywood films in Mumbai. always up for a good show
+1002,631,partner_b,Hollywood Films Marathon: Aarav Live Premiere,Aarav Live,movie,Mumbai,19.1575,72.9797,2026-06-23 22:30:00,An evening of hollywood films in Mumbai. always up for a good show
+1003,632,partner_a,Pottery Workshop with Midnight Chai Collective,Midnight Chai Collective,workshop,Hyderabad,17.3149,78.4586,2027-01-20 21:00:00,An evening of pottery in Hyderabad. always up for a good show
+1004,632,partner_b,Pottery Workshop with Midnight Chai Collective,Midnight Chai Collective,workshop,Hyderabad,17.3145,78.4585,2027-01-20 21:30:00,An evening of pottery in Hyderabad. always up for a good show
+1005,633,partner_a,Pune Tech Summit 2026,Kavya Project,conference,Pune,18.5144,73.8568,2026-07-17 20:00:00,An evening of tech in Pune. always up for a good show
+1006,633,partner_b,Pune Tech Summit 2026 | Tickets,Kavya Project,conference,Pune,18.5143,73.8565,2026-07-17 20:00:00,An evening of tech in Pune. always up for a good show
+1007,634,partner_a,Comedy Night ft. Riya Trio,Riya Trio,comedy,Pune,18.4743,73.8858,2026-10-14 22:00:00,An evening of stand-up comedy in Pune. chalo saath chalte hain
+1008,635,partner_a,Bengaluru Startups Summit 2026,Midnight Chai Live,conference,Bengaluru,13.0144,77.5718,2026-07-01 23:00:00,An evening of startups in Bengaluru. ekdum mast vibe
+1009,635,partner_b,Bengaluru Startups Summit 2026 | Tickets,Midnight Chai Live,conference,Bengaluru,13.0143,77.5713,2026-07-01 22:30:00,An evening of startups in Bengaluru. ekdum mast vibe
+1010,636,partner_a,Mumbai Music Festivals Fest,Riya Project,festival,Mumbai,19.1697,72.8776,2026-11-16 19:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+1011,636,partner_b,MUMBAI MUSIC FESTIVALS FEST,Riya Project,festival,Mumbai,19.1696,72.8777,2026-11-16 19:00:00,An evening of music festivals in Mumbai. weekend pe plans chahiye
+1012,637,partner_a,Comedy Night ft. Static Tides Live,Static Tides Live,comedy,Hyderabad,17.3933,78.5429,2026-10-03 23:00:00,"An evening of improv in Hyderabad. new city, new friends"
+1013,637,partner_b,Comedy Night ft. Static Tides Live | Tickets,Static Tides Live,comedy,Hyderabad,17.3936,78.543,2026-10-03 23:00:00,"An evening of improv in Hyderabad. new city, new friends"
+1014,638,partner_a,Aarav Collective Live in Hyderabad,Aarav Collective,concert,Hyderabad,17.4405,78.5003,2026-06-03 22:00:00,An evening of indie music in Hyderabad. chalo saath chalte hain
+1015,638,partner_b,Aarav Collective Live in Hyderabad | Tickets,Aarav Collective,concert,Hyderabad,17.4407,78.4998,2026-06-03 22:00:00,An evening of indie music in Hyderabad. chalo saath chalte hain
+1016,639,partner_a,Anime Marathon: Kavya Sessions Premiere,Kavya Sessions,movie,Hyderabad,17.3123,78.5082,2026-10-23 21:00:00,An evening of anime in Hyderabad. weekend pe plans chahiye
+1017,639,partner_b,Anime Marathon - Kavya Sessions Premiere,Kavya Sessions,movie,Hyderabad,17.3124,78.5081,2026-10-23 21:00:00,An evening of anime in Hyderabad. weekend pe plans chahiye
+1018,640,partner_a,Pune Dynamos vs Royals (kabaddi),Saffron Sessions,sports,Pune,18.5595,73.9874,2026-09-05 22:00:00,An evening of kabaddi in Pune. chalo saath chalte hain
+1019,640,partner_b,PUNE DYNAMOS VS ROYALS (KABADDI),Saffron Sessions,sports,Pune,18.5599,73.9882,2026-09-05 22:00:00,An evening of kabaddi in Pune. chalo saath chalte hain
+1020,641,partner_a,Hyderabad Tigers vs Royals (kabaddi),Mehfil Live,sports,Hyderabad,17.4405,78.5003,2027-01-25 20:00:00,"An evening of kabaddi in Hyderabad. new city, new friends"
+1021,642,partner_a,Pune Tech Summit 2026,Blue Lantern Express,conference,Pune,18.4933,73.8493,2026-10-07 21:00:00,An evening of tech in Pune. weekend pe plans chahiye
+1022,643,partner_a,Aarav Band presents a theatre evening,Aarav Band,theatre,Hyderabad,17.3123,78.5082,2026-09-10 23:00:00,An evening of theatre in Hyderabad. always up for a good show
+1023,644,partner_a,Blue Lantern Sessions presents a musicals evening,Blue Lantern Sessions,theatre,Pune,18.4933,73.8493,2026-07-19 21:00:00,An evening of musicals in Pune.
+1024,645,partner_a,Hyderabad Mavericks vs Titans (football),Saffron Live,sports,Hyderabad,17.4405,78.5003,2026-06-07 23:00:00,An evening of football in Hyderabad. always up for a good show
+1025,645,partner_b,Hyderabad Mavericks vs Titans (football),Saffron Live,sports,Hyderabad,17.44,78.5003,2026-06-07 23:30:00,An evening of football in Hyderabad. always up for a good show
+1026,646,partner_a,Delhi Food Festivals Fest,Midnight Chai Sessions,festival,Delhi,28.5718,77.2247,2026-11-20 21:00:00,An evening of food festivals in Delhi. always up for a good show
+1027,647,partner_a,Static Tides Project - Edm Night,Static Tides Project,concert,Pune,18.5595,73.9874,2027-01-12 19:00:00,An evening of edm in Pune. weekend pe plans chahiye
+1028,648,partner_a,Pune Dynamos vs Royals (kabaddi),Midnight Chai Project,sports,Pune,18.5683,73.8686,2027-01-18 22:00:00,An evening of kabaddi in Pune. always up for a good show
+1029,648,partner_b,Pune Dynamos vs Royals (kabaddi),Midnight Chai Project,sports,Pune,18.5685,73.8678,2027-01-18 22:00:00,An evening of kabaddi in Pune. always up for a good show
+1030,649,partner_a,Aarav Band presents a theatre evening,Aarav Band,theatre,Bengaluru,12.928,77.6909,2026-09-04 23:00:00,An evening of theatre in Bengaluru. weekend pe plans chahiye
+1031,650,partner_a,The Monsoon Band presents a theatre evening,The Monsoon Band,theatre,Pune,18.4933,73.8493,2026-10-03 19:00:00,An evening of theatre in Pune.
+1032,650,partner_b,The Monsoon Band presents a theatre evening | Tickets,The Monsoon Band,theatre,Pune,18.4935,73.8494,2026-10-03 19:00:00,An evening of theatre in Pune.
+1033,651,partner_a,The Monsoon Live Live in Delhi,The Monsoon Live,concert,Delhi,28.5718,77.2247,2026-06-01 21:00:00,An evening of bollywood music in Delhi. chalo saath chalte hain
+1034,652,partner_a,Anime Marathon: Kavya Live Premiere,Kavya Live,movie,Bengaluru,13.0421,77.6685,2026-09-28 23:00:00,An evening of anime in Bengaluru. always up for a good show
+1035,652,partner_b,Anime Marathon: Kavya Live Premiere,Kavya Live,movie,Bengaluru,13.0423,77.6684,2026-09-28 23:30:00,An evening of anime in Bengaluru. always up for a good show
+1036,653,partner_a,Comedy Night ft. Aarav Trio,Aarav Trio,comedy,Hyderabad,17.3933,78.5429,2026-11-14 23:00:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+1037,653,partner_b,Comedy Night ft. Aarav Trio,Aarav Trio,comedy,Hyderabad,17.3933,78.5433,2026-11-14 23:30:00,An evening of stand-up comedy in Hyderabad. always up for a good show
+1038,654,partner_a,Riya Collective: Stand-up Special,Riya Collective,comedy,Pune,18.4933,73.8493,2026-09-04 23:00:00,An evening of improv in Pune. always up for a good show
+1039,654,partner_b,Riya Collective: Stand-up Special,Riya Collective,comedy,Pune,18.4937,73.8494,2026-09-04 22:30:00,An evening of improv in Pune. always up for a good show
+1040,655,partner_a,The Monsoon Project presents a musicals evening,The Monsoon Project,theatre,Hyderabad,17.3149,78.4586,2026-06-09 19:00:00,An evening of musicals in Hyderabad. chalo saath chalte hain
+1041,655,partner_b,The Monsoon Project presents a musicals evening | Tickets,The Monsoon Project,theatre,Hyderabad,17.3148,78.4586,2026-06-09 18:30:00,An evening of musicals in Hyderabad. chalo saath chalte hain
+1042,656,partner_a,Pune Tigers vs Dynamos (football),Riya Collective,sports,Pune,18.4833,73.9283,2026-10-07 23:00:00,"An evening of football in Pune. new city, new friends"
+1043,656,partner_b,Pune Tigers vs Dynamos (football) | Tickets,Riya Collective,sports,Pune,18.4832,73.9284,2026-10-07 23:00:00,"An evening of football in Pune. new city, new friends"
+1044,657,partner_a,Pottery Workshop with Aarav Collective,Aarav Collective,workshop,Bengaluru,13.0493,77.5864,2026-12-03 19:00:00,An evening of pottery in Bengaluru. weekend pe plans chahiye
+1045,657,partner_b,Pottery Workshop with Aarav Collective,Aarav Collective,workshop,Bengaluru,13.0487,77.5864,2026-12-03 19:00:00,An evening of pottery in Bengaluru. weekend pe plans chahiye
+1046,658,partner_a,Mehfil Sessions: Stand-up Special,Mehfil Sessions,comedy,Hyderabad,17.4405,78.5003,2026-09-09 23:00:00,An evening of stand-up comedy in Hyderabad.
+1047,658,partner_b,Mehfil Sessions - Stand-up Special,Mehfil Sessions,comedy,Hyderabad,17.4411,78.5002,2026-09-09 23:30:00,An evening of stand-up comedy in Hyderabad.
+1048,659,partner_a,Blue Lantern Live Live in Pune,Blue Lantern Live,concert,Pune,18.5144,73.8568,2026-12-03 23:00:00,"An evening of edm in Pune. new city, new friends"
+1049,660,partner_a,Anime Marathon: The Monsoon Express Premiere,The Monsoon Express,movie,Mumbai,19.103,72.9041,2026-12-24 20:00:00,An evening of anime in Mumbai. always up for a good show

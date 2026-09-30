@@ -1,0 +1,51 @@
+# Render Blueprint: New → Blueprint → pick this repo. Creates the ML API (Docker) and its Postgres.
+# Secrets marked `sync: false` are asked for in the dashboard; nothing secret lives in this file.
+services:
+  - type: web
+    name: buddysync-ml
+    runtime: docker
+    dockerfilePath: ./ml/Dockerfile
+    dockerContext: ./ml
+    # Memory: ~250 MB for the trip planner alone, ~430 MB once face verification and liveness have run.
+    # free/starter (512 MB) works for a demo with 1 process; use standard (2 GB) for real traffic.
+    # free instances sleep after 15 min idle (first request then takes ~1 min): open /health before a demo.
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: buddysync-db
+          property: connectionString
+      - key: ML_SERVICE_TOKEN        # callers send it as X-Service-Token (not needed for /v1/go)
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: "1"
+      - key: TRIP_WORKERS            # planner worker threads inside the API process
+        value: "2"
+      # LLM: three Groq models (each has its own free quota), Gemini as the fallback
+      - key: LLM_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: LLM_MODEL
+        value: qwen/qwen3.8-27b,openai/gpt-oss-120b,openai/gpt-oss-20b
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_FALLBACK_BASE_URL
+        value: https://generativelanguage.googleapis.com/v1beta/openai/
+      - key: LLM_FALLBACK_MODEL
+        value: gemini-flash-lite-latest,gemini-3.8-flash
+      - key: LLM_FALLBACK_API_KEY
+        sync: false
+      # live prices, affiliate links, voice
+      - key: LITEAPI_KEY
+        sync: false
+      - key: TRAVELPAYOUTS_TOKEN
+        sync: false
+      - key: TRAVELPAYOUTS_MARKER
+        value: "783614"
+      - key: STT_API_KEY
+        sync: false
+
+databases:
+  - name: buddysync-db
+    databaseName: buddysync
+    plan: free                       # Render's free Postgres expires after 30 days: fine for a demo

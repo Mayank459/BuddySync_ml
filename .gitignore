@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# local data and generated files
+# LFW download (1.4 GB): python -m face_verification.train fetches it
+ml/data/lfw_home/
+# embedded dev Postgres
+ml/data/pgdata/
+# webcam test recordings
+ml/data/*.mp4
+ml/artifacts/trip_evals.json
+*.log
+
+# secrets
+ml/demo_env.ps1
+.env
+.env.*
+
+# tooling
+.playwright-mcp/
+.vscode/
+.idea/
+
+# project reports (shared separately)
+*.pdf

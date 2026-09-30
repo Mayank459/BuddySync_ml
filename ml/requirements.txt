@@ -1,0 +1,18 @@
+numpy>=1.26,<2
+pandas>=2.2
+scikit-learn>=1.4
+joblib
+fastapi
+uvicorn
+python-multipart
+opencv-contrib-python==4.11.0.86   # mediapipe needs the contrib build; 4.12+ needs numpy 2
+mediapipe==1.0.1
+streamlit
+requests
+anthropic
+openai                             # OpenAI-compatible providers (Gemini, Groq, ...) for the trip planner
+psycopg[binary]>=3.2               # trip planner storage + job queue (Postgres)
+psycopg-pool
+opening-hours-py                   # OSM opening_hours parser for the planner's validator
+pgserver                           # embedded Postgres for local dev and tests when DATABASE_URL is unset
+pytest

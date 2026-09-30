@@ -1,0 +1,6 @@
+[server]
+address = "127.0.0.1"   # local only: the playground can call the unauthenticated ML API
+headless = true
+
+[browser]
+gatherUsageStats = false
