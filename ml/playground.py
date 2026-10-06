@@ -4,6 +4,7 @@ Start the API first, then this (both from ml/):
     python -m uvicorn app:app --port 8765
     python -m streamlit run playground.py
 """
+import importlib.util
 import os
 import time
 
@@ -13,6 +14,8 @@ import streamlit as st
 
 from common.utils import DATA, load
 import common.http  # noqa: F401  (adds X-Service-Token when ML_SERVICE_TOKEN is set)
+
+HAS_CAM = importlib.util.find_spec("cv2") is not None  # webcam flows need OpenCV; absent on the hosted demo
 
 st.set_page_config(page_title="BuddySync ML playground", layout="wide")
 BASE = st.sidebar.text_input("API base URL", os.getenv("API_URL", "https://buddysync-ml.onrender.com"))  # local: http://127.0.0.1:8765 (127.0.0.1, not localhost → 2 s delay on Windows)
@@ -274,7 +277,8 @@ def liveness_flow(view, base, max_attempts=3):
 
 with tabs[4]:
     mode = st.radio("Mode", ["Liveness (video challenge)", "Photo match only (no liveness)"], horizontal=True)
-    use_cam = st.toggle("Use this PC's webcam (photo + challenge video)", value=True, key="f_cam")
+    use_cam = st.toggle("Use this PC's webcam (photo + challenge video)", value=HAS_CAM, disabled=not HAS_CAM,
+                        key="f_cam", help=None if HAS_CAM else "Unavailable on this hosted demo — upload photos/a video instead.")
     photos = [] if use_cam else st.file_uploader("Profile photos", ["jpg", "jpeg", "png"], accept_multiple_files=True,
                                                  key="f_photos")
     if use_cam:
