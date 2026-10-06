@@ -1,0 +1,7 @@
+# Streamlit Community Cloud deploy of the ML playground (client only — it calls the
+# hosted API over HTTP). The API's own deps are in ml/requirements.txt.
+streamlit
+pandas>=2.2
+numpy>=1.26,<2
+requests
+joblib

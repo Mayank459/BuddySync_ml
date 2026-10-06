@@ -15,7 +15,7 @@ from common.utils import DATA, load
 import common.http  # noqa: F401  (adds X-Service-Token when ML_SERVICE_TOKEN is set)
 
 st.set_page_config(page_title="BuddySync ML playground", layout="wide")
-BASE = st.sidebar.text_input("API base URL", os.getenv("API_URL", "http://127.0.0.1:8765"))  # 127.0.0.1, not localhost (2 s delay on Windows)
+BASE = st.sidebar.text_input("API base URL", os.getenv("API_URL", "https://buddysync-ml.onrender.com"))  # local: http://127.0.0.1:8765 (127.0.0.1, not localhost → 2 s delay on Windows)
 
 
 @st.cache_data
