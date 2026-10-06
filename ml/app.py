@@ -6,6 +6,8 @@ ML_SERVICE_TOKEN set → every /v1 call needs the header X-Service-Token (except
 """
 import hmac
 import os
+import threading
+import urllib.request
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -24,11 +26,29 @@ from trip_planner.api import router as trips
 PUBLIC = ("/v1/go",)
 
 
+def keep_awake(url, every=13 * 60):
+    """Render's free plan sleeps after 15 min without inbound traffic, so ping our own public URL every 13."""
+    done = threading.Event()
+
+    def loop():
+        while not done.wait(every):
+            try:
+                urllib.request.urlopen(url + "/health", timeout=30).close()
+            except OSError:
+                pass  # next ping retries
+
+    threading.Thread(target=loop, daemon=True).start()
+    return done.set
+
+
 @asynccontextmanager
 async def lifespan(app):
     # trip planner jobs: in-process workers for dev; production sets TRIP_WORKERS=0 and runs trip_planner.worker
     stop = worker.start(int(os.getenv("TRIP_WORKERS", "2")))
+    url = os.getenv("RENDER_EXTERNAL_URL")  # Render sets it; unset locally, so no pinging
+    stop_ping = keep_awake(url) if url else (lambda: None)
     yield
+    stop_ping()
     stop()
 
 
