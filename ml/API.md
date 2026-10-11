@@ -7,7 +7,8 @@ The React app never calls this service directly. Spring calls it, then decides w
 - **Format:** JSON in and out, except face verification (`multipart/form-data`).
 - **Auth:** set `ML_SERVICE_TOKEN` on the service, and Spring sends it as the header `X-Service-Token` on every `/v1` call (otherwise `401`). `/v1/go` is the exception: users' browsers open it directly, and it only redirects to known booking sites. Keep the service on the backend's private network anyway.
 - **IDs:** `user_id` and `event_id` are the backend's integer IDs. For now the service reads them from the synthetic CSVs in `ml/data/`; later it will read them from Postgres.
-- **Interactive docs:** `GET /docs` (Swagger) lists every request schema.
+- **Interactive docs:** `GET /docs` (Swagger) lists every request schema. **Only when `ML_SERVICE_TOKEN` is unset (local dev)**: a deployed service hides `/docs` and `/openapi.json`, and this file is the reference.
+- **Request size:** every request needs a `Content-Length` header (chunked uploads get `411`) and may be at most **96 MB** (`413`). Normal HTTP clients send it for multipart uploads.
 
 ## Contents
 
@@ -20,6 +21,7 @@ The React app never calls this service directly. Spring calls it, then decides w
 | 5a | `POST /v1/verify/challenge` | Get random liveness actions | < 5 ms |
 | 5b | `POST /v1/verify/liveness` | Challenge video → liveness + same-person + face match | ~5 s for a 10 s video |
 | 5c | `POST /v1/verify/face` | Photo match only (no liveness) | ~100–300 ms (not benchmarked) |
+| 5d | `DELETE /v1/verify/users/{user_id}/face` | Erase a user's stored face template (account deletion) | < 50 ms |
 | 6 | `POST /v1/moderate/message` | Check a chat message before delivery | 2 ms (~70 ms with `USE_LAYA=1`) |
 | 7.1 | `POST /v1/trips` | Create a trip (queues the draft) | < 100 ms; draft 1–20 s async |
 | 7.2 | `GET /v1/trips/{trip_id}` | Read the trip | < 50 ms |
@@ -38,6 +40,7 @@ The React app never calls this service directly. Spring calls it, then decides w
 | 7.22 | `DELETE /v1/trips/users/{user_id}` | Erase a user's trip data | < 100 ms |
 | 7.23 | `GET /v1/go` | Booking hand-off (click tracking, 302) | < 50 ms |
 | 8 | `GET /health` | Liveness probe | < 5 ms |
+| 9 | `GET /v1/trust/users/{user_id}` | Trust signals from post-event feedback | < 5 ms |
 
 ---
 
@@ -54,7 +57,8 @@ Every error has the same body:
 | `400` | Bad input the service understood (e.g. uploaded file is not an image) | Show the message to the user |
 | `403` | The user isn't a member of that trip | Don't show the trip |
 | `404` | Unknown `user_id`, `event_id` or `trip_id` | Fix the call; don't retry |
-| `413` | Uploaded image larger than 8 MB | Ask the user for a smaller image |
+| `411` | No `Content-Length` (chunked upload) | Send the body with a length |
+| `413` | Request over 96 MB; an image over 8 MB or 40 megapixels; more than 5 profile photos; a video over 40 MB, 20 s, 4,800 frames or 4K frames | Ask the user for a smaller file |
 | `422` | Request doesn't match the schema (missing field, wrong type). FastAPI adds a list of field errors to `detail`. | Bug in the caller; don't retry |
 | `409` | Trip card action on a stale version, while the planner is editing, or on a locked slot | Re-fetch the trip, then retry |
 | `429` | Limit reached (trip message caps) | Show the message |
@@ -110,6 +114,12 @@ Ranks the people attending the same event as buddy candidates for one user.
       "match_pct": 50,
       "distance": "2-5 km",
       "reasons": ["2-5 km apart", "similar plans for the night"],
+      "shared_interests": [
+        { "interest": "Music", "pct": 73, "shared": ["edm"] },
+        { "interest": "Technology", "pct": 60, "shared": [] }
+      ],
+      "events_in_common": 2,
+      "reliability": 0.84,
       "components": {
         "interest": 0.069, "event_fit": 0.678, "location": 0.83,
         "pref_uv": 0.872, "pref_vu": 0.153
@@ -128,12 +138,16 @@ Ranks the people attending the same event as buddy candidates for one user.
 | `candidates[].match_pct` | int 0–100 | **Show this to the user.** Reciprocal compatibility (both directions). |
 | `candidates[].distance` | string | Bucket only: `"< 2 km"`, `"2-5 km"`, `"5-10 km"`, `"10+ km"`. Never exact. |
 | `candidates[].reasons` | string[] | Up to 2 short explanations to display |
+| `candidates[].shared_interests` | array | Up to 3 interest groups both people have, best first: **show as "Music 73%"**. `pct` is 60 for sharing the group, up to 100 as their tags within it overlap. `shared` = the exact tags in common. |
+| `candidates[].events_in_common` | int | Other events (past or upcoming) both have a participant row for ("Similar events 2") |
+| `candidates[].reliability` | float 0–1 | From post-event feedback (section 9). 0.84 = new user, no feedback yet. |
 | `candidates[].components` | object of floats 0–1 | For debugging/analytics only; **don't show**. `pref_uv` = candidate fits viewer's preferences, `pref_vu` = the reverse. |
 
 ### Behaviour
 - **Who can appear:** other users with an EventParticipant row for this event whom the viewer hasn't already sent a request to.
 - **Hard filters, checked both ways:** women-only, verified-only, age range. If either side fails the other's filter, the pair is excluded.
-- **Order isn't strictly by `match_pct`.** Users with many unanswered incoming requests are ranked lower on purpose, to spread requests beyond the few most popular users.
+- **Order isn't strictly by `match_pct`.** Users with many unanswered incoming requests are ranked lower on purpose, to spread requests beyond the few most popular users. Reliability also counts: someone who keeps not showing up ranks lower (×0.7 at reliability 0.4); a new user loses almost nothing (×0.92).
+- **Never suggested:** two people where either said after an event that they wouldn't join the other again (also kept out of the same clan).
 - **What the score uses:** interests and bio text, onboarding-quiz answers, home-area distance, and soft preferences (language, group size, verified, age). It does **not** use gender (except the user's own women-only filter), photos or looks.
 
 ### Errors
@@ -232,7 +246,7 @@ Personal event feed for the home screen.
 
 ### Behaviour
 - **Filtering:** only events in the **user's city** that start **between now and `days_ahead`**, excluding events the user already has a participant row for.
-- **Taste:** built from the user's interests plus events they RSVP'd to or saved, with RSVPs weighted more.
+- **Taste:** built from the user's interests plus events they RSVP'd to or saved, with RSVPs weighted more, plus how they **rated past events**: a 5-star event pulls similar events up as much as an RSVP, a 1-star pushes them down as hard.
 
 ### Errors
 - `404` unknown `user_id`
@@ -336,13 +350,14 @@ Flow:
 | `challenge_id` | string | Send with the video. **Single use**, even if that attempt fails. |
 | `expires_in_s` | int | Challenge lifetime in seconds (300 now; ~90 once the app records live) |
 | `steps` | array of 3 | Do these **in this order**. Show `prompt` to the user. |
-| `steps[].action` | string | `blink`, `open_mouth`, `turn_head`, `touch_nose`, `fingers_1` … `fingers_4` |
+| `steps[].action` | string | `blink`, `open_mouth`, `smile`, `turn_head`, `tilt_head`, `touch_nose`, `cover_eye`, `fingers_1` … `fingers_4` |
 | `instructions` | string | Show before recording |
 
 **How steps are picked:**
-- **Randomness:** chosen with a cryptographic random generator. There are always 3 steps: at least one facial expression (`blink` / `open_mouth`), at least one hand action (`touch_nose` / `fingers_N`), and at most one finger count.
+- **Randomness:** chosen with a cryptographic random generator. There are always 3 steps: at least one facial expression (`blink` / `open_mouth` / `smile`), at least one hand action (`touch_nose` / `cover_eye` / `fingers_N`), and at most one finger count.
 - **Why:** a photo can't change expression, a pre-recorded video can't know the random steps, and a hand in front of the face tends to break face-swap deepfakes.
-- **Head turns:** `turn_head` accepts either side, because front cameras often mirror the image.
+- **Head turns and tilts:** `turn_head` and `tilt_head` accept either side, because front cameras often mirror the image.
+- **Judged against the user's own start face** (first frames of the video), not fixed numbers: blink = eye opening drops under 60% of the start, smile = mouth 1.2x wider with the jaw mostly shut, tilt = eye line rotates 15°.
 
 ### 5b. `POST /v1/verify/liveness`: check the video and match the face
 
@@ -352,9 +367,10 @@ Flow:
 |---|---|---|---|
 | `challenge_id` | text | ✓ | From 5a |
 | `video` | video file | ✓ | mp4 / mov / webm / avi / mkv. **At most 20 s and 40 MB.** One person, face visible, decent light. |
-| `profile_photos` | image file(s) | ✓ | One or more; repeat the field. 8 MB each. |
+| `profile_photos` | image file(s) | ✓ | 1–5; repeat the field. 8 MB and 40 megapixels each. |
+| `user_id` | int | | Also check the face against **every other account** (duplicate accounts). **Send it only with the user's consent**: it stores their face template. |
 
-- **Storage:** the video is written to a temp file (OpenCV needs a file path) and **deleted as soon as it's analysed**. Only the result is kept. Photos are processed in memory only.
+- **Storage:** the video is written to a temp file (OpenCV needs a file path) and **deleted as soon as it's analysed**. Photos are processed in memory only. With `user_id`, and only when the face matched the profile, the face **template** (128 numbers, not an image) is kept for future duplicate checks; erase it with 5d when the account is deleted.
 
 ```bash
 curl -X POST http://127.0.0.1:8765/v1/verify/liveness \
@@ -393,16 +409,18 @@ curl -X POST http://127.0.0.1:8765/v1/verify/liveness \
 | `decision` | string | `pass` / `review` / `fail` / `retry` (tables below) |
 | `reason` | string | Present on `fail` and `retry` |
 | `liveness.passed` | bool | Every step done, in order, with the face identity-checked at that moment |
-| `liveness.steps[].done` | bool | Action seen, held about 0.3 s (a blink only needs one frame, but open eyes must be seen first), after the previous step |
+| `liveness.steps[].done` | bool | Action seen, held about 0.3 s, after the previous step. `blink` needs **two blinks within 2 s** after open eyes were seen: people blink on their own every few seconds, so one blink proves nothing was asked |
 | `liveness.steps[].at_s` | float or null | Seconds into the video when the step was completed |
 | `liveness.steps[].identity_checked` | bool | The face was confirmed within 1 s of this step |
 | `same_person_throughout` | bool or null | Every sampled frame, at any pose, matches the clearest frontal frame. `null` if not evaluated. |
 | `min_continuity` | float or null | Lowest frame-to-reference similarity |
-| `identity_coverage` | float 0–1 | Share of sampled face frames that could be identity-checked. Blurry frames and frames with a hand over the face count against it. |
+| `identity_coverage` | float 0–1 | Share of sampled face frames that could be identity-checked. Blurry frames and frames with a hand inside the face area count against it; fingers held beside the face don't, and wide-open-mouth frames aren't sampled (the face model sees a different face then). |
 | `frames_analyzed` | int | Frames checked (sampled at up to about 10 per second, depending on the video's frame rate) |
 | `duration_s` | float | Length of the video |
 | `best_similarity`, `per_photo` | float, list | Clearest frontal video frame vs each profile photo (only when a match was attempted) |
 | `liveness_checked` | bool | Always `true` here |
+| `duplicate_check` | string | Only with `user_id`: `clear`, `match`, `unavailable` (database down: verification still completes) or `not_calibrated` |
+| `duplicate_of` | array | Accounts whose face matches: `[{ "user_id": 812, "similarity": 0.71 }]`, most similar first. **Never show to the user.** |
 
 #### How `decision` is reached (checks run in this order)
 | Check | Result | Tell the user / backend action |
@@ -415,6 +433,7 @@ curl -X POST http://127.0.0.1:8765/v1/verify/liveness \
 | Face match ≥ 0.368 | `pass` | **Grant the Verified badge.** Store `model_version`. |
 | Face match 0.358 – 0.368 | `review` | Queue for a human moderator |
 | Face match < 0.358 | `fail` | "Doesn't match your profile photos" |
+| With `user_id`: the face matches another account (≥ 0.652) | `review` · `possible_duplicate_account` | Hold the badge; a moderator compares the accounts in `duplicate_of`. Never auto-ban: twins exist. |
 
 **Retries:** every retry needs a new challenge (5a). Limit attempts in Spring, e.g. 3 per day.
 
@@ -424,11 +443,17 @@ curl -X POST http://127.0.0.1:8765/v1/verify/liveness \
 | `400` | Video can't be decoded, or a photo isn't an image |
 | `404` | Unknown or already-used `challenge_id` |
 | `410` | Challenge expired |
-| `413` | Video over 40 MB or 20 s, or an image over 8 MB |
+| `413` | Video over 40 MB, 20 s, 4,800 frames or larger than 4K; an image over 8 MB or 40 megapixels; more than 5 profile photos |
 | `422` | Missing a form field |
 | `503` | Face thresholds not calibrated |
 
 **Speed:** about 20 frames/s analysed on a laptop CPU, so a 10 s video takes about 5–8 s. Call it with a **30 s timeout** and show a spinner. One video is processed at a time per server process.
+
+### 5d. `DELETE /v1/verify/users/{user_id}/face`: erase the face template
+
+Call on account deletion. **Response `200`:** `{ "template_deleted": true }` (`false` if none was stored).
+
+**Why the duplicate threshold is stricter (0.652 vs 0.358):** one face is searched against every account, so expected false matches per check = per-pair false-match rate × number of accounts. It's set so that at most 1 in a million stranger pairs match (calibrated on all ~80M LFW stranger pairs): about 0.1 false flags per check at 100k accounts. Past ~100k accounts, move the search to pgvector.
 
 ### 5c. `POST /v1/verify/face`: photo match only
 
@@ -441,7 +466,7 @@ Compares a selfie photo with the user's profile photos.
 | Part | Type | Required | Notes |
 |---|---|---|---|
 | `selfie` | image file | ✓ | One image. JPEG or PNG. The face should be clear, front-facing, and well lit. |
-| `profile_photos` | image file(s) | ✓ | One or more. Repeat the field name for each photo. |
+| `profile_photos` | image file(s) | ✓ | 1–5. Repeat the field name for each photo. |
 
 - **Size limit:** 8 MB per image.
 - **Storage:** images are processed in memory and **never stored** by the service (DPDP: raw biometrics aren't retained).
@@ -496,7 +521,7 @@ curl -X POST http://127.0.0.1:8765/v1/verify/face \
 
 ### Errors
 - `400` a file isn't an image
-- `413` a file is over 8 MB
+- `413` a file is over 8 MB or 40 megapixels, or more than 5 profile photos
 - `422` missing `selfie` or `profile_photos`
 - `503` thresholds not calibrated
 
@@ -1128,7 +1153,7 @@ Call it on account deletion, or on an erasure request. Chats are otherwise kept 
 | `user_id` | int | | Add it when opening the link |
 
 **Response `302`:** `Location` is the partner URL, and the click is logged.
-- Only `https` links to known booking hosts are allowed: Aviasales, Booking.com, Agoda, IRCTC, redBus, Uber, Google, ixigo, ConfirmTkt, BookMyShow, District, AbhiBus, MakeMyTrip, Cleartrip, Travelpayouts.
+- Only `https` links to known booking hosts are allowed: Aviasales, Booking.com, Agoda, IRCTC, redBus, Uber, Google (only `/maps/` and `/travel/`: Google's other paths include redirectors to any site), ixigo, ConfirmTkt, BookMyShow, District, AbhiBus, MakeMyTrip, Cleartrip, Travelpayouts.
 - It's **public**, with no service token, because users' browsers open it.
 
 **Errors:** `400` `"not a known booking link"` (never an open redirect).
@@ -1158,6 +1183,32 @@ Call it on account deletion, or on an erasure request. Chats are otherwise kept 
 
 ---
 
+## 9. `GET /v1/trust/users/{user_id}`
+
+Trust signals from **post-event peer feedback** (after an event, each buddy answers: did they show up? would you join them again?). Face/phone verified come from Spring's own records, not from here.
+
+### Response `200`
+```json
+{
+  "user_id": 330, "events_attended": 4, "feedback_count": 9,
+  "showed_up": "9 of 9", "would_join_again": "7 of 9",
+  "reliability": 0.889, "level": "reliable"
+}
+```
+
+| Field | Notes |
+|---|---|
+| `events_attended` | Past events the user rated, or where someone who went with them says they showed up |
+| `showed_up`, `would_join_again` | Raw counts, safe to show ("Showed up to 9 of 9 plans") |
+| `reliability` | 0.6 × show-up rate + 0.4 × join-again rate, each smoothed towards a prior worth 4 ratings (90% / 75%), so a new user starts at 0.84 and one bad night doesn't sink anyone |
+| `level` | `new` (under 3 ratings), `reliable` (≥ 0.85), `ok` (≥ 0.65), `low`. **Show `reliable` as a badge; use `low` for moderation, not as a public label.** |
+
+**Errors:** `404` unknown user.
+
+**Data:** reads `peer_feedback` (event_id, rater_id, ratee_id, showed_up, would_join_again) and `event_ratings` (user_id, event_id, rating 1–5); synthetic CSVs until Spring's tables exist.
+
+---
+
 ## Current limitations (affect how you use the API)
 
 | Area | Limitation |
@@ -1166,6 +1217,8 @@ Call it on account deletion, or on an erasure request. Chats are otherwise kept 
 | All | No authentication. Keep the service on a private network. |
 | buddies | Candidate pool includes every participant, not only those with `looking_for_buddy` (fix pending) |
 | verify | **Liveness has not yet been tested on a real recording.** Only the attack videos are verified: all are rejected (still or moving photo, person swap, blurry or hand-covered stand-in). Thresholds (hold time, blink/mouth/turn/nose distances) are first guesses, so tune them on ~30 real attempts per action. It doesn't stop a live deepfake through a virtual camera (add Play Integrity / App Attest in the app) or someone switching between several photos of the victim. Face thresholds are calibrated on LFW, not Indian faces. Challenges are held in memory (single instance). |
+| trust | Reliability weights and levels are hand-set, and feedback is synthetic. The buddy ranking uses reliability as a fixed multiplier (not learned), and the recs feed uses ratings at serving time only (offline metrics don't include them yet). |
+| verify (duplicates) | The duplicate threshold is calibrated on LFW (mostly Western celebrities), like the match thresholds: recalibrate on consented Indian faces. It's a full scan of all templates per check (fine to ~100k accounts). |
 | moderate | Toxicity model trained on a tiny seed set, so treat `toxicity` as rough. The pattern rules are reliable. |
 | trips | Places catalogs for Mumbai, Delhi, Bengaluru, Pune and Hyderabad. Prices are estimate bands, not live rates, until LiteAPI and Travelpayouts are connected. Few OSM hotels have star ratings, so "5-star only" returns few results, and clan variants can collapse to one or two real options. Travel legs have links but no times or fares yet. The last-metro warning is city-level (earliest line), not per station. The weather uses Open-Meteo's free tier, which is non-commercial only, so production needs its paid plan. The Gemini free tier is often busy: turns wait and retry, and drafts fall back to the code planner. Voice, affiliate links and the click redirect aren't built yet (design §19, streams E–F). |
 | responses | Response schemas aren't declared in code, so `/docs` shows inputs only. This file is the source of truth for outputs. |

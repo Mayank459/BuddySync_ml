@@ -5,6 +5,7 @@ Run from ml/ (server started with: uvicorn app:app --port 8000):
 Exit code 1 if any check fails.
 """
 import json
+import os
 import sys
 
 import cv2
@@ -12,10 +13,11 @@ import numpy as np
 import pandas as pd
 import requests
 
-from common.utils import DATA, load
-import common.http  # noqa: F401  (adds X-Service-Token when ML_SERVICE_TOKEN is set)
-
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8000"  # not "localhost": ~2 s IPv6 fallback on Windows
+os.environ["API_URL"] = BASE  # the token is only ever sent to this origin
+
+from common.utils import DATA, load  # noqa: E402
+import common.http  # noqa: F401,E402  (adds X-Service-Token when ML_SERVICE_TOKEN is set)
 results = []
 
 
@@ -32,7 +34,8 @@ users, parts, events = load("users").set_index("user_id"), load("participants"),
 
 # --- service -------------------------------------------------------------------------
 check("health", requests.get(BASE + "/health", timeout=10).json() == {"ok": True})
-check("openapi docs", requests.get(BASE + "/docs", timeout=10).status_code == 200)
+docs = requests.get(BASE + "/docs", timeout=10).status_code
+check("openapi docs: public locally, hidden when a service token is set", docs == (404 if common.http.TOKEN else 200))
 
 # --- buddy matching ------------------------------------------------------------------
 looking = parts[parts.status == "looking_for_buddy"]
@@ -45,6 +48,13 @@ check("buddies: everyone is at the same event",
       set(c["user_id"] for c in cands) <= set(parts[parts.event_id == viewer_row.event_id].user_id))
 check("buddies: match % in 0-100 and reasons given", all(0 <= c["match_pct"] <= 100 and c["reasons"] for c in cands))
 check("buddies: unknown user -> 404", post("/v1/match/buddies", json={"user_id": 999999, "event_id": 1}).status_code == 404)
+check("buddies: per-interest % and reliability", all(0 <= c["reliability"] <= 1 and
+      all(60 <= x["pct"] <= 100 for x in c["shared_interests"]) for c in cands))
+
+# --- trust ---------------------------------------------------------------------------------
+tr = requests.get(f"{BASE}/v1/trust/users/{int(viewer_row.user_id)}", timeout=10).json()
+check("trust: level + reliability", tr.get("level") in {"new", "reliable", "ok", "low"} and 0 <= tr["reliability"] <= 1, tr.get("level"))
+check("trust: unknown user -> 404", requests.get(f"{BASE}/v1/trust/users/999999", timeout=10).status_code == 404)
 
 # --- clans ---------------------------------------------------------------------------
 busiest = int(looking.event_id.value_counts().index[0])

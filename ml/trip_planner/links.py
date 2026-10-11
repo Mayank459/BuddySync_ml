@@ -12,9 +12,14 @@ DISCLOSURE = ("BuddySync may earn a commission when you book through these links
               "We rank options by fit for your trip, never by commission. We don't book or take payment.")
 
 
+ALLOWED_PATHS = {"google.com": ("/travel/", "/maps/")}  # Google also hosts redirectors (/url, /amp) to anywhere
+
+
 def allowed(url: str) -> bool:
-    host = (urlparse(url).hostname or "").lower()
-    return urlparse(url).scheme == "https" and any(host == h or host.endswith("." + h) for h in ALLOWED_HOSTS)
+    u = urlparse(url)
+    host = (u.hostname or "").lower()
+    site = next((h for h in ALLOWED_HOSTS if host == h or host.endswith("." + h)), None)
+    return u.scheme == "https" and site is not None and u.path.startswith(ALLOWED_PATHS.get(site, ("",)))
 
 
 def tracked(link: dict, trip_id: str, item_id: str) -> str:

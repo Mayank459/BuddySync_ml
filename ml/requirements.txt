@@ -8,6 +8,7 @@ python-multipart
 opencv-contrib-python==4.11.0.86   # mediapipe needs the contrib build; 4.12+ needs numpy 2
 mediapipe==1.0.1
 streamlit
+pillow                             # image headers checked before decoding (face_verification)
 requests
 anthropic
 openai                             # OpenAI-compatible providers (Gemini, Groq, ...) for the trip planner
