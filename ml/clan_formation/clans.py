@@ -12,13 +12,15 @@ import pandas as pd
 from buddy_matching.model import features, hard_ok, reciprocal
 
 
-def pair_matrix(user_ids, users, art) -> np.ndarray:
-    """Symmetric reciprocal-score matrix; 0 where either side's hard filters fail."""
+def pair_matrix(user_ids, users, art, avoid: set = frozenset()) -> np.ndarray:
+    """Symmetric reciprocal-score matrix; 0 where either side's hard filters fail or the pair is in `avoid`
+    (one said they wouldn't join the other again), so they never share a clan."""
     n = len(user_ids)
     i, j = np.triu_indices(n, k=1)
     pairs = pd.DataFrame({"viewer_id": np.asarray(user_ids)[i], "candidate_id": np.asarray(user_ids)[j]})
     raw, A, B, _, _ = features(pairs, users, art["vectorizer"])
     R = reciprocal(art["scaler"].transform(raw), art["weights"]) * (hard_ok(A, B) & hard_ok(B, A)).values
+    R = R * np.array([(a, b) not in avoid for a, b in zip(pairs.viewer_id, pairs.candidate_id)])
     M = np.zeros((n, n))
     M[i, j] = M[j, i] = R
     return M

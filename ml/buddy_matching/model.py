@@ -7,16 +7,27 @@ Components per pair (viewer u, candidate v):
   location   exp(-km / 5)
   pref_uv    share of u's soft preferences v meets (language, group size, verified, age)
   pref_vu    same, the other way round
+At serving time, post-event feedback nudges the ranking (reliability) and keeps apart anyone who said they
+wouldn't join the other again.
 """
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from common.utils import haversine_km
+from trust.model import NEUTRAL
 
 KEYS = ["interest", "event_fit", "location", "prefs"]
 DEFAULT_WEIGHTS = {"interest": 0.40, "event_fit": 0.30, "location": 0.20, "prefs": 0.10}
 QUIZ_KEYS = ["vibe", "arrive", "after", "punctuality"]
+INTEREST_GROUPS = {  # interest tags -> the groups people see ("Music 80%")
+    "Music": {"bollywood music", "indie music", "edm", "rock", "hip hop", "sufi", "music festivals"},
+    "Comedy": {"stand-up comedy", "improv"}, "Sports": {"cricket", "football", "kabaddi"},
+    "Movies": {"bollywood films", "hollywood films", "anime"}, "Theatre": {"theatre", "musicals"},
+    "Photography": {"photography"}, "Arts & crafts": {"pottery"}, "Food": {"food festivals"},
+    "Technology": {"coding", "tech", "startups", "ai"},
+}
+GROUP_OF = {t: g for g, tags in INTEREST_GROUPS.items() for t in tags}
 
 
 def profile_text(u) -> str:
@@ -68,14 +79,32 @@ def reciprocal(Z: np.ndarray, w: dict) -> np.ndarray:
     return 2 * s_uv * s_vu / (s_uv + s_vu + 1e-9)
 
 
+def interest_group(tag: str) -> str:
+    return GROUP_OF.get(tag, tag.title())  # a tag we don't know yet is its own group
+
+
+def shared_interests(a: set, b: set, top: int = 3) -> list:
+    """Per interest group both people have: 60% for sharing the group, up to 100% as their tags in it overlap
+    (both into Music: 60%; both into edm and rock: 100%)."""
+    out = []
+    for g in {interest_group(t) for t in a} & {interest_group(t) for t in b}:
+        ga, gb = {t for t in a if interest_group(t) == g}, {t for t in b if interest_group(t) == g}
+        out.append({"interest": g, "pct": round(100 * (0.6 + 0.4 * len(ga & gb) / len(ga | gb))),
+                    "shared": sorted(ga & gb)})
+    return sorted(out, key=lambda x: (-x["pct"], x["interest"]))[:top]
+
+
 def distance_bucket(km: float) -> str:
     return "< 2 km" if km < 2 else "2-5 km" if km < 5 else "5-10 km" if km < 10 else "10+ km"
 
 
-def rank_candidates(viewer_id, event_id, users, participants, requests, art, limit=10):
+def rank_candidates(viewer_id, event_id, users, participants, requests, art, limit=10,
+                    reliability: pd.Series | None = None, avoid: set = frozenset()):
+    """reliability: user_id -> 0-1 from trust.model (missing = neutral); avoid: (a, b) pairs never to suggest."""
     pool = participants.loc[(participants.event_id == event_id) & (participants.user_id != viewer_id), "user_id"]
     asked = requests.loc[(requests.viewer_id == viewer_id) & requests.sent, "candidate_id"]
-    pool = pd.Series(pool[~pool.isin(asked)].unique())
+    pool = pool[~pool.isin(asked) & ~pool.map(lambda c: (viewer_id, c) in avoid)]
+    pool = pd.Series(pool.unique())
     if pool.empty:
         return []
     raw, A, B, common, dist = features(pd.DataFrame({"viewer_id": viewer_id, "candidate_id": pool}),
@@ -90,7 +119,13 @@ def rank_candidates(viewer_id, event_id, users, participants, requests, art, lim
     pending = requests.loc[requests.status == "pending", "candidate_id"].value_counts()
     ids = pool[keep].reset_index(drop=True)
     final = R / (1 + ids.map(pending).fillna(0).values / 5)
-    # ponytail: no trust multiplier / exploration slots yet — need report data and user age; see plan §3.3
+    # reliability: someone who keeps not showing up sinks (x0.7 at 0.4); a new user loses almost nothing (x0.92)
+    # ponytail: hand-set; learn it from show-up outcomes once real logs exist. No exploration slots yet (plan §3.3)
+    rel = ids.map(reliability if reliability is not None else {}).fillna(NEUTRAL).values
+    final = final * (0.5 + 0.5 * rel)
+    U = users.set_index("user_id")
+    elsewhere = participants[participants.event_id != event_id]
+    mine = set(elsewhere.event_id[elsewhere.user_id == viewer_id])
     kept_common = [c for c, k in zip(common, keep) if k]
     kept_dist = dist[keep]
     out = []
@@ -105,7 +140,12 @@ def rank_candidates(viewer_id, event_id, users, participants, requests, art, lim
                 reasons.append("similar plans for the night")
             else:
                 reasons.append(f"{distance_bucket(kept_dist[i])} apart")
-        out.append({"user_id": int(ids[i]), "match_pct": int(round(100 * R[i])),
+        cid = int(ids[i])
+        out.append({"user_id": cid, "match_pct": int(round(100 * R[i])),
                     "distance": distance_bucket(kept_dist[i]), "reasons": reasons,
+                    "shared_interests": shared_interests(set(U.at[viewer_id, "interests"].split(";")),
+                                                         set(U.at[cid, "interests"].split(";"))),
+                    "events_in_common": len(mine & set(elsewhere.event_id[elsewhere.user_id == cid])),
+                    "reliability": round(float(rel[i]), 2),
                     "components": {k: round(float(Z[i, j]), 3) for j, k in enumerate(["interest", "event_fit", "location", "pref_uv", "pref_vu"])}})
     return out

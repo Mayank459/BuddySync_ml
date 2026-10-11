@@ -16,3 +16,16 @@ def test_every_pair_clears_threshold_and_nobody_twice():
 
 def test_incompatible_pool_forms_nothing():
     assert form_clans(np.zeros((10, 10))) == []
+
+
+def test_never_again_pair_scores_zero():
+    import pandas as pd
+    from sklearn.preprocessing import FunctionTransformer
+
+    from buddy_matching.model import DEFAULT_WEIGHTS, fit_text
+    from buddy_matching.test_buddy import user
+    from clan_formation.clans import pair_matrix
+    users = pd.DataFrame([user(1), user(2), user(3)])
+    art = {"vectorizer": fit_text(users), "scaler": FunctionTransformer(), "weights": DEFAULT_WEIGHTS}
+    M = pair_matrix([1, 2, 3], users, art, avoid={(1, 2), (2, 1)})
+    assert M[0, 1] == M[1, 0] == 0 and M[0, 2] > 0

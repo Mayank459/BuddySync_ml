@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import FunctionTransformer
 
-from buddy_matching.model import DEFAULT_WEIGHTS, fit_text, rank_candidates, reciprocal
+from buddy_matching.model import DEFAULT_WEIGHTS, fit_text, rank_candidates, reciprocal, shared_interests
 
 
 def user(uid, **kw):
@@ -36,3 +36,21 @@ def test_hard_filters_and_ranking():
     ids = [c["user_id"] for c in out]
     assert ids == [2, 4], ids
     assert all(0 <= c["match_pct"] <= 100 for c in out)
+
+
+def test_shared_interests_by_group():
+    out = shared_interests({"edm", "rock", "coding"}, {"edm", "sufi", "ai", "pottery"})
+    assert out == [{"interest": "Music", "pct": 73, "shared": ["edm"]},
+                   {"interest": "Technology", "pct": 60, "shared": []}]
+
+
+def test_feedback_reorders_and_keeps_pairs_apart():
+    users = pd.DataFrame([user(1), user(2), user(3), user(4, interests="rock;edm;sufi")])
+    parts = pd.DataFrame({"event_id": [7, 7, 7, 7, 8, 8], "user_id": [1, 2, 3, 4, 1, 2],
+                          "status": "looking_for_buddy"})
+    reqs = pd.DataFrame(columns=["viewer_id", "candidate_id", "event_id", "sent", "status"]).astype({"sent": bool})
+    art = {"vectorizer": fit_text(users), "scaler": FunctionTransformer(), "weights": DEFAULT_WEIGHTS}
+    out = rank_candidates(1, 7, users, parts, reqs, art, reliability=pd.Series({2: 0.3, 3: 0.95}), avoid={(1, 4)})
+    assert [c["user_id"] for c in out] == [3, 2]  # 2 and 3 are identical; 2 keeps not showing up; 4 is kept apart
+    assert out[1]["events_in_common"] == 1 and out[0]["events_in_common"] == 0
+    assert out[0]["shared_interests"][0] == {"interest": "Music", "pct": 100, "shared": ["edm", "rock"]}

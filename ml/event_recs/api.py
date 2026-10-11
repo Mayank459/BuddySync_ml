@@ -25,7 +25,7 @@ def artifact():
 def tables():
     events, inter = load("events"), load("participants")
     events["start_time"] = pd.to_datetime(events.start_time)
-    return load("users").set_index("user_id"), events, inter
+    return load("users").set_index("user_id"), events, inter, load("event_ratings")
 
 
 class RecsQuery(BaseModel):
@@ -37,7 +37,7 @@ class RecsQuery(BaseModel):
 
 @router.post("/events")
 def recommend(q: RecsQuery):
-    users, events, inter = tables()
+    users, events, inter, ratings = tables()
     if q.user_id not in users.index:
         raise HTTPException(404, "unknown user")
     art, user = artifact(), users.loc[q.user_id]
@@ -48,7 +48,8 @@ def recommend(q: RecsQuery):
                    & ~events.event_id.isin(mine.event_id)]
     if cands.empty:
         return {"request_id": str(uuid.uuid4()), "model_version": art["model_version"], "events": []}
-    total, cos, dist, pop = score(user, taste(user, mine, events, art["vectorizer"]), cands,
+    taste_v = taste(user, mine, events, art["vectorizer"], ratings[ratings.user_id == q.user_id])
+    total, cos, dist, pop = score(user, taste_v, cands,
                                   art["vectorizer"], art["popularity"], art["weights"])
     out, per_cat = [], {}
     for i in np.argsort(-total):  # diversity: cap events per category

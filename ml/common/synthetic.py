@@ -196,6 +196,31 @@ def make_listings(events):
     return pd.DataFrame(rows)
 
 
+FEEDBACK_UNTIL = datetime(2026, 10, 1)  # events before this have happened, so they have feedback
+
+
+def make_feedback(users, events, participants, requests):
+    """Post-event feedback. Hidden truth: each user has a reliability (most show up, a few flake) and people
+    enjoy events that match their interests. Own RNG, so the other tables come out exactly as before."""
+    r = np.random.default_rng(7)
+    reliability = dict(zip(users.user_id, r.beta(9, 1.2, len(users))))
+    past = set(events.loc[pd.to_datetime(events.start_time) < FEEDBACK_UNTIL, "event_id"])
+    tags, interests = dict(zip(events.event_id, events.tags)), dict(zip(users.user_id, users.interests.str.split(";")))
+    went = participants[participants.event_id.isin(past) & participants.status.isin(["going", "looking_for_buddy"])]
+    ratings = [{"user_id": p.user_id, "event_id": p.event_id,
+                "rating": int(np.clip(round(r.normal(3.0 + 1.3 * (tags[p.event_id] in interests[p.user_id]), 0.9)), 1, 5))}
+               for p in went.itertuples() if r.random() < 0.6]
+    peers = []
+    for q in requests[(requests.status == "accepted") & requests.event_id.isin(past)].itertuples():
+        for rater, ratee in ((q.viewer_id, q.candidate_id), (q.candidate_id, q.viewer_id)):
+            if r.random() < 0.7:  # not everyone leaves feedback
+                showed = bool(r.random() < reliability[ratee])
+                peers.append({"event_id": q.event_id, "rater_id": rater, "ratee_id": ratee, "showed_up": showed,
+                              "would_join_again": bool(r.random() < (0.85 if showed else 0.1))})
+    peers = pd.DataFrame(peers).drop_duplicates(["event_id", "rater_id", "ratee_id"])
+    return pd.DataFrame(ratings), peers
+
+
 def make_messages():
     clean = ["kal show pe milte hain", "what time are the gates opening?", "I'll reach by 6",
              "let's meet at gate 2", "did you get the tickets?", "bhai kitne baje nikalna hai",
@@ -221,6 +246,7 @@ def main():
     tables = {"users": users, "events": events, "participants": participants,
               "buddy_requests": make_buddy_requests(users, participants),
               "listings": make_listings(events), "messages": make_messages()}
+    tables["event_ratings"], tables["peer_feedback"] = make_feedback(users, events, participants, tables["buddy_requests"])
     for name, df in tables.items():
         df.to_csv(DATA / f"{name}.csv", index=False)
         print(f"{name:15s} {len(df):7d} rows")

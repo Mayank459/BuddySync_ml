@@ -1,4 +1,4 @@
--- Trip planner tables (TRIP_PLANNER_DESIGN.md §14). Idempotent: run on every start.
+-- ML service tables: the trip planner (TRIP_PLANNER_DESIGN.md §14) + face templates. Idempotent: run on every start.
 -- The ML service writes only the ml schema; Spring owns business tables (users, clans, expenses).
 CREATE SCHEMA IF NOT EXISTS ml;
 
@@ -152,4 +152,14 @@ CREATE TABLE IF NOT EXISTS ml.planner_log (        -- validator failures, fallba
     kind    text NOT NULL,
     detail  jsonb NOT NULL DEFAULT '{}',
     at      timestamptz NOT NULL DEFAULT now()
+);
+
+-- Face templates for the duplicate-account check (face_verification/dedupe.py). Not a trip table: it shares
+-- this schema and pool. 128 numbers per user from the face model, never an image. Biometric data under DPDP:
+-- written only when the app sends user_id (with the user's consent), deleted with the account.
+CREATE TABLE IF NOT EXISTS ml.face_templates (
+    user_id       bigint PRIMARY KEY,
+    embedding     real[] NOT NULL,
+    model_version text NOT NULL,
+    updated_at    timestamptz NOT NULL DEFAULT now()
 );

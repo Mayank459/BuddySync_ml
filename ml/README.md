@@ -6,11 +6,12 @@ Design and reasoning: [../ML_IMPLEMENTATION_PLAN.md](../ML_IMPLEMENTATION_PLAN.m
 
 | Folder | What it does | "Training" | Endpoint |
 |---|---|---|---|
-| `buddy_matching/` | Rank people at the same event, scoring both directions | tune the 4 weights + logistic regression, split by viewer | `POST /v1/match/buddies` |
+| `buddy_matching/` | Rank people at the same event, scoring both directions; per-interest % ("Music 73%"); post-event feedback nudges the order and keeps "never again" pairs apart | tune the 4 weights + logistic regression, split by viewer | `POST /v1/match/buddies` |
 | `clan_formation/` | Group 3–6 people so every pair is compatible | none (reuses buddy score); greedy vs random check | `POST /v1/clans/form` |
-| `event_recs/` | Personal event feed | taste vectors + tag popularity; weights tuned on a validation window; time split | `POST /v1/recs/events` |
+| `event_recs/` | Personal event feed (past-event ratings shift the taste) | taste vectors + tag popularity; weights tuned on a validation window; time split | `POST /v1/recs/events` |
 | `event_ingestion/` | Spot duplicate listings across sources, categorise events | pair classifier + tf-idf/logistic regression categoriser | `POST /v1/events/ingest` |
-| `face_verification/` | Liveness video challenge (random actions) + same-person check + face match → pass / review / fail / retry | calibrate thresholds on LFW train pairs, test on LFW test pairs; `attack_check.py` runs attack videos | `POST /v1/verify/challenge`, `/v1/verify/liveness` (`/v1/verify/face` = photo match only) |
+| `face_verification/` | Liveness video challenge (random actions) + same-person check + face match → pass / review / fail / retry; duplicate accounts (one face on several accounts → review) | calibrate thresholds on LFW train pairs, test on LFW test pairs; duplicate threshold on all ~80M LFW stranger pairs; `attack_check.py` runs attack videos | `POST /v1/verify/challenge`, `/v1/verify/liveness` (`/v1/verify/face` = photo match only) |
+| `trust/` | Reliability from post-event feedback (showed up? would join again?) → new / reliable / ok / low | none: smoothed rates with a prior | `GET /v1/trust/users/{id}` |
 | `moderation/` | Chat: block / nudge / flag / allow | char-n-gram tf-idf + logistic regression, plus regex scam rules | `POST /v1/moderate/message` |
 | `trip_planner/` | Trip around the event: draft, then chat edits (LLM + tools, every edit checked by code), stored in Postgres, run by queued workers ([design](../TRIP_PLANNER_DESIGN.md)) | none; the data step builds a real places catalog from OpenStreetMap | `POST /v1/trips`, `POST /v1/trips/{id}/messages`, `GET /v1/trips/{id}/stream` |
 

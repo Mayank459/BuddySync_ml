@@ -6,6 +6,7 @@ from pydantic import BaseModel
 
 from buddy_matching.model import rank_candidates
 from common.utils import load, load_artifact
+from trust.model import never_again, table
 
 router = APIRouter(prefix="/match", tags=["buddy matching"])
 
@@ -23,6 +24,13 @@ def tables():
     return load("users"), load("participants"), load("buddy_requests")
 
 
+@lru_cache
+def feedback():
+    """(user_id -> reliability, pairs to keep apart) from post-event peer feedback."""
+    peer = load("peer_feedback")
+    return table(peer).reliability, never_again(peer)
+
+
 class BuddyQuery(BaseModel):
     user_id: int
     event_id: int
@@ -36,4 +44,5 @@ def buddies(q: BuddyQuery):
         raise HTTPException(404, "unknown user")
     art = artifact()
     return {"request_id": str(uuid.uuid4()), "model_version": art["model_version"],
-            "candidates": rank_candidates(q.user_id, q.event_id, users, participants, requests, art, q.limit)}
+            "candidates": rank_candidates(q.user_id, q.event_id, users, participants, requests, art, q.limit,
+                                          *feedback())}

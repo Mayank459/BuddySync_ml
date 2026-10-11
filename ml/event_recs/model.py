@@ -11,6 +11,7 @@ from sklearn.preprocessing import normalize
 from common.utils import haversine_km
 
 ACTION_WEIGHT = {"going": 3.0, "looking_for_buddy": 3.0, "interested": 1.0}
+RATING_WEIGHT = 1.5  # per star away from 3: a 5-star night pulls like a "going" RSVP, a 1-star pushes as hard
 WEIGHTS = {"taste": 0.6, "distance": 0.2, "popularity": 0.2}  # default; train.py tunes these on validation
 # ponytail: no trending / "buddies going" / urgency terms yet (plan §5.1); add once live counts exist
 
@@ -31,12 +32,17 @@ def popularity(events, inter) -> dict:
     return (counts / counts.groupby(level=0).transform("max")).to_dict()
 
 
-def taste(user, user_inter, events, vec):
-    """Profile interests + time-weighted events the user saved/RSVP'd, as one unit vector."""
+def taste(user, user_inter, events, vec, ratings=None):
+    """Profile interests + events the user saved/RSVP'd + how they rated past events, as one unit vector."""
     v = vec.transform([user.interests.replace(";", " ")]).toarray().ravel()
+    by_id = events.set_index("event_id")
     if len(user_inter):
-        X = vec.transform(event_text(events.set_index("event_id").loc[user_inter.event_id]))
+        X = vec.transform(event_text(by_id.loc[user_inter.event_id]))
         v = v + X.T.dot(user_inter.status.map(ACTION_WEIGHT).values)
+    if ratings is not None and len(ratings):
+        # ponytail: serve-time only; train.py's offline metrics don't include ratings yet (synthetic ones add little)
+        X = vec.transform(event_text(by_id.loc[ratings.event_id]))
+        v = v + X.T.dot(RATING_WEIGHT * (ratings.rating.values - 3))
     return normalize(v.reshape(1, -1)).ravel()
 
 

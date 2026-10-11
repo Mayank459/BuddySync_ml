@@ -22,8 +22,10 @@ from moderation.api import router as moderation
 from trip_planner import worker
 from trip_planner.api import go_router
 from trip_planner.api import router as trips
+from trust.api import router as trust
 
-PUBLIC = ("/v1/go",)
+PUBLIC = {"/v1/go"}  # exact paths: a future /v1/gofoo must not become public by accident
+MAX_BODY = 96 * 1024 * 1024  # largest real request: a 40 MB video + 5 photos of 8 MB; caps temp-disk use too
 
 
 def keep_awake(url, every=13 * 60):
@@ -52,8 +54,11 @@ async def lifespan(app):
     stop()
 
 
-app = FastAPI(title="BuddySync ML", version="0.1", lifespan=lifespan)
-for router in (buddy, clans, recs, ingestion, face, moderation, trips, go_router):
+# with a token set (deployed), the schema isn't public; API.md is the reference
+_hide = bool(os.getenv("ML_SERVICE_TOKEN"))
+app = FastAPI(title="BuddySync ML", version="0.1", lifespan=lifespan,
+              docs_url=None if _hide else "/docs", redoc_url=None, openapi_url=None if _hide else "/openapi.json")
+for router in (buddy, clans, recs, ingestion, face, moderation, trust, trips, go_router):
     app.include_router(router, prefix="/v1")
 
 
@@ -61,7 +66,13 @@ for router in (buddy, clans, recs, ingestion, face, moderation, trips, go_router
 async def service_token(request: Request, call_next):
     token = os.getenv("ML_SERVICE_TOKEN")
     path = request.url.path
-    if token and path.startswith("/v1/") and not path.startswith(PUBLIC):
+    # body size before anything reads it: Starlette spools every uploaded file to disk in full
+    size = request.headers.get("content-length")
+    if size is None and request.headers.get("transfer-encoding"):
+        return JSONResponse({"detail": "Content-Length required"}, status_code=411)
+    if size is not None and (not size.isdigit() or int(size) > MAX_BODY):
+        return JSONResponse({"detail": f"request over {MAX_BODY // 2**20} MB"}, status_code=413)
+    if token and path.startswith("/v1/") and path not in PUBLIC:
         if not hmac.compare_digest(request.headers.get("x-service-token", ""), token):
             return JSONResponse({"detail": "missing or wrong X-Service-Token"}, status_code=401)
     return await call_next(request)

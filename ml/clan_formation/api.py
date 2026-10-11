@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from buddy_matching.api import artifact, tables
+from buddy_matching.api import artifact, feedback, tables
 from clan_formation.clans import form_clans, pair_matrix
 
 router = APIRouter(prefix="/clans", tags=["clan formation"])
@@ -23,7 +23,7 @@ def form(q: ClanQuery):
                            & participants.user_id.isin(wants_group), "user_id"].tolist()
     if len(ids) < 3:
         return {"event_id": q.event_id, "clans": []}
-    M = pair_matrix(ids, users, artifact())
+    M = pair_matrix(ids, users, artifact(), feedback()[1])
     clans = form_clans(M, k=q.size, tau=q.min_score)
     return {"event_id": q.event_id,
             "clans": [{"members": [int(ids[m]) for m in c],

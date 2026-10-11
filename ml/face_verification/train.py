@@ -4,10 +4,13 @@ The face models are pretrained, so "training" = picking the similarity threshold
 Data: LFW pairs (same / different person), downloaded by scikit-learn (~230 MB, once).
   pass   threshold: no false matches among the train "different person" pairs
   review threshold: best overall accuracy on train
+  duplicate threshold: one face searched against EVERY account (duplicate accounts) — expected false hits per
+                       check = per-pair FAR x accounts, so it is set at FAR 1e-6 over all LFW stranger pairs
 LFW is mostly Western celebrities: recalibrate on consented Indian selfie/profile pairs
 and report error rates per skin-tone group before trusting these numbers (plan §7.2).
 Run from ml/:  python -m face_verification.train
 """
+import cv2
 import numpy as np
 from sklearn.datasets import fetch_lfw_pairs
 
@@ -30,6 +33,36 @@ def similarities(subset):
     return np.array(sims), np.array(labels), rejected
 
 
+def duplicate_threshold(max_far=1e-6):
+    """Every LFW face against every other person's (~13k faces, ~80M stranger pairs): the lowest similarity
+    at which at most max_far of stranger pairs match. Also reports how many same-person pairs it still finds."""
+    root = DATA / "lfw_home" / "lfw_funneled"
+    embs, people = [], []
+    for n, person in enumerate(sorted(p for p in root.iterdir() if p.is_dir())):
+        for img in sorted(person.glob("*.jpg")):
+            e, _ = embed(cv2.imread(str(img)))
+            if e is not None:
+                embs.append(e)
+                people.append(n)
+    E, ids = np.array(embs, np.float32), np.array(people)
+    strangers, same, tail = 0, [], []
+    for i in range(0, len(E), 1000):  # upper triangle in row blocks: 13k x 13k at once is too much memory
+        S = E[i:i + 1000] @ E.T
+        r, c = np.nonzero(np.arange(len(E))[None, :] > np.arange(i, i + len(S))[:, None])  # each pair once
+        s, diff = S[r, c], ids[i + r] != ids[c]
+        strangers += int(diff.sum())
+        tail.append(s[diff & (s > 0.3)])
+        same.append(s[~diff])
+    tail, same = np.sort(np.concatenate(tail))[::-1], np.concatenate(same)
+    k = int(max_far * strangers)  # this many stranger pairs may score at or above the threshold
+    t = float(tail[k] + 1e-3) if k < len(tail) else 0.3
+    print(f"duplicate search: {len(E)} faces, {strangers:,} stranger pairs, {len(same):,} same-person pairs")
+    print(f"  threshold {t:.3f}: stranger FAR {(tail >= t).sum() / strangers:.1e}, "
+          f"same person found {(same >= t).mean():.1%}  (1:1 review threshold would flag "
+          f"{(tail >= 0.358).sum() / strangers:.1e} of strangers)")
+    return t
+
+
 def rates(sims, labels, t):
     far = float(((sims >= t) & (labels == 0)).sum() / max(1, (labels == 0).sum()))  # stranger accepted
     frr = float(((sims < t) & (labels == 1)).sum() / max(1, (labels == 1).sum()))  # real person rejected
@@ -46,7 +79,7 @@ def main():
     grid = np.linspace(0, 1, 501)
     review = float(max(grid, key=lambda t: ((s_tr >= t) == y_tr).mean()))
     pass_t = float(s_tr[y_tr == 0].max() + 0.01)
-    thresholds = {"pass": max(pass_t, review), "review": review}
+    thresholds = {"pass": max(pass_t, review), "review": review, "duplicate": max(duplicate_threshold(), review)}
 
     # test
     print(f"{'threshold':10s} {'value':>6s} {'FAR':>7s} {'FRR':>7s}")
