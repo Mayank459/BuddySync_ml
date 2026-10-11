@@ -18,7 +18,9 @@ import common.http  # noqa: F401  (adds X-Service-Token when ML_SERVICE_TOKEN is
 HAS_CAM = importlib.util.find_spec("cv2") is not None  # webcam flows need OpenCV; absent on the hosted demo
 
 st.set_page_config(page_title="BuddySync ML playground", layout="wide")
-BASE = st.sidebar.text_input("API base URL", os.getenv("API_URL", "https://buddysync-ml.onrender.com"))  # local: http://127.0.0.1:8765 (127.0.0.1, not localhost → 2 s delay on Windows)
+# with a service token the URL is fixed: it is the only host the token is sent to (common/http.py)
+BASE = st.sidebar.text_input("API base URL", common.http.API, disabled=bool(common.http.TOKEN),
+                             help="Fixed: this deployment holds a service token" if common.http.TOKEN else None)  # local: http://127.0.0.1:8765 (127.0.0.1, not localhost → 2 s delay on Windows)
 
 
 @st.cache_data
@@ -51,7 +53,8 @@ if ok:
     st.sidebar.success("API is up")
 else:
     st.sidebar.error("API is down")
-st.sidebar.markdown(f"[Swagger docs]({BASE}/docs) · data: synthetic CSVs in `ml/data/`")
+st.sidebar.markdown(("" if common.http.TOKEN else f"[Swagger docs]({BASE}/docs) · ")  # hidden when a token is set
+                    + "data: synthetic CSVs in `ml/data/`")
 
 tabs = st.tabs(["Buddies", "Clans", "Event recs", "Ingest", "Face", "Moderation", "Trip planner"])
 looking = parts[parts.status == "looking_for_buddy"]
@@ -78,9 +81,20 @@ with tabs[0]:
             info = users.set_index("user_id")[["gender", "age", "interests", "vibe", "after", "verified"]]
             df = pd.DataFrame(body["candidates"]).set_index("user_id").join(info)
             df["reasons"] = df.reasons.str.join(" · ")
+            df["shared_interests"] = df.shared_interests.map(lambda xs: ", ".join(f"{x['interest']} {x['pct']}%" for x in xs))
             st.dataframe(df.drop(columns="components"), use_container_width=True)
         elif body is not None:
             st.info("No candidates.")
+    st.markdown("**Trust signals** (post-event feedback: show-ups, would join again)")
+    t_uid = st.number_input("user_id", 1, int(users.user_id.max()), int(uid), key="t_user")
+    if st.button("Get trust signals"):
+        _, body = call("GET", f"/v1/trust/users/{int(t_uid)}")
+        if body and "level" in body:
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("level", body["level"], f"reliability {body['reliability']}")
+            c2.metric("showed up", body["showed_up"])
+            c3.metric("would join again", body["would_join_again"])
+            c4.metric("events attended", body["events_attended"])
 
 # --- Clans -------------------------------------------------------------------------------
 with tabs[1]:
@@ -141,6 +155,71 @@ with tabs[3]:
             c3.metric("duplicate of", r["duplicate_of"] or "—", f"p={r['duplicate_probability']}")
 
 # --- Face --------------------------------------------------------------------------------
+# Live check in the viewer's browser (works on the hosted demo, where the server has no camera):
+# preview → Record → do the steps → Stop → the video + a still from its start go back to Python.
+browser_recorder = st.components.v2.component("liveness_recorder", html="""
+<video autoplay muted playsinline></video>
+<ol></ol>
+<p class="msg">Starting the camera…</p>
+<button disabled>● Record</button>
+""", css="""
+video { width: 100%; max-width: 480px; border-radius: 8px; background: #000; transform: scaleX(-1); }
+.msg { font-weight: 600; }
+button { padding: .4rem 1rem; border-radius: 6px; border: 1px solid currentColor; cursor: pointer; font: inherit; }
+""", js="""
+export default function ({ parentElement, data, setTriggerValue }) {
+  const $ = (q) => parentElement.querySelector(q);
+  const video = $("video"), btn = $("button"), msg = $(".msg");
+  $("ol").replaceChildren(...data.steps.map((s) => Object.assign(document.createElement("li"), { textContent: s })));
+  let stream, rec, timer, gone = false;
+  const say = (t) => (msg.textContent = t);
+  const b64 = (blob) => new Promise((ok) => {
+    const r = new FileReader(); r.onload = () => ok(r.result.split(",")[1]); r.readAsDataURL(blob);
+  });
+  navigator.mediaDevices.getUserMedia({ video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: "user" }, audio: false })
+    .then((s) => {
+      if (gone) return s.getTracks().forEach((t) => t.stop());
+      stream = s; video.srcObject = s; btn.disabled = false;
+      say("Face the camera, then press Record.");
+    })
+    .catch((e) => say(`Camera unavailable: ${e.message}. Allow camera access for this site.`));
+
+  btn.onclick = async () => {
+    if (rec) return rec.stop();
+    const still = document.createElement("canvas");  // profile photo: a frame from the start of the check
+    still.width = video.videoWidth; still.height = video.videoHeight;
+    still.getContext("2d").drawImage(video, 0, 0);
+    const photo = await new Promise((ok) => still.toBlob(ok, "image/jpeg", 0.9));
+    const mime = ["video/webm", "video/mp4"].find((m) => MediaRecorder.isTypeSupported(m));
+    const chunks = [];
+    rec = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 2500000 });
+    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+    rec.onstop = async () => {
+      clearInterval(timer); btn.disabled = true; say("Verifying…");
+      const blob = new Blob(chunks, { type: rec.mimeType });
+      setTriggerValue("recorded", { video: await b64(blob), mime: rec.mimeType, photo: await b64(photo) });
+    };
+    rec.start(250);
+    btn.textContent = "■ Stop";
+    const end = Date.now() + data.max_s * 1000;
+    say("Look straight at the camera…");
+    setTimeout(() => rec.state === "recording" && say("Now do the steps in order, then press Stop."), 1200);
+    timer = setInterval(() => Date.now() >= end && rec.state === "recording" && rec.stop(), 250);
+  };
+  return () => { gone = true; clearInterval(timer); stream?.getTracks().forEach((t) => t.stop()); };
+}
+""")
+
+
+def show_liveness(r):
+    c1, c2, c3 = st.columns(3)
+    c1.metric("decision", r["decision"], r.get("reason"))
+    c2.metric("same person throughout", str(r.get("same_person_throughout")), f"min {r.get('min_continuity')}")
+    c3.metric("face match", r.get("best_similarity", "—"), f"coverage {r.get('identity_coverage')}")
+    if r.get("liveness"):
+        st.dataframe(pd.DataFrame(r["liveness"]["steps"]), use_container_width=True)
+
+
 def webcam_frame():
     import cv2
     cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
@@ -160,7 +239,7 @@ def liveness_flow(view, base, max_attempts=3):
 
     import cv2
     from face_verification.liveness import MAX_VIDEO_S, LiveGuide, frame_signals, landmarks
-    STEP_S, ATTEMPT_S, GREEN, YELLOW, RED, GREY = 7.0, MAX_VIDEO_S - 3, (80, 220, 80), (0, 220, 255), (60, 60, 255), (170, 170, 170)
+    STEP_S, ATTEMPT_S, REC_FPS, GREEN, YELLOW, RED, GREY = 7.0, MAX_VIDEO_S - 3, 15, (80, 220, 80), (0, 220, 255), (60, 60, 255), (170, 170, 170)
     cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     if not cam.isOpened():
         return {"error": "Couldn't open the webcam (is another app using it?)"}, 0, None
@@ -188,10 +267,9 @@ def liveness_flow(view, base, max_attempts=3):
 
     try:
         # 1. profile photo: taken by itself once one face has looked straight at the camera for ~1 s
-        photo, steady, t0, n = st.session_state.get("cam_photo"), 0, time.time(), 0
+        photo, steady = st.session_state.get("cam_photo"), 0
         while photo is None:
             f, s, n_faces = frame_and_signals()
-            n += 1
             good = s.get("face") and n_faces == 1 and s.get("eyes_open") and abs(s.get("yaw", 1)) < 0.08
             steady = steady + 1 if good else 0
             hint = ("Hold still..." if good else "No face found" if not s.get("face")
@@ -200,7 +278,6 @@ def liveness_flow(view, base, max_attempts=3):
             if steady >= 15:
                 photo = cv2.imencode(".jpg", f)[1].tobytes()
                 st.session_state.cam_photo = photo
-        fps = max(5.0, min(30.0, n / max(time.time() - t0, 0.1))) if n > 5 else 15.0
         hold(1.0, [("Profile photo taken  OK", GREEN)])
 
         result = None
@@ -211,19 +288,21 @@ def liveness_flow(view, base, max_attempts=3):
             guide = LiveGuide([x["action"] for x in ch["steps"]])
             path = os.path.join(tempfile.gettempdir(), f"liveness_attempt{attempt}.mp4")
             f, _, _ = frame_and_signals()
-            out = cv2.VideoWriter(path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (f.shape[1], f.shape[0]))
-            t0, step_t0, note, finished_at = time.time(), None, None, None
+            out = cv2.VideoWriter(path, cv2.VideoWriter_fourcc(*"mp4v"), REC_FPS, (f.shape[1], f.shape[0]))
+            t0, step_t0, note, finished_at, written = time.time(), None, None, None, 0
             while True:
                 f, s, n_faces = frame_and_signals()
                 t = time.time() - t0
-                out.write(f)  # the recording has no overlay
-                if step_t0 is None and len(guide.base_yaws) >= 5:
+                while written <= t * REC_FPS:  # paced by the clock, so the file's length is the real length
+                    out.write(f)  # the recording has no overlay
+                    written += 1
+                if step_t0 is None and len(guide.start_frames) >= 5:
                     step_t0 = t  # start pose captured: the first instruction pops up
                 if guide.feed(s, t):
                     note, step_t0 = ("OK  -  next:", GREEN, t + 0.9), t
                 elif step_t0 is not None and not guide.finished and t - step_t0 > STEP_S:
                     note, step_t0 = ("Not detected  -  retake:", RED, t + 1.8), t  # retake the same step
-                    guide.run, guide.eyes_were_open = 0, False
+                    guide.retake()
                 lines = [(f"Attempt {attempt}/{max_attempts}   step {min(guide.i + 1, len(guide.steps))}"
                           f"/{len(guide.steps)}", GREY)]
                 if not s.get("face"):
@@ -312,16 +391,42 @@ with tabs[4]:
             elif "decision" in r:
                 (st.success if r["decision"] == "pass" else st.warning)(
                     f"{r['decision'].upper()} after {attempts} attempt(s)" + (f": {r.get('reason')}" if r.get("reason") else ""))
-                c1, c2, c3 = st.columns(3)
-                c1.metric("decision", r["decision"], r.get("reason"))
-                c2.metric("same person throughout", str(r.get("same_person_throughout")), f"min {r.get('min_continuity')}")
-                c3.metric("face match", r.get("best_similarity", "—"), f"coverage {r.get('identity_coverage')}")
-                if r.get("liveness"):
-                    st.dataframe(pd.DataFrame(r["liveness"]["steps"]), use_container_width=True)
+                show_liveness(r)
                 with st.expander("Raw response"):
                     st.json(r)
             else:
                 st.error(r)
+    elif mode.startswith("Liveness") and st.radio("Video", ["Live camera (in your browser)", "Upload a video"],
+                                                  horizontal=True, key="f_src").startswith("Live"):
+        st.caption("Get a challenge → Record → face the camera, do the steps in order → Stop. "
+                   "No profile photos uploaded? A still from the start of the recording is used.")
+        if st.button("🔴 Start live check", type="primary"):
+            _, c = call("POST", "/v1/verify/challenge")
+            if c and "challenge_id" in c:
+                st.session_state.live_challenge = c
+        c = st.session_state.get("live_challenge")
+        if c:
+            slot = st.empty()
+            with slot:
+                rec = browser_recorder(key=c["challenge_id"], on_recorded_change=lambda: None,
+                                       data={"steps": [s["prompt"] for s in c["steps"]], "max_s": 18})
+            if rec.recorded:
+                import base64
+                slot.empty()  # recording is in: drop the recorder (and its camera) before the result shows
+                st.session_state.pop("live_challenge")  # used up either way
+                ext = "mp4" if "mp4" in rec.recorded["mime"] else "webm"
+                import tempfile
+                with open(os.path.join(tempfile.gettempdir(), f"liveness_browser.{ext}"), "wb") as fh:
+                    fh.write(base64.b64decode(rec.recorded["video"]))  # last attempt, for debugging (local temp)
+                photo = [("profile_photos", ("live.jpg", base64.b64decode(rec.recorded["photo"]), "image/jpeg"))]
+                with st.spinner("Analysing video…"):
+                    _, r = call("POST", "/v1/verify/liveness", data={"challenge_id": c["challenge_id"]},
+                                files=[("video", (f"live.{ext}", base64.b64decode(rec.recorded["video"]),
+                                                  rec.recorded["mime"].split(";")[0]))] + (profile_files or photo))
+                if r and "decision" in r:
+                    (st.success if r["decision"] == "pass" else st.warning)(
+                        r["decision"].upper() + (f": {r.get('reason')}" if r.get("reason") else ""))
+                    show_liveness(r)
     elif mode.startswith("Liveness"):
         st.caption("1) Get a challenge  2) record ONE short video doing the steps in order (webcam/phone camera app)"
                    "  3) upload it before the challenge expires. Each challenge works once.")
@@ -345,11 +450,7 @@ with tabs[4]:
                                 files=[("video", (video.name, video.getvalue(), video.type or "video/mp4"))] + profile_files)
                 st.session_state.pop("challenge", None)  # used up either way
                 if r and "decision" in r:
-                    c1, c2, c3 = st.columns(3)
-                    c1.metric("decision", r["decision"], r.get("reason"))
-                    c2.metric("same person throughout", str(r.get("same_person_throughout")), f"min {r.get('min_continuity')}")
-                    c3.metric("face match", r.get("best_similarity", "—"), f"coverage {r.get('identity_coverage')}")
-                    st.dataframe(pd.DataFrame(r["liveness"]["steps"]), use_container_width=True)
+                    show_liveness(r)
     else:
         st.warning("No liveness: a photo of a photo can pass. Testing face matching only.")
         selfie = st.camera_input("Selfie (webcam)") if st.toggle("Use webcam") else st.file_uploader("Selfie", ["jpg", "jpeg", "png"])

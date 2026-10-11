@@ -2,7 +2,7 @@
 
 MediaPipe (Apache-2.0) gives face landmarks + blendshapes and hand landmarks; each action is simple geometry.
 Why each challenge has one facial-expression step and one hand step:
-  - a printed/on-screen photo can't blink or open its mouth
+  - a printed/on-screen photo can't blink, smile or open its mouth
   - a pre-recorded video can't know which random steps (and finger count) will be asked
   - hands in front of the face tend to break real-time face-swap deepfakes
 Not covered: live deepfakes fed through a virtual camera -> pair with device attestation in the app (plan §7).
@@ -25,17 +25,33 @@ URLS = {
     "hand": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task",
 }
 ACTIONS = {  # action -> (group, prompt shown to the user)
-    "blink": ("expression", "Blink a couple of times"),
+    "blink": ("expression", "Blink twice, quickly"),
     "open_mouth": ("expression", "Open your mouth wide"),
+    "smile": ("expression", "Give a big smile, lips closed or slightly apart"),
     "turn_head": ("motion", "Turn your head to one side, then back to the camera"),
+    "tilt_head": ("motion", "Tilt your head sideways, ear toward your shoulder, keep facing the camera"),
     "touch_nose": ("hand", "Touch the tip of your nose with your index finger"),
+    "cover_eye": ("hand", "Cover one eye with your hand"),
     **{f"fingers_{n}": ("hand", f"Hold up {n} finger{'s' * (n > 1)} next to your face (don't count your thumb)")
        for n in (1, 2, 3, 4)},
 }
+COVERS_FACE = {"touch_nose", "cover_eye"}
 CHALLENGE_TTL_S = 300    # ponytail: generous for manual playground uploads; ~90 s once the app records live
 MAX_VIDEO_S, SAMPLE_FPS, MAX_SIDE = 20, 10, 640
-HOLD_FRAMES = 3          # an action must hold for 3 sampled frames (~0.3 s); a blink needs 1
+MAX_FRAMES = MAX_VIDEO_S * 240     # timestamps come from the file: one that never advances must still end
+MAX_FRAME_PIXELS = 3840 * 2160     # 4K; bigger frames are refused before decoding (memory)
+HOLD_FRAMES = 3          # an action must hold for 3 sampled frames (~0.3 s)
+BLINKS, BLINK_WINDOW_S = 2, 2.0  # people blink on their own every few seconds: one blink proves nothing asked
 BLINK_CLOSED, BLINK_OPEN, JAW_OPEN = 0.5, 0.3, 0.5
+# blink scores run low for some people (glasses: full blinks peaked at 0.39), but the eye aspect ratio still
+# drops to under half of their own start value, so a blink also counts on that
+EAR_CLOSED, EAR_OPEN = 0.6, 0.8
+# smile = mouth corners pulled out vs the user's start; the smile blendshape also fires on a wide-open mouth
+# (0.67 seen), and an open mouth widened the mouth only 1.17x, so the jaw must stay mostly shut
+SMILE_WIDEN, SMILE_MAX_JAW = 1.2, 0.35
+WIDE_MOUTH = 0.35        # jaw above this: not used for identity (the face model sees a different face)
+TILT_DEG = 15            # head tilt: eye line rotates this far from the start (seen wandering +-3 deg)
+COVER_EYE = 0.25         # a hand point this close to an eye centre, in eye-widths (fingers held beside the face: 0.39)
 TURN = 0.2               # head turn: nose moves this far (as a share of face width) from the user's own start pose
 IDENTITY_COVERAGE = 0.6   # share of identity samples that must pass the quality gate
 STEP_ID_WINDOW_S = 1.0    # each completed step needs an identity sample this close to it
@@ -43,6 +59,8 @@ BASELINE_FRAMES = 5      # start pose = median of the first face frames (user is
 NOSE_TOUCH = 0.6         # fingertip-to-nose distance, in eye-widths
 # face mesh / hand landmark indices
 NOSE, CHEEK_A, CHEEK_B, EYE_A, EYE_B = 1, 234, 454, 33, 263
+EYES = ((33, 160, 158, 133, 153, 144), (362, 385, 387, 263, 373, 380))  # corner, top, top, corner, bottom, bottom
+MOUTH_A, MOUTH_B = 61, 291  # mouth corners
 WRIST, FINGERS = 0, [(8, 6), (12, 10), (16, 14), (20, 18)]  # (tip, pip) for index..pinky
 
 # ---- challenges ----------------------------------------------------------------------------
@@ -53,7 +71,11 @@ def new_challenge() -> dict:
     rng = secrets.SystemRandom()  # unpredictable: the whole defence against replayed videos
     by_group = lambda g: [a for a, (grp, _) in ACTIONS.items() if grp == g]
     steps = [rng.choice(by_group("expression")), rng.choice(by_group("hand"))]
-    rest = [a for a in ACTIONS if a not in steps and not (a.startswith("fingers") and any(s.startswith("fingers") for s in steps))]
+    # at most one finger count, and at most one step that covers the face: two (cover eye, then touch nose)
+    # kept a hand on the face for ~4 s of an 8.7 s real attempt, and those frames count against identity coverage
+    rest = [a for a in ACTIONS if a not in steps
+            and not (a.startswith("fingers") and any(s.startswith("fingers") for s in steps))
+            and not (a in COVERS_FACE and any(s in COVERS_FACE for s in steps))]
     steps.append(rng.choice(rest))
     rng.shuffle(steps)
     cid = secrets.token_urlsafe(16)
@@ -99,53 +121,112 @@ def frame_signals(face, blend, hands) -> dict:
     s["yaw"] = (face[NOSE][0] - a) / ((b - a) or 1.0) - 0.5  # signed; ~0 facing camera. A tilted flat photo barely moves it
     s["eyes_closed"] = min(blend.get("eyeBlinkLeft", 0), blend.get("eyeBlinkRight", 0))
     s["eyes_open"] = max(blend.get("eyeBlinkLeft", 0), blend.get("eyeBlinkRight", 0)) < BLINK_OPEN
+    s["ear"] = float(np.mean([(dist(face[e[1]], face[e[5]]) + dist(face[e[2]], face[e[4]]))
+                              / (2 * dist(face[e[0]], face[e[3]]) or 1.0) for e in EYES]))
     s["jaw"] = blend.get("jawOpen", 0)
+    s["mouth_w"] = dist(face[MOUTH_A], face[MOUTH_B]) / eye_w
+    s["roll"] = math.degrees(math.atan2(face[EYE_B][1] - face[EYE_A][1], face[EYE_B][0] - face[EYE_A][0]))
+    centres = [np.mean([face[i] for i in e], axis=0) for e in EYES]
+    s["eye_cover"] = min((dist(p, c) / eye_w for h in hands for p in h for c in centres), default=99)
+    # hand points inside the face (its landmark box, 10% in from each edge): touching the nose put 3 points inside,
+    # fingers held beside the face 0 (the old "fingertip within 2 eye-widths of the nose" test flagged those too)
+    xs, ys = [p[0] for p in face], [p[1] for p in face]
+    mx, my = (max(xs) - min(xs)) * 0.1, (max(ys) - min(ys)) * 0.1
+    s["hand_in_face"] = sum(min(xs) + mx < p[0] < max(xs) - mx and min(ys) + my < p[1] < max(ys) - my
+                            for h in hands for p in h)
     s["nose_touch"] = min((dist(h[8], face[NOSE]) / eye_w for h in hands), default=99)
     s["fingers"] = [finger_count(h) for h in hands]
     s["eye_w"] = eye_w
     return s
 
 
-def baseline(signals: list) -> float:
-    first = [s["yaw"] for s in signals if s.get("face")][:BASELINE_FRAMES]
+def baseline(signals: list, key: str = "yaw") -> float:
+    first = [s[key] for s in signals if s.get("face") and key in s][:BASELINE_FRAMES]
     return float(np.median(first)) if first else 0.0
+
+
+def baselines(signals: list) -> dict:
+    """The user's own start face: actions are judged against it, not against fixed numbers."""
+    return {k: baseline(signals, k) for k in ("yaw", "ear", "mouth_w", "roll")}
+
+
+def eyes_open(s: dict, ear0: float = 0.0) -> bool:
+    return bool(s.get("eyes_open")) or bool(ear0 and s.get("ear", 0) > EAR_OPEN * ear0)
+
+
+def eyes_shut(s: dict, ear0: float = 0.0) -> bool:
+    return s["eyes_closed"] > BLINK_CLOSED or bool(ear0 and s.get("ear", ear0) < EAR_CLOSED * ear0)
 
 
 def turned(s: dict, base: float) -> float:
     return abs(s["yaw"] - base)
 
 
-def action_now(action: str, s: dict, base: float = 0.0) -> bool:
+def action_now(action: str, s: dict, base: dict) -> bool:
     if not s.get("face"):
         return False
     if action == "blink":
-        return s["eyes_closed"] > BLINK_CLOSED
+        return eyes_shut(s, base.get("ear", 0.0))
     if action == "open_mouth":
         return s["jaw"] > JAW_OPEN
+    if action == "smile":
+        return bool(base.get("mouth_w")) and s["mouth_w"] >= SMILE_WIDEN * base["mouth_w"] and s["jaw"] < SMILE_MAX_JAW
     if action == "turn_head":
-        return turned(s, base) > TURN
+        return turned(s, base.get("yaw", 0.0)) > TURN
+    if action == "tilt_head":  # still facing the camera: a big turn skews the eye line too (-13 deg seen on a turn)
+        return abs(s["roll"] - base.get("roll", 0.0)) > TILT_DEG and turned(s, base.get("yaw", 0.0)) < TURN
     if action == "touch_nose":
         return s["nose_touch"] < NOSE_TOUCH
+    if action == "cover_eye":
+        return s["eye_cover"] < COVER_EYE
     if action.startswith("fingers_"):
         return int(action[-1]) in s["fingers"]
     raise ValueError(action)
 
 
+class Step:
+    """One step's progress, frame by frame. A held action needs HOLD_FRAMES in a row. A blink needs BLINKS
+    separate closures within BLINK_WINDOW_S (a natural blink is a single one), counted only after open eyes
+    were seen (a closed-eyes photo isn't a blink). Covering an eye often hides the whole face from the
+    landmarker: those frames (no face, a hand in view) keep the run going if the hand was seen on the eye."""
+
+    def __init__(self, action: str):
+        self.action, self.run, self.seen_open, self.was_shut, self.closures = action, 0, False, False, []
+        self.hand_on_eye = False  # cover_eye: seen at least once in the current run
+
+    def feed(self, s: dict, base: dict, t: float) -> bool:
+        if self.action == "cover_eye":
+            on = action_now("cover_eye", s, base)
+            self.run = self.run + 1 if on or (not s.get("face") and s.get("hands", 0) > 0) else 0
+            self.hand_on_eye = (self.hand_on_eye or on) and self.run > 0
+            return self.run >= HOLD_FRAMES and self.hand_on_eye
+        if self.action != "blink":
+            self.run = self.run + 1 if action_now(self.action, s, base) else 0
+            return self.run >= HOLD_FRAMES
+        if not self.seen_open:
+            self.seen_open = eyes_open(s, base["ear"])
+            return False
+        shut = action_now("blink", s, base)
+        if shut and not self.was_shut:  # a new closure: the eyes reopened since the last one
+            self.closures = [c for c in self.closures if t - c <= BLINK_WINDOW_S] + [t]
+        self.was_shut = shut
+        return len(self.closures) >= BLINKS
+
+
 def check_steps(steps: list, signals: list, times: list) -> list:
-    """Each step must be seen (held HOLD_FRAMES) after the previous one finished. Returns per-step results."""
-    out, i, base = [], 0, baseline(signals)
+    """Each step must be completed after the previous one finished. Returns per-step results.
+    A missed step doesn't hide the rest: the next step is searched from where the missed one started, so the user
+    sees which steps were done. The check still fails unless every step is done, in order."""
+    out, i, base = [], 0, baselines(signals)
     for action in steps:
-        need, run, eyes_were_open, at = (1 if action == "blink" else HOLD_FRAMES), 0, False, None
+        step, at, start = Step(action), None, i
         while i < len(signals):
-            s = signals[i]
             i += 1
-            if action == "blink" and not eyes_were_open:  # closed eyes only count after we've seen them open
-                eyes_were_open = bool(s.get("eyes_open"))
-                continue
-            run = run + 1 if action_now(action, s, base) else 0
-            if run >= need:
+            if step.feed(signals[i - 1], base, times[i - 1]):
                 at = round(times[i - 1], 2)
                 break
+        if at is None:
+            i = start
         out.append({"action": action, "done": at is not None, "at_s": at})
     return out
 
@@ -155,8 +236,13 @@ class LiveGuide:
     Same thresholds as the server; the server still verifies the recorded video and makes the decision."""
 
     def __init__(self, steps: list):
-        self.steps, self.i, self.run, self.eyes_were_open = list(steps), 0, 0, False
-        self.base_yaws, self.done_at = [], []
+        self.steps, self.i, self.step = list(steps), 0, Step(steps[0]) if steps else None
+        self.start_frames, self.done_at = [], []
+
+    def retake(self):
+        """Start the current step over (the user is asked to do it again)."""
+        if not self.finished:
+            self.step = Step(self.steps[self.i])
 
     @property
     def finished(self) -> bool:
@@ -168,19 +254,15 @@ class LiveGuide:
 
     def feed(self, s: dict, t: float) -> bool:
         """True when this frame completed the current step."""
-        if s.get("face") and len(self.base_yaws) < BASELINE_FRAMES:
-            self.base_yaws.append(s["yaw"])  # start pose, as in baseline()
+        if s.get("face") and len(self.start_frames) < BASELINE_FRAMES:
+            self.start_frames.append(s)  # start face, as in baselines()
             return False
-        if self.finished or len(self.base_yaws) < BASELINE_FRAMES:
+        if self.finished or len(self.start_frames) < BASELINE_FRAMES:
             return False
-        action = self.steps[self.i]
-        if action == "blink" and not self.eyes_were_open:  # closed eyes only count after we've seen them open
-            self.eyes_were_open = bool(s.get("eyes_open"))
-            return False
-        self.run = self.run + 1 if action_now(action, s, float(np.median(self.base_yaws))) else 0
-        if self.run >= (1 if action == "blink" else HOLD_FRAMES):
+        if self.step.feed(s, baselines(self.start_frames), t):
             self.done_at.append(round(t, 2))
-            self.i, self.run, self.eyes_were_open = self.i + 1, 0, False
+            self.i += 1
+            self.retake()  # the next step starts fresh
             return True
         return False
 
@@ -225,21 +307,27 @@ def analyze_video(path: str, steps: list) -> dict:
     cap = cv2.VideoCapture(path)
     if not cap.isOpened():
         raise ValueError("not a readable video")
+    if cap.get(cv2.CAP_PROP_FRAME_WIDTH) * cap.get(cv2.CAP_PROP_FRAME_HEIGHT) > MAX_FRAME_PIXELS:
+        cap.release()
+        raise OverflowError("video frames larger than 4K")
     fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
     fps = fps if 1 <= fps <= 240 else 30.0
-    every = max(1, round(fps / SAMPLE_FPS))
-    signals, times, embs, emb_times, tried, multi, best, n = [], [], [], [], 0, 0, None, 0
+    signals, times, embs, emb_times, tried, multi, best, n, next_t = [], [], [], [], 0, 0, None, 0, 0.0
     try:
         while True:
             ok, frame = cap.read()
             if not ok:
                 break
             n += 1
-            t = (n - 1) / fps
+            if n > MAX_FRAMES:
+                raise OverflowError(f"video has more than {MAX_FRAMES} frames")
+            # the frame's own timestamp: browser recordings (MediaRecorder) have a variable frame rate
+            t = cap.get(cv2.CAP_PROP_POS_MSEC) / 1000 or (n - 1) / fps
             if t > MAX_VIDEO_S:
                 raise OverflowError(f"video longer than {MAX_VIDEO_S} s")
-            if (n - 1) % every:
+            if t + 1e-3 < next_t:
                 continue
+            next_t = max(next_t + 1 / SAMPLE_FPS, t)  # ~SAMPLE_FPS whatever the source frame rate
             scale = MAX_SIDE / max(frame.shape[:2])
             if scale < 1:
                 frame = cv2.resize(frame, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
@@ -250,13 +338,18 @@ def analyze_video(path: str, steps: list) -> dict:
             multi += n_faces > 1
             # identity samples on every 3rd frame at ANY pose (else a second person could hide by staying turned);
             # skip only frames with a hand over the face. SFace copes with pose (LFW mixed-pose pairs: 2% FRR).
-            if s.get("face") and len(signals) % 3 == 1:
+            # a wide-open mouth isn't sampled at all: SFace scores the same person 0.20-0.30 then (vs 0.86+ closed),
+            # and it hides nothing. The open_mouth step is still identity-checked by samples within STEP_ID_WINDOW_S
+            if s.get("face") and len(signals) % 3 == 1 and s["jaw"] <= WIDE_MOUTH:
                 tried += 1  # hand-over-face frames count as tried-but-unconfirmed, so a raised hand can't hide a face
-                emb, _ = embed(frame) if s["nose_touch"] > 2 else (None, "hand_over_face")
+                emb, _ = (None, "hand_over_face") if s["hand_in_face"] else embed(frame)
                 if emb is not None:
                     embs.append(emb)
                     emb_times.append(t)
-                    facing = turned(s, baseline(signals)) < TURN / 2 and s["eyes_open"]
+                    # the reference everything is compared with: frontal AND neutral. A wide-open-mouth frame as the
+                    # reference made the same user's normal face score 0.35 ("face_changed")
+                    neutral = s["jaw"] < 0.2 and s["mouth_w"] < 1.1 * baseline(signals, "mouth_w")
+                    facing = turned(s, baseline(signals)) < TURN / 2 and s["eyes_open"] and neutral
                     if facing and (best is None or s["eye_w"] > best[0]):  # clearest frontal frame -> profile match
                         best = (s["eye_w"], emb)
     finally:
