@@ -354,6 +354,8 @@ def analyze_video(path: str, steps: list) -> dict:
                         best = (s["eye_w"], emb)
     finally:
         cap.release()
+    if n == 0:  # opened but nothing decodes, e.g. AV1, which Chrome picks for webm unless told otherwise
+        raise ValueError("couldn't decode the video: send H.264 MP4 or VP8 WebM")
     if not signals:
         raise ValueError("video has no frames")
     results = check_steps(steps, signals, times)

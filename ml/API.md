@@ -366,7 +366,7 @@ Flow:
 | Part | Type | Required | Notes |
 |---|---|---|---|
 | `challenge_id` | text | ✓ | From 5a |
-| `video` | video file | ✓ | mp4 / mov / webm / avi / mkv. **At most 20 s and 40 MB.** One person, face visible, decent light. |
+| `video` | video file | ✓ | **H.264 MP4 or VP8 WebM** (others in mov / avi / mkv may work). **Not AV1**: the server can't decode it, and Chrome's MediaRecorder picks AV1 for `video/webm` unless you ask for `video/webm;codecs=vp8`. **At most 20 s and 40 MB.** One person, face visible, decent light. |
 | `profile_photos` | image file(s) | ✓ | 1–5; repeat the field. 8 MB and 40 megapixels each. |
 | `user_id` | int | | Also check the face against **every other account** (duplicate accounts). **Send it only with the user's consent**: it stores their face template. |
 

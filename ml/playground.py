@@ -190,7 +190,9 @@ export default function ({ parentElement, data, setTriggerValue }) {
     still.width = video.videoWidth; still.height = video.videoHeight;
     still.getContext("2d").drawImage(video, 0, 0);
     const photo = await new Promise((ok) => still.toBlob(ok, "image/jpeg", 0.9));
-    const mime = ["video/webm", "video/mp4"].find((m) => MediaRecorder.isTypeSupported(m));
+    // name the codec: left to choose, Chrome records AV1, which the server's OpenCV (Linux) can't decode
+    const mime = ["video/webm;codecs=vp8", "video/mp4;codecs=avc1", "video/mp4"].find((m) => MediaRecorder.isTypeSupported(m));
+    if (!mime) return say("This browser can't record VP8 WebM or H.264 MP4. Try Chrome, Firefox or Safari.");
     const chunks = [];
     rec = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 2500000 });
     rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
