@@ -51,6 +51,19 @@ except Exception:
     ok = None
 if ok:
     st.sidebar.success("API is up")
+    if common.http.TOKEN:  # /health needs no token, so check one cheap read-only call that does
+        @st.cache_data(ttl=60)
+        def token_accepted(base):
+            try:
+                return requests.get(base + "/v1/trust/users/1", timeout=10).status_code != 401
+            except Exception:
+                return None
+        accepted = token_accepted(BASE)
+        if accepted is False:
+            st.sidebar.error("API rejected the service token: ML_SERVICE_TOKEN in this app's secrets must match "
+                             "the API's (Render → Environment). Reboot the app after changing secrets.")
+        elif accepted:
+            st.sidebar.caption("Service token accepted")
 else:
     st.sidebar.error("API is down")
 st.sidebar.markdown(("" if common.http.TOKEN else f"[Swagger docs]({BASE}/docs) · ")  # hidden when a token is set
