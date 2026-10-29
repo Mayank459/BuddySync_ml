@@ -1,0 +1,58 @@
+{
+  "99991": {
+    "weights": {
+      "interest": 0.3396,
+      "event_fit": 0.2925,
+      "social_fit": 0.1132,
+      "prefs": 0.0943,
+      "intent_fit": 0.0943,
+      "location": 0.0189,
+      "availability": 0.0472
+    },
+    "answers": {
+      "q1": "A",
+      "q2": "A"
+    },
+    "updated_at": "2026-10-29 17:02:33.616249"
+  },
+  "99994": {
+    "weights": {
+      "interest": 0.3396,
+      "event_fit": 0.2925,
+      "social_fit": 0.1132,
+      "prefs": 0.0943,
+      "intent_fit": 0.0943,
+      "location": 0.0189,
+      "availability": 0.0472
+    },
+    "answers": {
+      "q1": "A",
+      "q2": "A"
+    },
+    "updated_at": "2026-10-29 17:02:33.685187"
+  },
+  "4": {
+    "weights": {
+      "interest": 0.2207,
+      "event_fit": 0.1379,
+      "social_fit": 0.2,
+      "prefs": 0.1793,
+      "intent_fit": 0.131,
+      "location": 0.0966,
+      "availability": 0.0345
+    },
+    "answers": {
+      "q1": "B",
+      "q2": "B",
+      "q3": "B",
+      "q4": "B",
+      "q5": "B",
+      "q6": "B",
+      "q7": "A",
+      "q8": "A",
+      "q9": "A",
+      "q10": "A"
+    },
+    "updated_at": "2026-10-29 17:27:14.634833"
+  }
+}

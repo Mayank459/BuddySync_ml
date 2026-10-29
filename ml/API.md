@@ -88,13 +88,45 @@ Responses from **buddies** and **recs** include `request_id` and `model_version`
 
 ---
 
-## 1. `POST /v1/match/buddies`
+## 1. Buddy Recommendation (`/v1/match/*`)
 
-Ranks the people attending the same event as buddy candidates for one user.
+Ranks people attending the same event as buddy candidates for one user across 7 recommendation dimensions.
+Implements the Amigo weighting specification:
+1. **Taste Profile**: User setup creates a persistent taste fingerprint (general interest groups & tags) independent of event listing.
+2. **First-Time Questionnaire**: When a user lists an event or looks for buddies for the first time, a 10-question trade-off questionnaire determines what matters to them and saves their default recommendation profile (`RecommendationProfile`).
+3. **Fallback Weights**: Baseline system fallback weights (`30/25/15/10/10/5/5`) are active if the user has not completed the questionnaire (established via internal team user survey + AI weighting optimization analysis).
+4. **Event-Specific Adjustments**: Subsequent events allow adjusting priorities via 4 short event questions or direct percentage sliders without ever overwriting the user's stored default weights.
+5. **Reconduct Option**: Users can reconduct/retake the questionnaire at any time to recompute defaults.
 
-### Request
+### Recommendation Dimensions & Fallbacks
+
+| Dimension | Meaning | Initial Fallback | Primary Source |
+|---|---|---|---|
+| `interest` | General compatibility from Taste Profile | **30%** (`0.30`) | Persistent Taste Profile (text cosine + tag Jaccard + interest groups) |
+| `event_fit` | Suitability for this specific event | **25%** (`0.25`) | User Taste + Event Category/Tags + Budget Alignment |
+| `social_fit` | Compatibility in social behaviour & interaction style | **15%** (`0.15`) | Energy (introvert/ambivert/extrovert) & Vibe (front_row/chill/depends) |
+| `prefs` | Event-going soft preferences | **10%** (`0.10`) | Language, group size, verified, age suitability |
+| `intent_fit` | Purpose of going & after-event experience | **10%** (`0.10`) | After-event plans (party, food, home) |
+| `location` | Practical proximity for meeting/travel | **5%** (`0.05`) | Haversine distance (`exp(-km / 5)`) |
+| `availability`| Attendance schedules & arrival alignment | **5%** (`0.05`) | Arrival style (together/at_venue) & Punctuality (early/on_time/relaxed) |
+
+Total sum must always equal 100% (`1.0`).
+
+---
+
+### 1.1 `POST /v1/match/buddies`
+
+Ranks candidates for a user at an event using the effective weights (event-specific if set, else user default, else system fallback).
+
+#### Request
 ```json
-{ "user_id": 1024, "event_id": 214, "limit": 10 }
+{
+  "user_id": 1024,
+  "event_id": 214,
+  "limit": 10,
+  "custom_weights": null,
+  "use_event_adjustments": true
+}
 ```
 
 | Field | Type | Required | Default | Notes |
@@ -102,18 +134,31 @@ Ranks the people attending the same event as buddy candidates for one user.
 | `user_id` | int | ✓ | | The viewer |
 | `event_id` | int | ✓ | | The event they're finding a buddy for |
 | `limit` | int | | `10` | Max candidates returned |
+| `custom_weights` | object | | `null` | Optional direct weight override (e.g. from frontend sliders) |
+| `use_event_adjustments` | bool | | `true` | If true, looks up event-specific weights before user defaults |
 
-### Response `200`
+#### Response `200`
 ```json
 {
   "request_id": "5f0c3c1e-8a55-4b8e-9d2e-2b1f6a0c9e41",
-  "model_version": "buddy-phase0-tuned",
+  "model_version": "buddy-phase0-tuned-7dim",
+  "weights_used": {
+    "interest": 0.30,
+    "event_fit": 0.25,
+    "social_fit": 0.15,
+    "prefs": 0.10,
+    "intent_fit": 0.10,
+    "location": 0.05,
+    "availability": 0.05
+  },
+  "weights_source": "user_default",
+  "is_fallback": false,
   "candidates": [
     {
       "user_id": 655,
-      "match_pct": 50,
+      "match_pct": 78,
       "distance": "2-5 km",
-      "reasons": ["2-5 km apart", "similar plans for the night"],
+      "reasons": ["strong mutual event compatibility", "matching social vibe & energy"],
       "shared_interests": [
         { "interest": "Music", "pct": 73, "shared": ["edm"] },
         { "interest": "Technology", "pct": 60, "shared": [] }
@@ -121,40 +166,100 @@ Ranks the people attending the same event as buddy candidates for one user.
       "events_in_common": 2,
       "reliability": 0.84,
       "components": {
-        "interest": 0.069, "event_fit": 0.678, "location": 0.83,
-        "pref_uv": 0.872, "pref_vu": 0.153
+        "interest": 0.820,
+        "event_fit": 0.910,
+        "social_fit": 0.880,
+        "pref_uv": 0.872,
+        "pref_vu": 0.153,
+        "intent_fit": 0.900,
+        "location": 0.750,
+        "availability": 0.800
       }
     }
   ]
 }
 ```
 
-| Field | Type | Notes |
-|---|---|---|
-| `request_id` | string (UUID) | Log with the impression |
-| `model_version` | string | Log with the impression |
-| `candidates` | array | In display order. May be empty `[]`. |
-| `candidates[].user_id` | int | Candidate |
-| `candidates[].match_pct` | int 0–100 | **Show this to the user.** Reciprocal compatibility (both directions). |
-| `candidates[].distance` | string | Bucket only: `"< 2 km"`, `"2-5 km"`, `"5-10 km"`, `"10+ km"`. Never exact. |
-| `candidates[].reasons` | string[] | Up to 2 short explanations to display |
-| `candidates[].shared_interests` | array | Up to 3 interest groups both people have, best first: **show as "Music 73%"**. `pct` is 60 for sharing the group, up to 100 as their tags within it overlap. `shared` = the exact tags in common. |
-| `candidates[].events_in_common` | int | Other events (past or upcoming) both have a participant row for ("Similar events 2") |
-| `candidates[].reliability` | float 0–1 | From post-event feedback (section 9). 0.84 = new user, no feedback yet. |
-| `candidates[].components` | object of floats 0–1 | For debugging/analytics only; **don't show**. `pref_uv` = candidate fits viewer's preferences, `pref_vu` = the reverse. |
+---
 
-### Behaviour
-- **Who can appear:** other users with an EventParticipant row for this event whom the viewer hasn't already sent a request to.
-- **Hard filters, checked both ways:** women-only, verified-only, age range. If either side fails the other's filter, the pair is excluded.
-- **Order isn't strictly by `match_pct`.** Users with many unanswered incoming requests are ranked lower on purpose, to spread requests beyond the few most popular users. Reliability also counts: someone who keeps not showing up ranks lower (×0.7 at reliability 0.4); a new user loses almost nothing (×0.92).
-- **Never suggested:** two people where either said after an event that they wouldn't join the other again (also kept out of the same clan).
-- **What the score uses:** interests and bio text, onboarding-quiz answers, home-area distance, and soft preferences (language, group size, verified, age). It does **not** use gender (except the user's own women-only filter), photos or looks.
+### 1.2 `POST /v1/match/recommend` (Triadic ML Handoff Endpoint)
 
-### Errors
-- `404` unknown `user_id`
-- `422` bad body
-- `503` model not trained
-- An unknown `event_id` returns `200` with `candidates: []`.
+Ranks candidates in the triadic context: `(user, candidate, event)` using confidence-weighted taste dimensions, explicit tag overlap, and mutual event synergy.
+
+#### Request
+```json
+{
+  "userId": 1,
+  "eventId": 123,
+  "limit": 10,
+  "viewer_taste": {
+    "userId": 1,
+    "dimensions": {
+      "MUSIC": 0.82, "NIGHTLIFE": 0.65, "PARTY": 0.63, "SPORTS": 0.79,
+      "MOVIES": 0.75, "COMEDY": 0.50, "THEATRE": 0.50, "FOOD": 0.50,
+      "ARTS": 0.50, "TECHNOLOGY": 0.79, "SOCIAL": 0.61, "TRAVEL": 0.50,
+      "OUTDOOR": 0.50, "CREATIVE": 0.50, "ACADEMIC": 0.57, "GROUP_PREFERENCE": 0.65,
+      "SOLO_COMFORT": 0.50, "CROWD_COMFORT": 0.50, "EXPLORATION": 0.60,
+      "LIVE_EVENT": 0.63, "COMPETITIVE": 0.50
+    },
+    "confidence": {
+      "MUSIC": 0.83, "NIGHTLIFE": 0.39, "PARTY": 0.53, "SPORTS": 0.63,
+      "MOVIES": 0.63, "TECHNOLOGY": 0.63, "SOCIAL": 0.95
+    },
+    "tags": {
+      "cricket": 1.0, "ai": 1.0, "music festivals": 1.0, "anime": 1.0, "edm": 1.0
+    }
+  },
+  "include_details": false
+}
+```
+
+#### Semantics
+- `0.0–1.0` = preference score.
+- `0.50` with confidence `0` = **unknown**, not neutral preference (does not penalize matches).
+- `confidence` indicates the reliability/data sufficiency of the taste score.
+- `tags` are explicit user interests.
+
+#### Response `200`
+```json
+{
+  "userId": 1,
+  "eventId": 123,
+  "recommendations": [
+    {
+      "candidateUserId": 42,
+      "score": 0.91
+    },
+    {
+      "candidateUserId": 17,
+      "score": 0.86
+    }
+  ]
+}
+```
+
+---
+
+### 1.3 Questionnaire Endpoints
+
+- `GET /v1/match/questionnaire/first-time`: Returns the 10 trade-off questions for first-time profile creation.
+- `GET /v1/match/questionnaire/event-specific`: Returns the 4 short event-specific adjustment questions.
+
+### 1.3 Taste Profile Endpoints
+
+- `GET /v1/match/users/{user_id}/taste-profile`: Returns the user's persistent interest fingerprint (interest groups, tags, vibe, energy).
+- `POST /v1/match/users/{user_id}/taste-profile`: Update or generate taste profile.
+
+### 1.4 Default Weights Endpoints
+
+- `GET /v1/match/users/{user_id}/weights`: Returns the user's stored default recommendation weights (or system fallback weights).
+- `POST /v1/match/users/{user_id}/weights/first-time`: Submits answers to the 10 questions (`{"q1": "A", ...}`) or custom weights, normalizes to 100%, and saves to `RecommendationProfile`.
+- `POST /v1/match/users/{user_id}/weights/reconduct`: Resets the recommendation profile to system fallback so user can retake the questionnaire.
+
+### 1.5 Event-Specific Weights Endpoints
+
+- `GET /v1/match/users/{user_id}/events/{event_id}/weights`: Returns effective weights for `(user_id, event_id)`.
+- `POST /v1/match/users/{user_id}/events/{event_id}/weights`: Saves event-specific weights derived from short answers (`{"eq1": "same_interest"}`), delta adjustments (`{"location": +0.15}`), or slider percentages. **Stored default weights are preserved and never overwritten.**
 
 ---
 

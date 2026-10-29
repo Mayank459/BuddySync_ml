@@ -1,0 +1,55 @@
+{
+  "99991_101": {
+    "weights": {
+      "interest": 0.2282,
+      "event_fit": 0.2785,
+      "social_fit": 0.1078,
+      "prefs": 0.0898,
+      "intent_fit": 0.0898,
+      "location": 0.1609,
+      "availability": 0.045
+    },
+    "adjustments": {
+      "location": 0.15,
+      "interest": -0.1
+    },
+    "answers": {},
+    "updated_at": "2026-10-29 17:02:33.629450"
+  },
+  "1_1": {
+    "weights": {
+      "interest": 0.1839,
+      "event_fit": 0.2487,
+      "social_fit": 0.1334,
+      "prefs": 0.1031,
+      "intent_fit": 0.1456,
+      "location": 0.155,
+      "availability": 0.0303
+    },
+    "adjustments": {
+      "location": 0.15,
+      "interest": -0.1
+    },
+    "answers": {},
+    "updated_at": "2026-10-29 16:36:35.853464"
+  },
+  "4_214": {
+    "weights": {
+      "interest": 0.187,
+      "event_fit": 0.0999,
+      "social_fit": 0.2288,
+      "prefs": 0.1774,
+      "intent_fit": 0.1619,
+      "location": 0.0988,
+      "availability": 0.0462
+    },
+    "adjustments": {},
+    "answers": {
+      "eq1": "social_vibe",
+      "eq2": "somewhat_important",
+      "eq3": "watch_and_hangout",
+      "eq4": "somewhat_important"
+    },
+    "updated_at": "2026-10-29 17:27:25.949491"
+  }
+}

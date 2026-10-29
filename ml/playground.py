@@ -5,6 +5,7 @@ Start the API first, then this (both from ml/):
     python -m streamlit run playground.py
 """
 import importlib.util
+import json
 import os
 import time
 
@@ -18,9 +19,22 @@ import common.http  # noqa: F401  (adds X-Service-Token when ML_SERVICE_TOKEN is
 HAS_CAM = importlib.util.find_spec("cv2") is not None  # webcam flows need OpenCV; absent on the hosted demo
 
 st.set_page_config(page_title="BuddySync ML playground", layout="wide")
-# with a service token the URL is fixed: it is the only host the token is sent to (common/http.py)
-BASE = st.sidebar.text_input("API base URL", common.http.API, disabled=bool(common.http.TOKEN),
-                             help="Fixed: this deployment holds a service token" if common.http.TOKEN else None)  # local: http://127.0.0.1:8765 (127.0.0.1, not localhost → 2 s delay on Windows)
+
+if "api_base_input" not in st.session_state:
+    st.session_state["api_base_input"] = common.http.API
+
+c_sb1, c_sb2 = st.sidebar.columns([3, 1])
+BASE = c_sb1.text_input("API base URL", key="api_base_input",
+                        help="Fixed: this deployment holds a service token" if common.http.TOKEN else None)
+if c_sb2.button("Local", help="Reset to http://127.0.0.1:8765"):
+    st.session_state["api_base_input"] = "http://127.0.0.1:8765"
+    st.rerun()
+
+if "127.0.0.1" not in BASE and "localhost" not in BASE:
+    st.sidebar.warning(f"⚠️ Connected to external host (`{BASE}`). If calls fail with 401, switch to local server `http://127.0.0.1:8765`.")
+    if st.sidebar.button("👉 Switch to Local API (127.0.0.1:8765)", key="sb_switch_local"):
+        st.session_state["api_base_input"] = "http://127.0.0.1:8765"
+        st.rerun()
 
 
 @st.cache_data
@@ -40,6 +54,11 @@ def call(method, path, **kw):
         return None, None
     body = r.json() if r.headers.get("content-type", "").startswith("application/json") else r.text
     (st.success if r.ok else st.error)(f"{method} {path} → {r.status_code}  ({r.elapsed.total_seconds() * 1000:.0f} ms)")
+    if r.status_code == 401 and "127.0.0.1" not in BASE and "localhost" not in BASE:
+        st.warning(f"⚠️ **401 Unauthorized from `{BASE}`.** The remote server requires an authentication token. Click below to use your active local server where all new changes are running:")
+        if st.button("👉 Switch to Local Server (127.0.0.1:8765)", key=f"sw_local_{method}_{path.replace('/', '_')}"):
+            st.session_state["api_base_input"] = "http://127.0.0.1:8765"
+            st.rerun()
     with st.expander("Raw response"):
         st.json(body)
     return r.status_code, body
@@ -80,24 +99,281 @@ def event_label(eid):
 
 # --- Buddies -----------------------------------------------------------------------------
 with tabs[0]:
+    st.subheader("Amigo / BuddySync Recommendation Engine")
+    st.markdown(
+        "**Contextual Triadic Architecture:** `(User u, Candidate v, Event e) → Contextual Pairwise Features → Compatibility Score → Candidate Ranking`\n\n"
+        "**Weighting Flow:** Persistent Taste Profile (21 dimensions + confidence semantics + explicit tags) $\\longrightarrow$ "
+        "First-Time 10-Question Trade-off Questionnaire (User Default Weights) $\\longrightarrow$ "
+        "Event-Specific Adjustments (Event Weights) $\\longrightarrow$ "
+        "Mutual Event Synergy $S(u, v, e)$ & 7-Dimension Reciprocal Matching."
+    )
+
+    if "127.0.0.1" not in BASE and "localhost" not in BASE:
+        st.warning(
+            f"⚠️ **Notice:** Your Streamlit session is currently pointed at `{BASE}` (which requires authentication and doesn't have your local changes). "
+            "Click the button below to connect to your active local server (`http://127.0.0.1:8765`)."
+        )
+        if st.button("👉 Connect to Local ML Server (http://127.0.0.1:8765)", key="tab0_top_connect_local"):
+            st.session_state["api_base_input"] = "http://127.0.0.1:8765"
+            st.rerun()
+
     busy = looking.event_id.value_counts().index[:50]
-    eid = st.selectbox("Event (top 50 by people looking for a buddy)", busy, format_func=event_label, key="b_ev")
+    c_ev, c_u = st.columns([2, 1])
+    eid = c_ev.selectbox("Event (top 50 by people looking for a buddy)", busy, format_func=event_label, key="b_ev")
     at_event = looking[looking.event_id == eid].user_id
-    uid = st.selectbox("Viewer", at_event, key="b_user")
+    uid = c_u.selectbox("Viewer", at_event, key="b_user")
     u = users.set_index("user_id").loc[uid]
-    st.caption(f"Viewer: {u.gender}, {u.age}, {u.city} · interests: {u.interests} · vibe {u.vibe}, after-show {u.after}"
-               f" · filters: women-only={u.filter_women_only}, verified-only={u.filter_verified_only}, age {u.age_min}-{u.age_max}")
-    limit = st.slider("limit", 1, 30, 10, key="b_lim")
-    if st.button("Find buddies", type="primary"):
-        _, body = call("POST", "/v1/match/buddies", json={"user_id": int(uid), "event_id": int(eid), "limit": limit})
+    ev = events.set_index("event_id").loc[eid]
+
+    # Context Header Card
+    with st.container():
+        ce1, ce2 = st.columns([1, 1])
+        with ce1:
+            st.markdown(f"🎪 **Selected Event #{eid}: {ev.get('title', 'Unknown')}**")
+            st.caption(f"Category: `{ev.get('category')}` · City: `{ev.get('city')}` · Price Band: `{ev.get('price_band')}` · Hotness: `{round(float(ev.get('hotness', 0.5)), 2)}` · Tags: `{ev.get('tags')}`")
+        with ce2:
+            st.markdown(f"👤 **Viewer #{uid} ({u.get('gender', '?')}, age {u.get('age', '?')})**")
+            st.caption(f"City: `{u.get('city')}` · Vibe: `{u.get('vibe')}` · Energy: `{u.get('energy')}` · After: `{u.get('after')}` · Verified: `{'✅' if u.get('verified') else '❌'}`")
+
+    # 1. Persistent Taste Profile
+    with st.expander("👤 Step 1: Viewer Persistent Taste Profile (21 Dimensions & Unknown Semantics)", expanded=False):
+        t_status, t_body = call("GET", f"/v1/match/users/{int(uid)}/taste-profile")
+        if t_body:
+            st.info(
+                "ℹ️ **Important Semantics (ML Handoff):**\n"
+                "- Preference scores range `0.0–1.0`.\n"
+                "- A score of `0.50` with confidence `0.0` represents **UNKNOWN** (no user data yet), **NOT** neutral preference.\n"
+                "- The matching engine **does not penalize** compatibility on unknown dimensions; similarity is strictly weighted by joint confidence $(c_u \\times c_v)$.\n"
+                "- `tags` represent explicit interest tags with intensity weights."
+            )
+
+            # High-level summary
+            st.markdown(f"**Primary Interest Group:** `{t_body.get('primary_group')}` · **All Groups:** {', '.join(t_body.get('interest_groups', []))}")
+            tags_dict = t_body.get("tags", {})
+            if tags_dict:
+                tag_badges = " ".join([f"`🏷️ {t} ({v:.1f})`" for t, v in tags_dict.items()])
+                st.markdown(f"**Explicit Interest Tags:** {tag_badges}")
+            else:
+                st.markdown(f"**Interests:** `{'; '.join(t_body.get('interests', []))}`")
+            st.caption(f"Bio: {t_body.get('bio')} · Vibe: {t_body.get('vibe')} · Energy: {t_body.get('energy')}")
+
+            # 21 Dimensions Table
+            dims = t_body.get("dimensions", {})
+            confs = t_body.get("confidence", {})
+            if dims:
+                CLUSTERS = {
+                    "entertainment": ["MUSIC", "NIGHTLIFE", "PARTY", "MOVIES", "COMEDY", "THEATRE", "FOOD", "ARTS"],
+                    "active": ["SPORTS", "OUTDOOR", "TRAVEL", "COMPETITIVE"],
+                    "intellectual": ["TECHNOLOGY", "ACADEMIC", "CREATIVE"],
+                    "social_style": ["SOCIAL", "GROUP_PREFERENCE", "SOLO_COMFORT", "CROWD_COMFORT", "EXPLORATION", "LIVE_EVENT"],
+                }
+                dim_to_cluster = {}
+                for clust, members in CLUSTERS.items():
+                    for m in members:
+                        dim_to_cluster[m] = clust
+
+                dim_rows = []
+                for dim_name, score in dims.items():
+                    c_val = confs.get(dim_name, 0.0 if abs(score - 0.50) < 1e-4 else 0.50)
+                    is_known = c_val > 0.0
+                    status_lbl = f"🟢 Measured ({round(c_val * 100)}%)" if is_known else "⚪ Unknown (Non-penalizing)"
+                    dim_rows.append({
+                        "Dimension": dim_name,
+                        "Cluster": dim_to_cluster.get(dim_name, "other"),
+                        "Preference Score": round(float(score), 2),
+                        "Confidence": round(float(c_val), 2),
+                        "Status": status_lbl,
+                    })
+                df_dims = pd.DataFrame(dim_rows)
+                st.dataframe(df_dims, use_container_width=True, hide_index=True)
+
+            # JSON Editor / Inspection
+            with st.expander("🛠️ Inspect or Edit Raw Taste Profile JSON (Backend Handoff Schema)"):
+                clean_json_str = json.dumps({
+                    "userId": t_body.get("userId", int(uid)),
+                    "dimensions": dims,
+                    "confidence": confs,
+                    "tags": tags_dict,
+                }, indent=2)
+                raw_json_input = st.text_area("Taste Profile JSON", clean_json_str, height=220, key=f"raw_tp_{uid}")
+                if st.button("Save Updated Taste Profile", key=f"btn_save_tp_{uid}"):
+                    try:
+                        parsed = json.loads(raw_json_input)
+                        s, resp = call("POST", f"/v1/match/users/{int(uid)}/taste-profile", json={
+                            "dimensions": parsed.get("dimensions"),
+                            "confidence": parsed.get("confidence"),
+                            "tags": parsed.get("tags"),
+                            "bio": t_body.get("bio"),
+                            "vibe": t_body.get("vibe"),
+                            "energy": t_body.get("energy"),
+                        })
+                        if s == 200:
+                            st.success("Taste Profile saved successfully!")
+                            st.rerun()
+                    except Exception as ex:
+                        st.error(f"Invalid JSON: {ex}")
+
+    # 2. First-Time Questionnaire & User Default Weights
+    w_status, w_body = call("GET", f"/v1/match/users/{int(uid)}/weights")
+    user_defaults = w_body.get("default_weights", {}) if w_body else {}
+    is_fallback = w_body.get("is_fallback", True) if w_body else True
+
+    st.markdown("### ⚖️ Step 2: User Default Weights (Recommendation Profile)")
+    if is_fallback:
+        st.info("ℹ️ **Status: Using System Fallback Weights (30/25/15/10/10/5/5).** User has not yet completed the first-time questionnaire. "
+                "Baseline derived from internal user survey and AI weighting optimization.")
+    else:
+        st.success("✅ **Status: Custom Default Profile active.** Saved from first-time questionnaire.")
+
+    # Show metrics for 7 dimensions
+    d_cols = st.columns(7)
+    labels = ["Interest", "Event Fit", "Social Fit", "Prefs", "Intent Fit", "Location", "Availability"]
+    keys_list = ["interest", "event_fit", "social_fit", "prefs", "intent_fit", "location", "availability"]
+    for col, lbl, k in zip(d_cols, labels, keys_list):
+        val = user_defaults.get(k, 0.0)
+        col.metric(lbl, f"{round(val * 100, 1)}%")
+
+    with st.expander("📝 First-Time Questionnaire (10 Trade-Off Questions) — Set or Reconduct Defaults", expanded=False):
+        q_status, q_data = call("GET", "/v1/match/questionnaire/first-time")
+        if q_data and "questions" in q_data:
+            st.caption("Answer these trade-off questions to generate your persistent default weights:")
+            user_answers = {}
+            for q in q_data["questions"]:
+                st.markdown(f"**{q['id'].upper()} ({q['dimension']}):** {q['question']}")
+                opts = [f"{o['id']}. {o['text']}" for o in q["options"]]
+                sel = st.radio(q['question'], opts, key=f"q_{uid}_{q['id']}", label_visibility="collapsed")
+                user_answers[q["id"]] = sel[0]  # 'A' or 'B'
+
+            c_sub, c_rec = st.columns([1, 1])
+            if c_sub.button("Calculate & Save Default Weights", type="primary", key="save_defaults_btn"):
+                s, resp = call("POST", f"/v1/match/users/{int(uid)}/weights/first-time", json={"answers": user_answers})
+                if s == 200:
+                    st.success("Default weights saved! Refreshing profile...")
+                    st.rerun()
+
+            if c_rec.button("🔄 Reconduct Questionnaire (Reset to Fallback)", key="reconduct_btn"):
+                s, resp = call("POST", f"/v1/match/users/{int(uid)}/weights/reconduct")
+                if s == 200:
+                    st.warning("Profile reset to system fallback! Ready to reconduct.")
+                    st.rerun()
+
+    # 3. Event-Specific Adjustments
+    st.markdown("### 🎯 Step 3: Event-Specific Adjustments (Preserves Default Weights)")
+    ew_status, ew_body = call("GET", f"/v1/match/users/{int(uid)}/events/{int(eid)}/weights")
+    cur_event_weights = ew_body.get("effective_weights", user_defaults) if ew_body else user_defaults
+    ev_source = ew_body.get("source", "system_fallback") if ew_body else "system_fallback"
+
+    if ev_source == "event_custom":
+        st.warning(f"⚡ **Active: Custom adjustments applied for Event #{eid}.** User's persistent default weights remain untouched.")
+    else:
+        st.caption(f"Currently using base weights ({ev_source}) for Event #{eid}.")
+
+    adj_tab1, adj_tab2 = st.tabs(["Quick Event Survey (4 Questions)", "Direct Percentage Sliders"])
+    with adj_tab1:
+        st.caption("Short questions to determine if you want to deviate from your normal weighting for this event:")
+        eq_status, eq_data = call("GET", "/v1/match/questionnaire/event-specific")
+        event_answers = {}
+        if eq_data and "questions" in eq_data:
+            for eq in eq_data["questions"]:
+                st.markdown(f"**{eq['question']}**")
+                opts = [f"{o['id']}: {o['text']}" for o in eq["options"]]
+                sel = st.radio(eq['question'], opts, key=f"eq_{uid}_{eid}_{eq['id']}", label_visibility="collapsed")
+                event_answers[eq["id"]] = sel.split(":")[0]
+
+            c_apply_eq, c_rst_eq = st.columns([1, 1])
+            if c_apply_eq.button("Apply Event Survey Preferences", key="save_event_survey_btn"):
+                s, resp = call("POST", f"/v1/match/users/{int(uid)}/events/{int(eid)}/weights", json={"answers": event_answers})
+                if s == 200:
+                    st.success("Event weights updated! Defaults remain unchanged.")
+                    st.rerun()
+            if c_rst_eq.button("🔄 Reset Event Overrides to User Defaults", key="reset_event_eq_btn"):
+                s, resp = call("POST", f"/v1/match/users/{int(uid)}/events/{int(eid)}/weights/reset")
+                if s == 200:
+                    st.info("Event overrides cleared! Reverted to user default weights.")
+                    st.rerun()
+
+    with adj_tab2:
+        st.caption("Slide percentages to adjust priorities for this event (sums auto-normalize to 100%):")
+        slider_vals = {}
+        sc1, sc2 = st.columns(2)
+        for i, (lbl, k) in enumerate(zip(labels, keys_list)):
+            cur_p = round(cur_event_weights.get(k, user_defaults.get(k, 0.1)) * 100, 1)
+            target_col = sc1 if i < 4 else sc2
+            slider_vals[k] = target_col.slider(f"{lbl} (%)", 0.0, 100.0, cur_p, 1.0, key=f"sl_{uid}_{eid}_{k}")
+
+        c_apply_sl, c_rst_sl = st.columns([1, 1])
+        if c_apply_sl.button("Save Slider Weights for This Event", key="save_event_sliders_btn"):
+            s, resp = call("POST", f"/v1/match/users/{int(uid)}/events/{int(eid)}/weights", json={"custom_weights": slider_vals})
+            if s == 200:
+                st.success("Event custom weights saved! Default weights preserved.")
+                st.rerun()
+        if c_rst_sl.button("🔄 Reset Event Overrides to User Defaults", key="reset_event_sl_btn"):
+            s, resp = call("POST", f"/v1/match/users/{int(uid)}/events/{int(eid)}/weights/reset")
+            if s == 200:
+                st.info("Event overrides cleared! Reverted to user default weights.")
+                st.rerun()
+
+    # 4. Recommendation Search
+    st.markdown("### 👥 Step 4: Recommend Buddies")
+    c_ctrl1, c_ctrl2 = st.columns([2, 1])
+    limit = c_ctrl1.slider("Candidate Limit", 1, 30, 10, key="b_lim")
+    use_adj = c_ctrl2.checkbox("Use Event-Specific Adjustments", value=True, key="b_use_adj",
+                               help="When checked, uses event custom weights if set; otherwise user defaults.")
+
+    c_btn1, c_btn2 = st.columns([1, 1])
+    btn_recommend_schema = c_btn1.button("🚀 Recommend (Future ML Output Schema)", type="primary", use_container_width=True, key="btn_rec_schema")
+    btn_detailed_ranking = c_btn2.button("📊 Detailed Reciprocal Ranking (Diagnostic Mode)", use_container_width=True, key="btn_rec_detailed")
+
+    if btn_recommend_schema:
+        st.markdown("#### 📦 Future ML Output Schema (`POST /v1/match/recommend`)")
+        _, body = call("POST", "/v1/match/recommend", json={
+            "userId": int(uid),
+            "eventId": int(eid),
+            "limit": limit,
+            "use_event_adjustments": use_adj,
+        })
+        if body and "recommendations" in body:
+            st.caption("Matches requested backend contract: `userId`, `eventId`, and ordered list of `{candidateUserId, score}`:")
+            st.json(body)
+
+            recs = body.get("recommendations", [])
+            if recs:
+                rec_df = pd.DataFrame(recs)
+                rec_df.rename(columns={"candidateUserId": "user_id"}, inplace=True)
+                info = users.set_index("user_id")[["gender", "age", "interests", "vibe", "energy", "after", "verified"]]
+                rec_df = rec_df.set_index("user_id").join(info)
+                rec_df["score_pct"] = (rec_df["score"] * 100).round(1).astype(str) + "%"
+                st.dataframe(rec_df[["score_pct", "gender", "age", "interests", "vibe", "energy", "verified"]], use_container_width=True)
+        elif body is not None:
+            st.info("No candidates found.")
+
+    if btn_detailed_ranking:
+        st.markdown("#### 🔬 Detailed Reciprocal Ranking (`POST /v1/match/buddies`)")
+        _, body = call("POST", "/v1/match/buddies", json={
+            "user_id": int(uid),
+            "event_id": int(eid),
+            "limit": limit,
+            "use_event_adjustments": use_adj,
+        })
         if body and body.get("candidates"):
-            info = users.set_index("user_id")[["gender", "age", "interests", "vibe", "after", "verified"]]
+            st.caption(f"Weights used ({body.get('weights_source')}): " +
+                       ", ".join(f"{k}: {round(v * 100, 1)}%" for k, v in body.get("weights_used", {}).items()))
+            info = users.set_index("user_id")[["gender", "age", "interests", "vibe", "energy", "after", "verified"]]
             df = pd.DataFrame(body["candidates"]).set_index("user_id").join(info)
             df["reasons"] = df.reasons.str.join(" · ")
             df["shared_interests"] = df.shared_interests.map(lambda xs: ", ".join(f"{x['interest']} {x['pct']}%" for x in xs))
             st.dataframe(df.drop(columns="components"), use_container_width=True)
+
+            with st.expander("🔍 Detailed 7-Dimension Component Scores (Per Candidate)"):
+                comp_rows = []
+                for c in body["candidates"]:
+                    row = {"user_id": c["user_id"], "match_pct": c["match_pct"], **c["components"]}
+                    comp_rows.append(row)
+                st.dataframe(pd.DataFrame(comp_rows).set_index("user_id"), use_container_width=True)
         elif body is not None:
-            st.info("No candidates.")
+            st.info("No candidates found.")
+
+    st.markdown("---")
     st.markdown("**Trust signals** (post-event feedback: show-ups, would join again)")
     t_uid = st.number_input("user_id", 1, int(users.user_id.max()), int(uid), key="t_user")
     if st.button("Get trust signals"):

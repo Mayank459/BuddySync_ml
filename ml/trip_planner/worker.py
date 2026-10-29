@@ -171,7 +171,7 @@ def start(threads: int):
         return stop.set
     try:
         store.pool()
-    except store.StoreUnavailable as e:
+    except (store.StoreUnavailable, Exception) as e:
         log.warning("trip workers not started: %s", e)
         return stop.set
     for n in range(threads):

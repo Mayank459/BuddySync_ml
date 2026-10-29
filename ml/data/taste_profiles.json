@@ -1,0 +1,182 @@
+{
+  "99993": {
+    "user_id": 99993,
+    "interests": [
+      "coding",
+      "ai",
+      "rock",
+      "food festivals"
+    ],
+    "interest_groups": [
+      "Food",
+      "Music",
+      "Technology"
+    ],
+    "primary_group": "Food",
+    "bio": "Tech enthusiast and rocker.",
+    "vibe": "chill",
+    "energy": "ambivert",
+    "generated_at": "2026-10-29 16:35:56.015309",
+    "userId": 99993,
+    "dimensions": {
+      "MUSIC": 0.5,
+      "NIGHTLIFE": 0.5,
+      "PARTY": 0.5,
+      "SPORTS": 0.5,
+      "MOVIES": 0.5,
+      "COMEDY": 0.5,
+      "THEATRE": 0.5,
+      "FOOD": 0.5,
+      "ARTS": 0.5,
+      "TECHNOLOGY": 0.5,
+      "SOCIAL": 0.6,
+      "TRAVEL": 0.5,
+      "OUTDOOR": 0.5,
+      "CREATIVE": 0.5,
+      "ACADEMIC": 0.5,
+      "GROUP_PREFERENCE": 0.5,
+      "SOLO_COMFORT": 0.5,
+      "CROWD_COMFORT": 0.5,
+      "EXPLORATION": 0.5,
+      "LIVE_EVENT": 0.6,
+      "COMPETITIVE": 0.5
+    },
+    "confidence": {
+      "SOCIAL": 0.7,
+      "LIVE_EVENT": 0.6,
+      "CROWD_COMFORT": 0.6
+    },
+    "tags": {
+      "['coding', 'ai', 'rock', 'food festivals']": 1.0
+    }
+  },
+  "1": {
+    "user_id": 1,
+    "interests": [
+      "coding",
+      "edm",
+      "indie music",
+      "photography"
+    ],
+    "interest_groups": [
+      "Music",
+      "Photography",
+      "Technology"
+    ],
+    "primary_group": "Music",
+    "bio": "Love coding and edm.",
+    "vibe": "front_row",
+    "energy": "introvert",
+    "generated_at": "2026-10-29 16:36:35.816756"
+  },
+  "99995": {
+    "userId": 99995,
+    "user_id": 99995,
+    "dimensions": {
+      "MUSIC": 0.5,
+      "NIGHTLIFE": 0.5,
+      "PARTY": 0.5,
+      "SPORTS": 0.95,
+      "MOVIES": 0.5,
+      "COMEDY": 0.5,
+      "THEATRE": 0.5,
+      "FOOD": 0.85,
+      "ARTS": 0.5,
+      "TECHNOLOGY": 0.95,
+      "SOCIAL": 0.6,
+      "TRAVEL": 0.5,
+      "OUTDOOR": 0.5,
+      "CREATIVE": 0.5,
+      "ACADEMIC": 0.5,
+      "GROUP_PREFERENCE": 0.5,
+      "SOLO_COMFORT": 0.5,
+      "CROWD_COMFORT": 0.5,
+      "EXPLORATION": 0.5,
+      "LIVE_EVENT": 0.6,
+      "COMPETITIVE": 0.5
+    },
+    "confidence": {
+      "SPORTS": 0.85,
+      "TECHNOLOGY": 0.85,
+      "SOCIAL": 0.7,
+      "LIVE_EVENT": 0.6,
+      "CROWD_COMFORT": 0.6,
+      "FOOD": 0.8
+    },
+    "tags": {
+      "cricket": 1.0,
+      "ai": 1.0
+    },
+    "interests": [
+      "cricket",
+      "ai"
+    ],
+    "interest_groups": [
+      "Sports",
+      "Technology"
+    ],
+    "primary_group": "Sports",
+    "bio": "Data & sports fan",
+    "vibe": "chill",
+    "energy": "ambivert",
+    "generated_at": "2026-10-29 17:01:39.051499"
+  },
+  "4": {
+    "userId": 4,
+    "user_id": 4,
+    "dimensions": {
+      "MUSIC": 0.95,
+      "NIGHTLIFE": 0.8,
+      "PARTY": 0.8,
+      "SPORTS": 0.5,
+      "MOVIES": 0.5,
+      "COMEDY": 0.5,
+      "THEATRE": 0.5,
+      "FOOD": 0.95,
+      "ARTS": 0.5,
+      "TECHNOLOGY": 0.5,
+      "SOCIAL": 0.6,
+      "TRAVEL": 0.5,
+      "OUTDOOR": 0.5,
+      "CREATIVE": 0.5,
+      "ACADEMIC": 0.5,
+      "GROUP_PREFERENCE": 0.4,
+      "SOLO_COMFORT": 0.5,
+      "CROWD_COMFORT": 0.8,
+      "EXPLORATION": 0.5,
+      "LIVE_EVENT": 0.85,
+      "COMPETITIVE": 0.5
+    },
+    "confidence": {
+      "FOOD": 0.85,
+      "MUSIC": 0.85,
+      "SOCIAL": 0.7,
+      "LIVE_EVENT": 0.8,
+      "CROWD_COMFORT": 0.75,
+      "GROUP_PREFERENCE": 0.8,
+      "PARTY": 0.8,
+      "NIGHTLIFE": 0.8
+    },
+    "tags": {
+      "food festivals": 1.0,
+      "hip hop": 1.0,
+      "indie music": 1.0,
+      "music festivals": 1.0
+    },
+    "interests": [
+      "food festivals",
+      "hip hop",
+      "indie music",
+      "music festivals"
+    ],
+    "interest_groups": [
+      "Food",
+      "Music"
+    ],
+    "primary_group": "Food",
+    "bio": "Love food festivals and hip hop.",
+    "vibe": "front_row",
+    "energy": "ambivert",
+    "generated_at": "2026-10-29 17:26:23.446480"
+  }
+}

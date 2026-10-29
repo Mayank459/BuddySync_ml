@@ -6,7 +6,7 @@ Design and reasoning: [../ML_IMPLEMENTATION_PLAN.md](../ML_IMPLEMENTATION_PLAN.m
 
 | Folder | What it does | "Training" | Endpoint |
 |---|---|---|---|
-| `buddy_matching/` | Rank people at the same event, scoring both directions; per-interest % ("Music 73%"); post-event feedback nudges the order and keeps "never again" pairs apart | tune the 4 weights + logistic regression, split by viewer | `POST /v1/match/buddies` |
+| `buddy_matching/` | Rank people at the same event across 7 dimensions (Interest, Event Fit, Social Fit, Prefs, Intent Fit, Location, Availability); persistent Taste Profile; 10-question trade-off questionnaire; event-specific adjustments | tune 7 weights + logistic regression, split by viewer | `POST /v1/match/buddies`, `/v1/match/questionnaire/*`, `/v1/match/users/*` |
 | `clan_formation/` | Group 3–6 people so every pair is compatible | none (reuses buddy score); greedy vs random check | `POST /v1/clans/form` |
 | `event_recs/` | Personal event feed (past-event ratings shift the taste) | taste vectors + tag popularity; weights tuned on a validation window; time split | `POST /v1/recs/events` |
 | `event_ingestion/` | Spot duplicate listings across sources, categorise events | pair classifier + tf-idf/logistic regression categoriser | `POST /v1/events/ingest` |

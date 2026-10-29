@@ -7,7 +7,8 @@ from urllib.parse import urlsplit
 import requests
 
 TOKEN = os.getenv("ML_SERVICE_TOKEN")
-API = os.getenv("API_URL", "https://buddysync-ml.onrender.com")
+DEFAULT_URL = "https://buddysync-ml.onrender.com" if TOKEN else "http://127.0.0.1:8765"
+API = os.getenv("API_URL", DEFAULT_URL)
 
 
 def _origin(url: str):

@@ -88,9 +88,10 @@ The repo is a Render **Blueprint** ([render.yaml](render.yaml)): one Docker web 
 **Sizing:** about 250 MB for the trip planner alone, and about 430 MB once face verification and liveness have loaded their models.
 - The blueprint uses the **free** plan (512 MB) with one process: fine for a demo.
 - Use **standard** (2 GB) for real traffic, or to raise `WEB_CONCURRENCY`.
-- Free instances sleep after 15 min idle, and the first request then takes about a minute. Open `/health` before a demo.
+- Free instances sleep after 15 min idle; the API pings its own `RENDER_EXTERNAL_URL` every 13 min to stay up.
+- The free plan's 0.1 CPU makes a liveness check take ~35 s (4.7 s on a laptop).
 
-**Webcam liveness check:** the playground's check uses the camera of the machine *running the playground*. Run the playground on a laptop and point `API_URL` at Render.
+**Webcam liveness check:** the playground's "Live camera (in your browser)" records the viewer's own camera (VP8 WebM), so it works on the hosted playground too.
 
 **Background jobs:**
 - **Drafts and chat turns:** the API runs them itself (`TRIP_WORKERS`, 2 threads).
